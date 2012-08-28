@@ -148,6 +148,7 @@ window.global = "eksplisitt leak!"
         </pre>
       </article>
 
+      <!--
       <article class='horizontal code'>
         <h3>Ikke så hjernedød equals</h3>
         <pre class="coffeescript">
@@ -156,7 +157,9 @@ if (2 == "2") then alert("fail");
         <pre class="javascript">
         </pre>
       </article>
+      -->
 
+      <!--
       <article class='horizontal code'>
         <h3>Implisitt return</h3>
         <pre class="coffeescript">
@@ -166,6 +169,7 @@ drink_beer = (beer) ->
         </pre>
         <pre class="javascript"></pre>
       </article>
+      -->
 
       <article class='code'>
         <h3>Frivillige paranteser på funksjonskall</h3>
@@ -216,14 +220,14 @@ drink_beer() if numberOfBeers > 0
       <article class='horizontal code'>
         <h3>Alt er uttrykk!</h3>
         <pre class="coffeescript">
-beer_history = until numberOfBeers is  0
+beer_history = until numberOfBeers is 0
   numberOfBeers--
         </pre>
         <pre class="javascript"></pre>
       </article>
 
       <article class='horizontal code'>
-        <h3><strong>ALT</strong> er uttrykk!</h3>
+        <h3>Alt er uttrykk!</h3>
         <pre class="coffeescript">
 beer_text = switch remainingBeers
   when remainingBeers > 10 then "All is well!"
@@ -237,16 +241,13 @@ beer_text = switch remainingBeers
       <article class='horizontal code'>
         <h3>Sammenlikning flere veier!</h3>
         <pre class="coffeescript">
-beer_text = switch remainingBeers
-  when 5 < remainingBeers < 10 then "WOO! FEST!"
-  when 1 < remainingBeers < 5 then "Nachspiel?"
-  when remainingBeers is 0 then "Jeg vil hjem."
+just_one_more() while 0.5 < alcoholLevel < 1
         </pre>
         <pre class="javascript"></pre>
       </article>
 
       <article class='horizontal code'>
-        <h3>Bygging av strenger</h3>
+        <h3>Bygging av strenger (interpolering)</h3>
         <pre class="coffeescript">
 age = 10
 text = "I just had #{age} beers!"
