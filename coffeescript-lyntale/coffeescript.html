@@ -113,12 +113,16 @@ else
         </pre>
       </article>
 
-      <article class='horizontal code'>
+      <article class='horizontal code' style="position: relative;">
         <h3>IT-hipster funksjonssyntax</h3>
         <pre class="coffeescript">
 add_prices = (a, b) -> a + b
         </pre>
         <pre class="javascript"></pre>
+
+        <div class="build" style="position: absolute; bottom: -150px;">
+          <img src="images/it_hipster1.png" style="float: right; height: 50%; width: 50%;">
+        </div>
       </article>
 
       <article class='horizontal code keep-js-scope-fix'>
@@ -135,7 +139,7 @@ window.global = "eksplisitt leak!"
       <article class='horizontal code'>
         <h3>Ikke så hjernedød equals</h3>
         <pre class="coffeescript">
-if (2 == '2') then alert("fail");
+if (2 == "2") then alert("fail");
         </pre>
         <pre class="javascript">
         </pre>
