@@ -24,15 +24,21 @@
     
     <script>
       $(document).ready(function() {
+
           $('.code').each(function(index, element) {
-            var coffeescript = $(this).find('.coffeescript').text();
-            $(this).find('.coffeescript').text($.trim(coffeescript));
 
+            var coffeeScriptContainer = $(this).find('.coffeescript');
+            var javaScriptContainer = $(this).find('.javascript');
+            var coffeescript = coffeeScriptContainer.text();
             var javascript = CoffeeScript.compile(coffeescript);
-            
-            //javascript = javascript.replace(/\(function\(\) \{(\n)+/g, "").replace(/(\n)+\}\).call\(this\);/, "");
 
-            $(this).find('.javascript').text(javascript);
+            coffeeScriptContainer.text($.trim(coffeescript));
+
+            if (!$(this).hasClass('keep-js-scope-fix')) {
+              javascript = $.trim(javascript.replace("(function() {", "").replace("}).call(this);", ""));
+            }
+
+            javaScriptContainer.text(javascript);
           });
       });
     </script>
@@ -111,7 +117,7 @@ add_prices = (a, b) -> a + b
         <pre class="javascript"></pre>
       </article>
 
-      <article class='horizontal code'>
+      <article class='horizontal code keep-js-scope-fix'>
         <h3>Fikser scoping</h3>
         <pre class="coffeescript">
 accidentally_global = 'woops, I leaked'
