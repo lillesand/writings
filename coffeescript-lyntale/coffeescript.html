@@ -26,6 +26,22 @@
 
       $(document).ready(function() {
 
+        function processJavaScript(javascript, opts) {
+          if (opts.removeScope) {
+            javascript = $.trim(javascript.replace("(function() {", "").replace("}).call(this);", ""));
+
+            javascript = javascript.split("\n").map(function(line) {
+              return line.indexOf("  ") == 0 ? line.substring(2, line.length) : line;
+            }).join("\n");
+          }
+
+          if (opts.removeEmptyLines) {
+            javascript = javascript.replace(/\n(\\ )*\n/g, "\n");
+          }
+
+          return javascript;
+        }
+
           $('.code').each(function(index, element) {
 
             var coffeeScriptContainer = $(this).find('.coffeescript');
@@ -35,13 +51,10 @@
 
             coffeeScriptContainer.text($.trim(coffeescript));
 
-            if (!$(this).hasClass('keep-js-scope-fix')) {
-              javascript = $.trim(javascript.replace("(function() {", "").replace("}).call(this);", ""));
-
-              javascript = javascript.split("\n").map(function(line) {
-                return line.indexOf("  ") == 0 ? line.substring(2, line.length) : line;
-              }).join("\n");
-            }
+            javascript = processJavaScript(javascript, {
+              removeScope: !$(this).hasClass('keep-js-scope-fix'),
+              removeEmptyLines: $(this).hasClass('remove-newlines')
+            });
 
             javaScriptContainer.text(javascript);
           });
@@ -254,6 +267,18 @@ beer_story = """
   &lt;li&gt;Three beers&lt;/li&gt;
 &lt;/ul&gt;
              """
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
+      <article class='horizontal code remove-newlines'>
+        <h3>Objektorientering</h3>
+        <pre class="coffeescript">
+class Shape
+  constructor: (@x, @y) ->
+  centre: -> [ @x, @y ]
+  area: -> 0
+point = new Shape 13, 37
         </pre>
         <pre class="javascript"></pre>
       </article>
