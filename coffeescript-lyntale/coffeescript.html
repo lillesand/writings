@@ -41,22 +41,22 @@
           return javascript;
         }
 
-          $('.code').each(function(index, element) {
+        $('.code').each(function(index, element) {
 
-            var coffeeScriptContainer = $(this).find('.coffeescript');
-            var javaScriptContainer = $(this).find('.javascript');
-            var coffeescript = coffeeScriptContainer.text();
-            var javascript = CoffeeScript.compile(coffeescript);
+          var coffeeScriptContainer = $(this).find('.coffeescript');
+          var javaScriptContainer = $(this).find('.javascript');
+          var coffeescript = coffeeScriptContainer.text();
+          var javascript = CoffeeScript.compile(coffeescript);
 
-            coffeeScriptContainer.text($.trim(coffeescript));
+          coffeeScriptContainer.text($.trim(coffeescript));
 
-            javascript = processJavaScript(javascript, {
-              removeScope: !$(this).hasClass('keep-js-scope-fix'),
-              removeEmptyLines: $(this).hasClass('remove-newlines')
-            });
-
-            javaScriptContainer.text(javascript);
+          javascript = processJavaScript(javascript, {
+            removeScope: !$(this).hasClass('keep-js-scope-fix'),
+            removeEmptyLines: $(this).hasClass('remove-newlines')
           });
+
+          javaScriptContainer.text(javascript);
+        });
       });
     </script>
   </head>
