@@ -23,6 +23,7 @@
     <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
     
     <script>
+
       $(document).ready(function() {
 
           $('.code').each(function(index, element) {
@@ -36,6 +37,10 @@
 
             if (!$(this).hasClass('keep-js-scope-fix')) {
               javascript = $.trim(javascript.replace("(function() {", "").replace("}).call(this);", ""));
+
+              javascript = javascript.split("\n").map(function(line) {
+                return line.indexOf("  ") == 0 ? line.substring(2, line.length) : line;
+              }).join("\n");
             }
 
             javaScriptContainer.text(javascript);
@@ -57,7 +62,6 @@
       float: left;
       margin: 20px 0 0 0;
       min-height: 80%;
-      padding-left: 0;
     }
 
     .horizontal.code .javascript, .horizontal.code .coffeescript {
