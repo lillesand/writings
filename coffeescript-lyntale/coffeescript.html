@@ -26,7 +26,12 @@
       $(document).ready(function() {
           $('.code').each(function(index, element) {
             var coffeescript = $(this).find('.coffeescript').text();
+            $(this).find('.coffeescript').text($.trim(coffeescript));
+
             var javascript = CoffeeScript.compile(coffeescript);
+            
+            //javascript = javascript.replace(/\(function\(\) \{(\n)+/g, "").replace(/(\n)+\}\).call\(this\);/, "");
+
             $(this).find('.javascript').text(javascript);
           });
       });
@@ -34,13 +39,27 @@
   </head>
   
   <style>
-    .code .coffeescript, .code .javascript {
-      width: 40%;
+    .code .coffeescript {
+      width: 45%;
       float: left;
-      margin: 0 15px;
+      margin: 20px 20px 0 0;
       min-height: 80%;
     }
-    
+
+    .code .javascript {
+      width: 45%;
+      float: left;
+      margin: 20px 0 0 0;
+      min-height: 80%;
+      padding-left: 0;
+    }
+
+    .horizontal.code .javascript, .horizontal.code .coffeescript {
+      width: 100%;
+      margin: 10px 0 0 0;
+      min-height: 10%;
+    }
+
     .centered {
       text-align: center;
     }
@@ -52,31 +71,120 @@
       
       <article class='front-page centered'>
         <img src="images/coffeescript_logo.jpg" style="height: 60%; width: 60%;" />
-        <h2>Coffeescript - JavaScript without the... Java.
-        
+        <h2>CoffeeScript - JavaScript without the... Java.</h2>
       </article>
-      <article class='code'>
+      
+      <article class="tdlr">
+        <h3>TD;LR</h3>
+        <ul class="build">
+          <li>JavaScript, bare... without the cruft.</li>
+          <li>Kompilerer ned til JavaScript
+            <ul class="build"><li>Med en kompilator skrevet i CoffeeScript</li></ul>
+          </li>
+          <li>Er fullstendig <i>jslint compliant</i></li>
+          <li>Fikser småfeil og mangler i JavaScript</li>
+        </ul>
+      </article>
+      
+      <article class="we-want-code">
+        <h2>We want code!!</h2>
+        <img class="centered" src="images/screaming-children1.jpeg"/>
+      </article>
+      
+      <article class='horizontal code'>
+        <h3>Signifikante innrykk</h3>
         <pre class="coffeescript">
-a = 123
-b = 'lol'
+if opening_hours()
+  do_business()
+else
+  close_shop()
         </pre>
         <pre class="javascript">
         </pre>
       </article>
 
-      <article>
-        <h1>
-          Title Goes Here Up
-          <br>
-          To Two Lines
-        </h1>
-        <p>
-          Sergey Brin
-          <br>
-          May 10, 2011
-        </p>
+      <article class='horizontal code'>
+        <h3>IT-hipster funksjonssyntax</h3>
+        <pre class="coffeescript">
+add_prices = (a, b) -> a + b
+        </pre>
+        <pre class="javascript"></pre>
       </article>
-      
+
+      <article class='horizontal code'>
+        <h3>Implisitt return</h3>
+        <pre class="coffeescript">
+eat_cake = (cake) ->
+  rest = eat(cake)
+  rest
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
+      <article class='code'>
+        <h3>Frivillige paranteser på funksjonskall</h3>
+        <pre class="coffeescript">
+cake = { type: 'sjokoladekake' }
+eat cake
+
+# Shit.
+myPoop = poop
+
+# Ahh...
+myPoop = poop()
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
+      <article class='horizontal code'>
+        <h3>Hyggelige kortformer</h3>
+        <pre class="coffeescript">
+if syttendeMai() then alert "hurra!" else alert "nei, faen..."
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
+      <article class='horizontal code'>
+        <h3>Kan løkke begge veier</h3>
+        <pre class="coffeescript">
+while numberOfBeers > 0
+  numberOfBeers--
+
+until numberOfBeers is  0
+  numberOfBeers--
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
+      <article class='horizontal code'>
+        <h3>Alt kan suffixes</h3>
+        <pre class="coffeescript">
+drink_beer() if numberOfBeers > 0
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
+      <article class='horizontal code'>
+        <h3>Alt er uttrykk!</h3>
+        <pre class="coffeescript">
+beer_history = until numberOfBeers is  0
+  numberOfBeers--
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
+      <article class='horizontal code'>
+        <h3><strong>ALT</strong> er uttrykk!</h3>
+        <pre class="coffeescript">
+beer_text = switch remainingBeers
+  when remainingBeers > 10 then "All is well!"
+  when remainingBeers > 5 then "Maybe someone should..."
+  when remainingBeers > 2 then "Not cool."
+  when remainingBeers > 0 then "PANIC"
+        </pre>
+        <pre class="javascript"></pre>
+      </article>
+
       <article>
         <p>
           This is a slide with just text. This is a slide with just text.
