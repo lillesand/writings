@@ -121,16 +121,21 @@ else
         </pre>
       </article>
 
-      <article class='horizontal code' style="position: relative;">
-        <h3>IT-hipster funksjonssyntax</h3>
+      <article class='horizontal code'>
+        <h3>Fiffig funksjonssyntaks</h3>
         <pre class="coffeescript">
 add_prices = (a, b) -> a + b
         </pre>
         <pre class="javascript"></pre>
+      </article>
 
-        <div class="build" style="position: absolute; bottom: -150px;">
-          <img src="images/it_hipster1.png" style="float: right; height: 50%; width: 50%;">
-        </div>
+     <article class='horizontal code'>
+      <h3>... som fikser this!</h3>
+        <pre class="coffeescript">
+this.a = 3
+add_to_a = (b) => this.a + b
+        </pre>
+        <pre class="javascript"></pre>
       </article>
 
       <article class='horizontal code keep-js-scope-fix'>
@@ -144,7 +149,6 @@ window.global = "eksplisitt leak!"
         </pre>
       </article>
 
-      <!--
       <article class='horizontal code'>
         <h3>Ikke så hjernedød equals</h3>
         <pre class="coffeescript">
@@ -153,7 +157,6 @@ if (2 == "2") then alert("fail");
         <pre class="javascript">
         </pre>
       </article>
-      -->
 
       <!--
       <article class='horizontal code'>
@@ -283,7 +286,6 @@ point = new Shape 13, 37
         <h3>Pluss en masse, masse mer</h3>
         <ul style="float:left;">
           <li>Splats</li>
-          <li>Fat arrows (function binding)</li>
           <li>Default parameter values</li>
           <li>Comprehensions</li>
           <li>for own key (hasOwnProperty())</li>
