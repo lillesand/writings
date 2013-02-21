@@ -14,9 +14,9 @@
       text-align: center;
     }
 
-	.spaced li {
-		margin-bottom: 2em;
-	}
+    .spaced li {
+      margin-bottom: 2em;
+    }
 
     body article.invert.current {
         background-color: black;
@@ -31,19 +31,34 @@
       font-size: 0.8em;
       width: 100%;
       font-weight: bold;
+      margin-left: 250px;
     }
 
+    h1.gigantic {
+      font-size: 10em;
+      padding:0;
+    }
+
+    .spoiler * {
+      display: none;
+    }
+
+    .spoiler.current * {
+      display: block;
+    }
+
+    strong {
+      font-style: italic;
+    }
   </style>
 
   <body style='display: none'>
 
     <section class='slides layout-regular'>
-      <article class='front-page centered'>
-        <img src="images/real-fist.png" style="height: 60%;" />
+      <article class='centered'>
+        <img src="images/real-fist.png" style="height: 60%; width: 60%" />
         <h2>Sexy visualisering på åtte timer</h2>
-		    <h2 class="sub-heading">
-          … eller hvordan du lykkes med hackathon!
-        </h2>
+        <h2 class="sub-heading">… eller hvordan du lykkes med hackathon!</h2>
       </article>
 
       <article>
@@ -116,7 +131,7 @@
 
       <article>
         <h2>Bli ferdig på én dag</h2>
-        <h2 class="sub-heading" style="margin-left: 250px;">… you ain't gonna finish it later</h2>
+        <h2 class="sub-heading" style=>… you ain't gonna finish it later</h2>
 
         <div>
           <img class="centered" style="height: 60%; width: 60%" src="images/star_fist.png">
@@ -129,6 +144,63 @@
         <div>
           <img class="centered" style="margin-top: 50px;" src="images/stian_mathiassen.jpg">
         </div>
+      </article>
+
+      <article>
+        <p class="centered" style="margin-top: 500px;">(page intentionally left blank)</p>
+      </article>
+
+      <article>
+        <h3>Takk til hjernen, tilbake til munnen</h3>
+
+        <div>
+          <img class="centered" style="margin-top: 50px;" src="images/mouth.jpg">
+        </div>
+      </article>
+
+      <article>
+        <h3>Effekter</h3>
+        <ul class="build">
+          <li>Kunden <strong>elsker</strong> det</li>
+          <li>Vi vet hvordan applikasjonene har det til enhver tid</li>
+          <li>Hackathons er <strong>gøy</strong>!</li>
+          <li>Vi viser hvor kjapt vi <strong>kan</strong> levere</li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>Er dette noe du kan få til på ditt prosjekt?</h1>
+      </article>
+
+      <article>
+        <h1 class="gigantic centered">Nei</h1>
+      </article>
+
+      <article class="spoiler">
+        <h1 class="gigantic centered">Joda!</h1>
+      </article>
+
+      <article>
+        <h3>Men du må finne <strong>din</strong> måte…</h3>
+        <ul class="build">
+          <li>
+            Kanskje du ikke kan bruke Ducksboard
+            <ul><li>Ok, lag noe enkelt sjæl!</li></ul>
+          </li>
+          <li>
+            Kanskje du ikke kan deploye kjapt
+            <ul><li>Ok, lag det i testmijø og bestill deployment til slutten av dagen</li></ul>
+          </li>
+          <li>
+            Kanskje du ikke kan bygge en dedikert app
+            <ul><li>Ok, legg det på en beskyttet URL i applikasjonen din</li></ul>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>For hvis du ikke lager noenting</h2>
+        <h2 class="sub-heading">… så har du ingenting!</h2>
       </article>
 
     </section>
