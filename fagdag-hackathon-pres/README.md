@@ -1,5 +1,6 @@
 Intro: 15 min (Jøran)
  * Generell intro om prosjektet (max 3 min)
+ * Demo (5 minutter)
  * Det er her suksess sikres: Rigging av hackathon (nb: skryt av lars) (5 min)
     * Forankring i organisasjonen
     * Eliminere avhengigheter. Gjør at det bare er å sette seg ned og hacke!
@@ -7,7 +8,6 @@ Intro: 15 min (Jøran)
     * Når?
     * Hvordan får lov til å gjøre det? Forankring av løsning
     * Tekniske forberedelser: det tekniske skal være klappet og klart! <-- megaviktig
- * Demo (5 minutter)
  * Gevinster vi har opplevd (3min)
 
 Kodestuff: 20 min (Stian)
