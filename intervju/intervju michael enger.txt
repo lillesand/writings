@@ -1,0 +1,101 @@
+Intervju Michael Enger
+
+Intervjuspørsmål
+
+
+- Bakgrunn:
+	- Hva er hovedstyrken din som utvikler? ok
+	- Tidligere prosjekt: Fortell om hvilke oppgaver og utfordringer du har hatt i 07 Web og Nodes. ok
+	- Vis fram en side du har jobbet med som du er spesielt stolt av. A game of numbers
+	- Mobilutvikling! Mye erfaring? Hva synes du? Native vs hybrid vs web?
+
+	- Hva tenker du om å måtte jobbe med annen teknologi enn PHP/JS? Hva med Java eller .Net?
+	- HiO: Hvorfor 5 år på en bachelor?
+
+Løpende:
+	- Hva tenker du om å jobbe i et større selskap? ok, har lyst
+	- Noe erfaring med metodikk? ok	
+	- Jobbe som konsulent, 8-16, forholde seg mye til kunde. ok
+
+	- Prøvde seg på spillutvikling, men gikk ikke på grunn av mangel på penger. Hvordan ville du gjort det hvis du skulle gjort det igjen?
+	- Liker ikke EzPublish, vanskelig å jobbe med. Hvorfor?
+		Jobbet med wordpress freelance for Renomé. Hva synes du om det?
+	- Gikk på en smell med en kunde av 07 Web. Hva ville du gjort med et tilsvarende prosjekt igjen?
+	- Lever på sparepenger og jobber med småprosjekter nå. Hvilke?
+
+Notater:
+	- Har jobbet på en del VELDIG små prosjekter (1-2 uker)
+	- Noen litt lengre 1-2 måneder
+	- Nodes hovedkontor i danmark, 60 utviklere der, 3 prosjektledere og Michael i Norge.
+	- Begynte på universitetet for å lære å lage spill. Likte bedre å lage websider, så brukte mer tid på den enn skolen
+	- Nodes: jobbet med mye smått, mye instagram og multiple choice quiz
+		Har lyst til å jobbe i team
+	- Liker kodestandarder
+	- Hvordan sikrer du at du ikke har syntaxfeil i javascript?
+	- Lite erfaring med testdriving. Har litt erfaring med det i PHP.
+	- Kanskje litt cowboy, virker ikke vant til å ta helhetsansvar. Vil ha en pipeline som beskytter han selv mot feil.
+	- Konsulentmateriale? Virker ikke så serviceinnstilt.
+	- Litt tynn teknisk forståelse tatt i betrakning erfaring
+
+
+Generelt:
+1. Hva liker du å jobbe med? Hvilke teknologier, hvilken stack, hvor i stacken?
+2. Hvorfor liker du å programmere?
+3. Hva er ditt favoritt utviklingsmiljø?
+
+
+4. Hvordan jobber du når du skal lage en webside?
+5. Hva er det kuleste du noen gang har lagd?
+6. Hva er det feteste med utviklingsverktøyet du bruker?
+7. Har du noen hobbyprosjekter?
+
+
+
+HTML:
+1. Hva er quirks mode?
+2. Hva er forskjellen på cookies, localStorage og sessionStorage?
+3. Hva er data- attributter?
+4. Hva er semantisk web?
+	Hvorfor viktig?
+	Hva er problemet?
+
+5. Ressurslasting og CDN
+
+
+
+JavaScript:
+1. Hvordan virker "this" ?
+2. hvordan tester du JavaScript?
+3. Hvordan strukturerer du JavaScript for å unngå spaghetti?
+	- Anonym closure
+	- use strict
+	- Namespace
+4. Hva er forskjellen på .call og .apply?
+5. Hva er AJAX?
+6. Hva er JSONP?
+	- Sikkerhetsproblematikk (misforstått)
+7. Hva er forskjellen på == og ===?
+8. Hva er "use strict"; ?
+9. Hva er hoisting?
+10. Hva er prototypebasert arv?
+
+jQuery:
+1. Hva er chaining?
+2. Hva er deferreds?
+3. Hvorfor brukes namespacing av events?
+4. Hva er forskjellen på .on('click', function() {}); og .click(function() {}); ?
+
+
+CSS:
+1. Hva synes du om preprocessorer som LESS kontra vanlig CSS?
+2. Hva gjør en css reset?
+3. Hva er floating? Hvordan virker det?
+4. Hva er en css sprite? Hva er formålet? Hvordan virker det?
+5. Hva gjør du hvis du må bruke egen CSS for en nettleser? [conditional include css, property hacks?]
+6. Har du noen gang brukt et grid-system? Hva syynes du?
+7. Hvordan avgjør browseren hvilken stil som gjelder for en gitt selector? (Specificity) 
+	Universal selectors, Type selectors, Class selectors, Attributes selector,s Pseudo-classes, ID selectors, Inline style
+
+
+Til slutt:
+- implementer hangman i Javascript og html
