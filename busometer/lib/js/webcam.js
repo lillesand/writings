@@ -29,11 +29,13 @@ $(document).ready(function() {
 
     (function() {
         var $videoElement = $();
-        Reveal.addEventListener('slidechanged', function(e) {
+        var playVideo = function (e) {
             if ($videoElement.length == 1) $videoElement.get(0).pause();
             $videoElement = $(e.currentSlide).find('video');
             if ($videoElement.length == 1) $videoElement.get(0).play();
-        });
+        };
+        Reveal.addEventListener('slidechanged', playVideo);
+        Reveal.addEventListener('ready', playVideo);
     })();
 
 });
