@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Busometer for fun and profit (?)</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="description" content="Busometer – busstider på kjøkkenbenken!">
 		<meta name="author" content="Hakim El Hattab">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -41,30 +41,10 @@
 			<div class="slides">
 
         <section>
-          <h2>TODO</h2>
-          <ol>
-            <li>Introdusere behovet nærmere</li>
-            <li>Snakke mer om hva som skal lages før jeg viser hvordan det lages</li>
-          </ol>
-        </section>
-
-        <section>
-          <h2>Agenda</h2>
-          <ul>
-            <li>Intro (2min)</li>
-            <li>Vise RasPi + koblingskort (5min): Koble til raspi, kjøre javaprogram som setter spenning på alle IO-pinnene, vis at jeg kan koble opp to som lyser. La javaprogrammet slå dem av og på</li>
-            <li>Kjør som screen og vis at jeg da kan koble meg av</li>
-            <li>Introduser Java på RasPi (3min)</li>
-            <li>Vis frem javakode (6 min)</li>
-            <li>Andre problemer (wireless, ustabilitet, blåst minnekort) + avslutning (6 min)</li>
-          </ul>
-        </section>
-
-        <section>
           <section>
             <h1>Hei!</h1>
-            <video class="webcam"></video>
-            <div class="fragment img-side-desc"><-- Jøran</div>
+            <video class="webcam" style="width: 50%"></video>
+            <div>@lillesand</div>
           </section>
 
           <section>
@@ -94,6 +74,9 @@
         <section>
           <h2>Enter Busometeret!</h2>
           <img src="img/busometer.jpg" style="width: 80%"/>
+          <aside class="notes">
+            Forklar hva busometer er og hvordan det funker
+          </aside>
         </section>
 
         <section>
@@ -104,15 +87,6 @@
               <ul>
                 <li>I størst mulig grad basert på open source komponenter</li>
                 <li>Billig, typ 200 spenn. Men så må man kjøpe minnekort, wifi-dongle, casing, osv. Baller litt på seg!</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <img src="img/raspi-sketch.png"/>
-
-            <aside class="notes">
-              <ul>
                 <li>Broadcom ARM cpu, så ikke x86 instruksjonssett. Egne bygg av OS. Raspian</li>
               </ul>
             </aside>
@@ -123,24 +97,74 @@
           </section>
 
           <section>
-            <h1>PI4J</h1>
-            <img src="img/pi4j.png" style="border: none" />
+            <img src="img/raspi-gpio-led.png" />
           </section>
 
           <section>
-            <img src="img/raspi-gpio-led.png" />
+            <img src="img/breadboard.jpg" />
+            <aside class="notes">
+              Forklar roughly hva er breadboard er
+            </aside>
+          </section>
+
+          <section>
+            <img src="img/breadboard-annotated.jpg" />
+            <aside class="notes">
+              Forklar roughly hvordan breadboardet funker. Radene til venstre og høyre henger sammen nedover,
+              mens de andre henger sammen på langs. Kan f.eks. ha jord på minus til høyre.
+            </aside>
           </section>
 
           <section>
             <video class="webcam stretch"></video>
           </section>
-
+          <aside class="notes">
+            Koble opp eksempel-LEDs!
+          </aside>
         </section>
 
         <section>
-          <h1>Ditt eget Busometer</h1>
-          http://api.busbuddy.no/
-          Hvor kjøper du RasPi?
+          <section>
+            <h1>PI4J</h1>
+            <img src="img/pi4j.png" style="border: none" />
+            <aside class="notes">
+              Last piece of the puzzle! Hvordan snakke med skiten? Java, selvsagt ;).<br/>
+              Går an å bruke mange andre språk. PI4J er et ganske kult Java-prosjekt som lar deg snakke med native GPIO-kontrolleren.
+            </aside>
+          </section>
+
+          <section>
+            <img src="img/pi4j-dependencies.png" />
+          </section>
+
+          <section>
+            <h1>Livekoding!</h1>
+          </section>
+
+          <section>
+            <video class="webcam stretch"></video>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Resten</h1>
+            <ul>
+              <li class="fragment">Hente busstider</li>
+              <li class="fragment">Kjøre i bakgrunnen på Raspberry Pi</li>
+              <li class="fragment">WiFi</li>
+              <li class="fragment">Fikse WiFi</li>
+              <li class="fragment">Sette opp alt på nytt etter blåst minnekort</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Ditt eget Busometer?</h1>
+            <ul>
+              <li>http://api.busbuddy.no/</li>
+              <li>http://www.raspberrypi.org/</li>
+            </ul>
+          </section>
         </section>
 			</div>
 
