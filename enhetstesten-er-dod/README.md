@@ -28,10 +28,15 @@ Og en slik test kommer sjelden alene. Hvis man først enhetstester på dette niv
 Disse endringene, disse jævla endringene…
 -----------------------------------------
 
+Gode tester er godt for mye. Men for meg er det ett aspekt som trumfer alt: trygghet til å gjøre endringer i koden med visshet om at du ikke brekker eksisterende funksjonalitet.
 
+Den perfekte metaforen på gode tester er for meg sikringstauet til en fjellklatrer. Det er litt jobb med det, men stort sett holder det seg på siden med mindre du faktisk faller. Da kjenner du et kraftig rykk, før du trygt kan fire deg ned til bakken og prøve på nytt.
 
-Testen som sikkerhetsnett. Bør være som sikringstauet når du klatrer i et fjell, ikke som et fiskegarn som ikke lar deg bevege armene.
+Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogien for langt, føles det av og til litt som å prøve å klatre opp en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover, men det går trått.
 
+Hvis det å flytte en kodelinje fra én komponent til en annen (uten å endre funksjonalitet) knekker flerfoldige tester og krever 10-15 endrede linjer testkode – da er det noe som har gått feil.
+
+En god testsuite gjør det lett å gjøre endringer, samtidig som den klasker deg på lanken når du gjør noe feil.
 
 Programmér for testbarhet
 -------------------------
