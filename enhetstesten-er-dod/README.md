@@ -40,3 +40,11 @@ En god testsuite gjør det lett å gjøre endringer, samtidig som den klasker de
 
 Programmér for testbarhet
 -------------------------
+Mye av appellen i enhetstesting ligger nok i at det, relativt sett, er jævla enkelt. Å introdusere ende til ende-tester på en stor applikasjon som ikke er bygd for det kan være smertefullt: en bråte komplekse integrasjoner som det ikke er støtte for å bytte ut, treg oppstart av applikasjonen, sideeffekter og tilstander.
+
+Hvis du er så heldig at du starter opp en ny applikasjon i dag vil jeg påstå at det grenser mot uansvarlig å ikke allerede fra starten av bygge applikasjonen for enhetstesting. Rigg det med automatisert kjøring fra dag 1. Hold et veldig tett øye på oppstartstiden på applikasjonen og trege tester.
+
+Etter min erfaring har arkitekturen til applikasjonen en del å si for testbarheten. Single Page Applications har et REST-grensesnitt du kan kjøre testene dine mot, og på den måten få testet alt fra fra webserveren og inn. MVC kan av og til være litt tøffere å få gjort skikkelig. Trikset her er å gå tilbake til røttene og faktisk jobbe med å rendyrke skillet mellom modeller, visninger og oppførsel (controllers). Controllere skal nærmest per definisjon være ganske gode å teste mot.
+
+En måte å gjøre det på…
+-----------------------
