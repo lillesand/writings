@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+        <style>
+            .reveal ul.sparse li {
+                margin-bottom: 1em;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Wolfram Language</h1>
+
+                    <img src="images/wolfram-lang.png" style="margin-top: 150px;" />
+				</section>
+
+				<section>
+					<h1>Wtf?</h1>
+                    <blockquote style="margin-top: 100px; width: 80%; padding: 1em;">
+                        Unlike other programming languages, the philosophy of the Wolfram Language is to build as much knowledge – about algorithms and about the world – into the language as possible.
+                    </blockquote>
+				</section>
+
+                <section>
+                    <h2>Wolfram</h2>
+                    <ul class="sparse">
+                        <li>Mathematica møter Wolfram Alpha</li>
+                        <li>Kunnskapsbasert</li>
+                        <li>Symbolsk</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <blockquote style="margin-top: 200px;">
+                        Scalable for programs from tiny to huge, with immediate deployment locally and in the cloud, the Wolfram Language builds on clear principles—and 25+ years of development—to create what promises to be the world's most productive programming language.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Bruksområder</h2>
+                    <ul>
+                        <li>Maximum-productivity programming (10x faster!)</li>
+                        <li>Algorithmically oriented programming</li>
+                        <li>Computing with real world data</li>
+                        <li>Ultra high-level scripting</li>
+                        <li>Self-documenting large-scale development</li>
+                        <li>Rapid concept development</li>
+                        <li>Internet of things</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Modenhet</h2>
+                    <ul class="sparse">
+                        <li>Brukes i Wolfram Alpha</li>
+                        <li>Språket bundles med Raspberry Pi NOOBS</li>
+                        <li>Fortsatt ikke lansert!</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <a href="https://www.wolfram.com/language/" target="_blank" style="display: block;">
+                        La oss ta en titt!
+                    </a>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
