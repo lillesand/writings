@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="lib/css/clippy.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -44,17 +45,47 @@
 			<div class="slides">
                 <section>
                     <h1>Goddag!</h1>
+                    <p>Velkommen til Internett.</p>
                 </section>
 
-                <section>
-
+                <section id="clippy-og-joran">
+                    <video class="webcam strech" style="display:none;" autoplay></video>
                 </section>
 			</div>
 
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
+		<script src="lib/js/jquery.min.js"></script>
+		<script src="lib/js/clippy.min.js"></script>
+		<script src="lib/js/webcam.js"></script>
 		<script src="js/reveal.min.js"></script>
+
+        <script>
+            clippy.load('Clippy', function (agent) {
+
+                Reveal.addEventListener('slidechanged', function(e) {
+                    var $slide = $(e.currentSlide);
+                    if ($slide.attr('id') == 'clippy-og-joran') {
+                        agent.show();
+
+                        agent.speak('Hva faen er dette for en flau forestilling?');
+                        agent.moveTo(500, 500);
+                        agent.play('Searching', 5000, function() {
+                            $($slide.find('video')).show();
+                        });
+                        agent.speak('Brukbart stygg fyr!');
+                        agent.play('GestureUp');
+                        agent.speak('Æsj.');
+                        agent.play('GetTechy');
+                        agent.moveTo(10000, 10000);
+                    }
+                    else {
+                        agent.hide();
+                    }
+                });
+            });
+        </script>
 
 		<script>
 

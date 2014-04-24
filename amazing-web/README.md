@@ -30,3 +30,4 @@ Agenda:
 Kilder:
 
 http://chimera.labs.oreilly.com/books/1230000000545/ch18.html
+https://www.webrtc-experiment.com/docs/WebRTC-PeerConnection.html
