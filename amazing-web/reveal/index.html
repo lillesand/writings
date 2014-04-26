@@ -48,6 +48,7 @@
                     <h1 class="fragment">The Amazing Web!</h1>
 
                     <aside class="notes">
+                        <p>Før første skifte: så står vi her igjen…sist igjen. Rett før øl. Jeg tror kanskje noen i arrangementskomiteen har noe imot meg. Eller kanskje bare har blitt et comical relief.</p>
                         <ul>
                             <li>Har bestemt meg for å jekke ned tittelen litt. Ikke noe feil med Web 2.0</li>
                             <li>Grepet i min egen entusiasme over hvor fet browseren egentlig har blitt</li>
@@ -55,27 +56,79 @@
                     </aside>
                 </section>
 
-                <section id="zatacka"/>
+                <section>
+                    <img src="../images/web_2.0.png" style="border:none;"/>
+                </section>
+
+                <section id="wolfenstein">
+                    <img src="../images/wolfenstein.png" class="strech" style="border:none" />
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Wolfenstein 3d-clone i browseren</li>
+                            <li>Kom så tidlig som i 2008!</li>
+                            <li>Spill i browseren er liksom ikke så imponerende lengre. Det hadde vi for 15 år siden med flash også.</li>
+                            <li>Flash har prisverdig nok avgått med døden.</li>
+                            <li>Det som er fett her er: dette er ren JavaScript og canvas!</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section id="zatacka">
+                    <iframe src="http://arkt.is/zatacka/" class="stretch"></iframe>
+                    <aside class="notes">
+                        <ul>
+                            <li>Dette er faktisk en del fetere enn det kanskje ser ut.</li>
+                            <li>Zatacka er trolig skrevet av en eller annen tsjekker for rævlenge siden. Kildekoden er sannsynligvis tapt for alltid. Kjører kun i DOS.</li>
+                            <li>Finnes en drøss med cloner, men alle er ganske ræva</li>
+                            <li>Det vi ser her er orginalen, "lagd" av en kis i trondheim</li>
+                            <li>Noen har lagd DosBox.js som er en Dos-emulator i JavaScript. La DET synke inn!</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="../images/inception.jpeg" class="stretch" style="border:none;"/>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Denne presentasjonen er egentlig et stykke facinerende webteknologi i seg selv.</li>
+                            <li>Reveal.js</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="../images/mindblown.gif" class="stretch" style="border: none" />
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Vi tar disse tingene for gitt hver dag… men har dere tenkt over hvor rått det egentlig er!?</li>
+                            <li>Browseren løser ting man egentlig pleide å trenge et OS for…</li>
+                            <li>Og dette er vel egentlig nå bevist med ChromeOS</li>
+                        </ul>
+                    </aside>
+                </section>
 
                 <section>
                     <h1>Goddag!</h1>
                     <p>Velkommen til Internett.</p>
-                </section>
 
-                <section>
-                    <img src="../images/Web_2.0_Map.svg.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>Allright, det er fett å se kule ting som går an, men det holder neppe til en fagkveld</li>
+                            <li>Så vi må faktisk gjennom noe faglig. la oss sparke i gang!</li>
+                        </ul>
+                    </aside>
                 </section>
 
                 <section id="clippy-og-joran">
-                    <video class="webcam strech" style="display:none;" autoplay></video>
+                    <video class="webcam stretch"></video>
                 </section>
 
                 <section>
-                    <h2>Hva skal vi snakke om i dag?</h2>
-                    <ul>
-                        <li>WebRTC!</li>
-                        <li></li>
-                    </ul>
+                    <h2>Hva skal vi <i>egentlig</i> snakke om i dag?</h2>
+                    <h3>WebRTC!</h3>
                 </section>
 
 
@@ -92,24 +145,30 @@
         <script>
             clippy.load('Clippy', function (agent) {
 
+                var clippyvid = $('#clippy-og-joran video');
                 Reveal.addEventListener('slidechanged', function(e) {
-                    var $slide = $(e.currentSlide);
-                    if ($slide.attr('id') == 'clippy-og-joran') {
+                    var slide = $(e.currentSlide);
+
+                    clippyvid.get(0).play();
+                    setTimeout(function() { clippyvid.hide(); }, 100); // Hack to force correct drawing of slide
+                    if (slide.attr('id') == 'clippy-og-joran') {
                         agent.show();
 
                         agent.speak('Hva faen er dette for en flau forestilling?');
                         agent.moveTo(500, 500);
                         agent.play('Searching', 5000, function() {
-                            $($slide.find('video')).show();
+                            clippyvid.show();
                         });
                         agent.speak('Brukbart stygg fyr!');
                         agent.play('GestureUp');
                         agent.speak('Æsj.');
                         agent.play('GetTechy');
+                        agent.speak("Fuck this, I'm outta here!!");
                         agent.moveTo(10000, 10000);
                     }
                     else {
                         agent.hide();
+                        clippyvid.pause();
                     }
                 });
             });
@@ -120,19 +179,6 @@
                 var slide = $(e.fragment).parent('section');
                 if(slide.attr('id') == 'title') {
                     slide.find('.wrong-title').css('text-decoration', 'line-through');
-                }
-            });
-        </script>
-
-        <script>
-            Reveal.addEventListener('slidechanged', function(e) {
-                var id = e.currentSlide.id;
-                var $zatacka = $('#zatacka');
-                if (id == 'zatacka') {
-                    $zatacka.html('<iframe src="http://arkt.is/zatacka/" class="stretch"/>')
-                }
-                else {
-                    $zatacka.html('');
                 }
             });
         </script>
