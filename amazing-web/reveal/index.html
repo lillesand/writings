@@ -43,6 +43,20 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+                <section id="title">
+                    <h1 class="wrong-title">Fuck web 2.0</h1>
+                    <h1 class="fragment">The Amazing Web!</h1>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Har bestemt meg for å jekke ned tittelen litt. Ikke noe feil med Web 2.0</li>
+                            <li>Grepet i min egen entusiasme over hvor fet browseren egentlig har blitt</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section id="zatacka"/>
+
                 <section>
                     <h1>Goddag!</h1>
                     <p>Velkommen til Internett.</p>
@@ -101,7 +115,29 @@
             });
         </script>
 
-		<script>
+        <script>
+            Reveal.addEventListener('fragmentshown', function(e) {
+                var slide = $(e.fragment).parent('section');
+                if(slide.attr('id') == 'title') {
+                    slide.find('.wrong-title').css('text-decoration', 'line-through');
+                }
+            });
+        </script>
+
+        <script>
+            Reveal.addEventListener('slidechanged', function(e) {
+                var id = e.currentSlide.id;
+                var $zatacka = $('#zatacka');
+                if (id == 'zatacka') {
+                    $zatacka.html('<iframe src="http://arkt.is/zatacka/" class="stretch"/>')
+                }
+                else {
+                    $zatacka.html('');
+                }
+            });
+        </script>
+
+        <script>
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -128,6 +164,12 @@
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+
+            Reveal.configure({
+                keyboard: {
+                    32: null // We need space for zatacka :)
+                }
+            });
 
 		</script>
 
