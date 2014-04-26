@@ -9,8 +9,6 @@ Ideer:
 Agenda:
 
 1. Hva er WebRTC – Web Real-time Communication ?
-    1.1. Hvem står bak?
-    1.2. Består av tre distinkte APIer: MediaStream, RTCPeerConnection, RTCDataChannel
 2. Generelt om bruksområder
 2. MediaStream
     2.1. Så amazing det egentlig er! Håndterer kommunikasjon med inputdevices, synkronisering av lyd og bilde, jitter, bildeoptimaliseing, støyredusering, codecs og snurremegrundt!
