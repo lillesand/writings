@@ -6,6 +6,11 @@ Ideer:
 * CSS3 filtre på bilder jeg har tatt
 
 
+TODO:
+* Lim sammen starten bedre med resten.
+* Sørg for at det ikke blir så jævla goddag mann økseskaft
+
+
 Agenda:
 
 1. Hva er WebRTC – Web Real-time Communication ?

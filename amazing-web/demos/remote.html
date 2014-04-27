@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<button id="snap" style="height: 90%; width: 90%">Ta bilde!</button>
+
+</body>
+
+<script type="application/javascript" src="lib/remote.transmitter.js"></script>
+<script>
+    var signals = ['snap'];
+    var remote = Remote.transmitter(signals);
+
+    document.querySelector('#snap').addEventListener('click', function() {
+        remote.emit('snap');
+    })
+</script>
+
+</html>
