@@ -3,8 +3,7 @@
 
 <body>
 <video autoplay></video>
-<canvas></canvas>
-<div></div>
+<button>Send!</button>
 </body>
 
 
@@ -14,25 +13,47 @@
 <script type="application/javascript">
 
     var video = document.querySelector('video'),
-            canvas = document.querySelector('canvas');
+            button = document.querySelector('button');
 
-    var socket = io.connect('http://localhost:1337')
+    var socket = io.connect('http://localhost:1337');
+
+    var peer = new RTCPeerConnection(iceServerConfig(), []);
 
     navigator.getUserMedia({video:true, audio: false}, function(stream) {
         video.src = window.URL.createObjectURL(stream);
 
-        createOffer(stream);
+        button.addEventListener('click', function() {
+            createOffer(stream);
+        });
     });
 
+    socket.on('message', function(data) {
+        if (data.answer) {
+            console.log('Received answer');
+            peer.setRemoteDescription(new RTCSessionDescription(data.answer));
+        }
+        else if (data.candidate && data.sender != 'camera') {
+            console.log('Received ICE candidate');
+            console.log(data.candidate);
+
+            peer.addIceCandidate(new RTCIceCandidate(data.candidate));
+        }
+    });
+
+    peer.onicecandidate = function (event) {
+        if (event.candidate) {
+            console.log('Sending ICE candidate');
+            socket.emit('message', { candidate : event.candidate, sender: 'camera' });
+        }
+    };
+
     function createOffer(offerStream) {
-        var peer = new RTCPeerConnection(iceServerConfig(), []);
         peer.addStream(offerStream);
 
         peer.createOffer(function(offerSDP) {
             peer.setLocalDescription(offerSDP);
 
-            console.log(offerSDP);
-
+            console.log('Sending offer');
             socket.emit('message', {offer: offerSDP});
         });
     }
@@ -48,6 +69,7 @@
 
         var TURN = {
             url: 'turn:homeo@turn.bistri.com:80',
+            username: 'homeo',
             credential: 'homeo'
         };
 
