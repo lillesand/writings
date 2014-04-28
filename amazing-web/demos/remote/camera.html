@@ -7,7 +7,7 @@
 </body>
 
 
-<script src="http://localhost:1337/socket.io/socket.io.js"></script>
+<script src="signalling/lib/socket.io.js"></script>
 <script src="../lib/webrtc-adapter.js"></script>
 
 <script type="application/javascript">
@@ -15,11 +15,12 @@
     var video = document.querySelector('video'),
             button = document.querySelector('button');
 
-    var socket = io.connect('http://localhost:1337');
+    var socketUrl = window.location.hostname + ":1337";
+    var socket = io.connect(socketUrl);
 
     var peer = new RTCPeerConnection(iceServerConfig(), []);
 
-    navigator.getUserMedia({video:true, audio: false}, function(stream) {
+    navigator.getUserMedia({video: true, audio: false}, function (stream) {
         video.src = window.URL.createObjectURL(stream);
 
         button.addEventListener('click', function() {
