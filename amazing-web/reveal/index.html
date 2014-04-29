@@ -156,7 +156,9 @@
                 </section>
 
                 <section id="clippy-og-joran">
-                    <video class="webcam stretch"></video>
+                    <div class="stretch">
+                        <video class="webcam"></video>
+                    </div>
                 </section>
 
                 <section>
@@ -240,6 +242,7 @@
 
                     <section>
                         <h2>appear.in</h2>
+                        <a href="https://appear.in/" target="_blank"><img src="../images/appear.png" style="border:none"/></a>
                     </section>
                 </section>
 
@@ -265,7 +268,8 @@
                     var slide = $(e.currentSlide);
 
                     clippyvid.get(0).play();
-                    setTimeout(function() { clippyvid.hide(); }, 200); // Hack to force correct drawing of slide
+                    clippyvid.hide();
+                    //setTimeout(function() { clippyvid.hide(); }, 200); // Hack to force correct drawing of slide
                     if (slide.attr('id') == 'clippy-og-joran') {
                         agent.show();
 
