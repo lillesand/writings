@@ -2,8 +2,7 @@
 <html>
 
 <body>
-<video autoplay></video>
-<button>Send!</button>
+    <video autoplay></video>
 </body>
 
 
@@ -12,52 +11,47 @@
 
 <script type="application/javascript">
 
-    var video = document.querySelector('video'),
-            button = document.querySelector('button');
+    var video = document.querySelector('video');
 
     var socketUrl = window.location.hostname + ":1337";
     var socket = io.connect(socketUrl);
 
     var peer = new RTCPeerConnection(iceServerConfig(), []);
 
-    navigator.getUserMedia({video: true, audio: false}, function (stream) {
+    // 1. Be brukeren om tillatelse til å fange video
+    navigator.getUserMedia({video:true, audio: false}, function(stream) {
         video.src = window.URL.createObjectURL(stream);
 
-        button.addEventListener('click', function() {
-            createOffer(stream);
+        // 2. Send SDP Offer til skjermen (laptopen) når brueren trykker på videoen.
+        video.addEventListener('click', function() {
+            peer.addStream(stream);
+            peer.createOffer(function (offerSDP) {
+                peer.setLocalDescription(offerSDP);
+                socket.emit('message', {offer: offerSDP});
+            });
         });
     });
 
+    // 3. Motta SDP Answer fra skjermen (laptopen)
     socket.on('message', function(data) {
         if (data.answer) {
-            console.log('Received answer');
             peer.setRemoteDescription(new RTCSessionDescription(data.answer));
-        }
-        else if (data.candidate && data.sender != 'camera') {
-            console.log('Received ICE candidate');
-            console.log(data.candidate);
-
-            peer.addIceCandidate(new RTCIceCandidate(data.candidate));
         }
     });
 
+    // 4. Motta ICE (interactive connectivity establishment) candidates fra RTCPeerConnection
     peer.onicecandidate = function (event) {
         if (event.candidate) {
-            console.log('Sending ICE candidate');
             socket.emit('message', { candidate : event.candidate, sender: 'camera' });
         }
     };
 
-    function createOffer(offerStream) {
-        peer.addStream(offerStream);
-
-        peer.createOffer(function(offerSDP) {
-            peer.setLocalDescription(offerSDP);
-
-            console.log('Sending offer');
-            socket.emit('message', {offer: offerSDP});
-        });
-    }
+    // 5. Motta ICE candidates fra skjermen
+    socket.on('message', function(data) {
+        if (data.candidate && data.sender != 'camera') {
+            peer.addIceCandidate(new RTCIceCandidate(data.candidate));
+        }
+    });
 
 
     function iceServerConfig() {

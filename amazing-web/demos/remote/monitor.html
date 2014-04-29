@@ -21,34 +21,38 @@
         var socket = io.connect("http://localhost:1337");
 
         socket.on('message', function(data) {
+            // 1. Motta SDP Offer fra kameraet
             if (data.offer) {
                 peer.setRemoteDescription(new RTCSessionDescription(data.offer));
 
+                // 2. Send SDP Answer til kameraet
                 peer.createAnswer(function(answerSDP) {
                     peer.setLocalDescription(answerSDP);
-                    console.log('Sending answer');
                     socket.emit('message', { answer: answerSDP });
                 });
-
-                peer.onaddstream = function (event) {
-                    console.log("Got stream");
-                    video.src = window.URL.createObjectURL(event.stream);
-                };
-
-                peer.onicecandidate = function (event) {
-                    if (event.candidate) {
-                        console.log('Sending ICE candidate');
-                        socket.emit('message', { candidate : event.candidate, sender: 'monitor' });
-                    }
-                }
             }
-            else if (data.candidate && data.sender != 'monitor') {
-                console.log('Received ICE candidate');
-                console.log(data.candidate);
+        });
 
+        // 3. Motta ICE candidates fra kameraet
+        socket.on('message', function(data) {
+            if (data.candidate && data.sender != 'monitor') {
                 peer.addIceCandidate(new RTCIceCandidate(data.candidate));
             }
         });
+
+        // 4. Send ICE candidates til kameraet
+        peer.onicecandidate = function (event) {
+            if (event.candidate) {
+                socket.emit('message', { candidate : event.candidate, sender: 'monitor' });
+            }
+        };
+
+        // 5. Spill video når vi får beskjed om at den andre parten har lagd til stream
+        peer.onaddstream = function (event) {
+            video.src = window.URL.createObjectURL(event.stream);
+        };
+
+
 
 
         function iceServerConfig() {
