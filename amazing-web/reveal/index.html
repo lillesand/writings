@@ -62,6 +62,7 @@
 
                 <section id="wolfenstein">
                     <img src="../images/wolfenstein.png" class="strech" style="border:none" />
+                    <p style="float: right; font-size: 0.5em;">http://www.nihilogic.dk/labs/wolf/</p>
 
                     <aside class="notes">
                         <ul>
@@ -76,6 +77,7 @@
 
                 <section id="zatacka">
                     <iframe src="http://arkt.is/zatacka/" class="stretch"></iframe>
+                    <p style="float: right; font-size: 0.5em;">http://arkt.is/zatacka/</p>
                     <aside class="notes">
                         <ul>
                             <li>Dette er faktisk en del fetere enn det kanskje ser ut.</li>
@@ -97,6 +99,20 @@
                             <li>Vis browseren</li>
                         </ul>
                     </aside>
+                </section>
+
+                <section>
+                    <iframe src="http://alteredqualia.com/xg/examples/deferred_skin_eyes.html" class="stretch" scrolling="no" style="overflow:hidden;"></iframe>
+                </section>
+
+                <section>
+                    <img src="../images/spotify.png" class="stretch" style="border:none;" />
+                    <p style="float: right; font-size: 0.5em;">https://play.spotify.com</p>
+                </section>
+
+                <section>
+                    <img src="../images/flix.png" class="stretch" style="border:none;" />
+                    <p style="float: right; font-size: 0.5em;">https://www.netflix.com</p>
                 </section>
 
                 <section>
@@ -141,23 +157,15 @@
 
                 <section>
                     <h1>Hva er WebRTC?</h1>
-                    TODO: legg inn mer forklaring på norsk
-                    <ul>
-                        <li><a href="https://appear.in" target="_blank">appear.in</a></li>
-                        <li>talky.io</li>
-                    </ul>
-                </section>
 
-                <section>
-                    <h1>Modenhet</h1>
-                    <img src="../images/caniuse-webrtc.png" class="stretch" style="border:none;" />
-
-                    <aside class="notes">3. februar 2013 (bursdagen in i fjor!) var første gangen chrome og firefox snakket sammen! Utrolig døll video…</aside>
-                </section>
-
-                <section>
-                    <h1>WebRTC?</h1>
-                    <img src="../images/webrtc-engine.png" class="stretch" style="border:none;" />
+                    <aside class="notes">
+                        <ul>
+                            <li>Web Real Time Communcations</li>
+                            <li>Veldig kort fortalt: skype i nettleseren</li>
+                            <li>Kort fortalt en spesifikasjon for å fange og sende video over web</li>
+                            <li>Ikke så kort fortalt: en sykt svær og komplisert spesifikasjon som består av en bøtte subspesifikasjoner for deling av lyd, bilde og skjerm i nettleseren</li>
+                        </ul>
+                    </aside>
                 </section>
 
                 <section>
@@ -170,12 +178,18 @@
                 </section>
 
                 <section>
-                    <h1>GetUserMedia</h1>
-                    <p>Litt kode og demo her. Photobooth?</p>
+                    <h1>MediaStream</h1>
+                    <img src="../images/webrtc-engine.png" class="stretch" style="border:none;" />
                 </section>
 
                 <section>
-                    <h2>WebRTC data protocol stack</h2>
+                    <h2>Demotid:<br/> getUserMedia</h2>
+                    <p><a href="../demos/photobooth.html" target="_blank">Photobooth</a></p>
+                    <p class="fragment"><a href="../demos/remote_photobooth.html" target="_blank">Selfiebooth!</a></p>
+                </section>
+
+                <section>
+                    <h3>WebRTC data protocol stack</h3>
                     <img src="../images/webrtc-protocol-stack.png" class="stretch" style="border:none;" />
 
                     <aside class="notes">
@@ -196,15 +210,32 @@
                 </section>
 
                 <section>
-                    <h2>WebRTC signallering</h2>
-                    <img src="../images/webrtc-signalling.png" class="stretch" style="border:none;" />
+                    <h2>WebRTC: Videokonferanse!</h2>
+                    <img src="../images/webrtc-success.jpg" class="stretch" style="border:none;" />
                 </section>
 
                 <section>
-                    <h1>Demo: stream fra mobil til desktop?</h1>
-                    Hvis det blir god tid, prøv livekoding, hvis det blir dårlig tid, gå gjennom en kjapt eksempel. Kanskje bruke appear.in istedet?
+                    <h2>Demotid:<br/> RTCPeerConnection</h2>
+                    <p><a href="../demos/remote/monitor.html" target="_blank">Remotecam</a>!</p>
                 </section>
 
+
+                <section>
+                    <section>
+                        <h1>Modenhet</h1>
+                        <img src="../images/caniuse.png" class="stretch" style="border:none;" />
+
+                        <aside class="notes">3. februar 2013 (bursdagen min i fjor!) var første gangen chrome og firefox snakket sammen! Utrolig døll video…</aside>
+                    </section>
+
+                    <section>
+                        <h2>appear.in</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <h1 style="font-size: 350px;">Q & A</h1>
+                </section>
 
 			</div>
 
@@ -224,7 +255,7 @@
                     var slide = $(e.currentSlide);
 
                     clippyvid.get(0).play();
-                    setTimeout(function() { clippyvid.hide(); }, 100); // Hack to force correct drawing of slide
+                    setTimeout(function() { clippyvid.hide(); }, 200); // Hack to force correct drawing of slide
                     if (slide.attr('id') == 'clippy-og-joran') {
                         agent.show();
 
