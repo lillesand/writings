@@ -41,7 +41,7 @@ Gode tester er godt for mye. For meg er det ett aspekt som trumfer alt: trygghet
 
 Den perfekte metaforen på gode tester er for meg sikringstauet til en fjellklatrer. Det er litt jobb med det, men stort sett merker du ikke så mye til det med mindre du faktisk faller. Da kjenner du et kraftig rykk, før du trygt kan fire deg ned til bakken og prøve på nytt.
 
-Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogien for langt, føles det det mer som å klatre opp en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover, men det går trått. Du tenker hvertfall over hver eneste bevegelse du gjør!
+Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogien for langt, føles det mer som å klatre opp en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover. Du faller ikke nødvendigvis ned. Men det går forferdelig trått. Og det er fortsatt fullstendig mulig å gjøre feil som skader deg.
 
 Hvis det å flytte en kodelinje fra én komponent til en annen (uten å endre funksjonalitet) knekker flerfoldige tester og krever 10-15 endrede linjer testkode – da er det noe som har gått feil. Du henger fast i et fiskegarn.
 
