@@ -65,7 +65,7 @@ Da jeg var på høyden av troen min på enhetstesting forankret jeg denne tanken
 
 Programmering er åpenbart kommunikasjon. I sin enkleste form handler det om å forklare en datamaskin hva den skal gjøre. Men nesten like viktig er det å kommunisere med andre utviklere. De aller fleste kodebaser skal i løpet av livssyklusen sin besøkes av mange titalls, om ikke hundretalls, utviklere. At koden passer inn i hodet og virkelighetsoppfattelsen til andre utviklere er derfor ekstremt viktig. Utviklere som skal gjøre endringer på et system de ikke skjønner vil veldig fort gjøre feil. Og hvis koden primært er strukturert for å passe til enhetstester har du da et problem. Lag komponenter som gir mening for mennesker, ikke tester!
 
-Med tester som sjekker at applikasjonen din overordnet gjør det den skal står du fritt til å fokusere noe av det aller viktigste når du programmerer; at koden du skriver formidler dine tanker og din kontekst til den neste utvikleren som skal inn og gjøre en endring. I tillegg vil ende-til-ende-tester ### Må avgjøre om du vil bruke "ende-til-ende" eller "ende til ende" ### gi henne beskjed dersom han har tråkket feil ved en endring. ### Kjønnsforvirret eller bare politisk korrekt? :)###
+Med tester som sjekker at applikasjonen din overordnet gjør det den skal står du fritt til å fokusere noe av det aller viktigste når du programmerer; at koden du skriver formidler dine tanker og din kontekst til den neste utvikleren som skal inn og gjøre en endring. I tillegg vil ende-til-ende-tester --- Må avgjøre om du vil bruke "ende-til-ende" eller "ende til ende" --- gi henne beskjed dersom han har tråkket feil ved en endring. --- Kjønnsforvirret eller bare politisk korrekt? :)---
 
 Testing har en kontekst
 ----------------------
@@ -78,7 +78,7 @@ Poenget er at dette varierer. Derfor bør vi ikke velge enhetstest som verktøy 
 Er enhetstesten virkelig død?
 -----------------------------
 Enhetstesten er selvsagt ikke død. Enhetstester er faktisk helt fantastiske til det de gjør best. Og det er å teste ting som er litt vanskelig eller litt kronglete.
-### Kanskje noe sånt isteden: "Enhetstester er faktisk helt fantastiske til det de gjør best: teste ting som er litt vanskelig eller litt kronglete" ### Hvis du ser deg selv være litt usikker på hvordan en algoritme skal gjøres, hvordan matching av noe tekst blir riktig, på hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå… da passer enhetstesten perfekt! Dette fordi du har et _problem_ som er en enhet arbeid. Det er ikke noe vits å enhetsteste noe det er åpenbart om er riktig eller feil!
+---Kanskje noe sånt isteden: "Enhetstester er faktisk helt fantastiske til det de gjør best: teste ting som er litt vanskelig eller litt kronglete" --- Hvis du ser deg selv være litt usikker på hvordan en algoritme skal gjøres, hvordan matching av noe tekst blir riktig, på hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå… da passer enhetstesten perfekt! Dette fordi du har et _problem_ som er en enhet arbeid. Det er ikke noe vits å enhetsteste noe det er åpenbart om er riktig eller feil!
 
 Hvis du er usikker på hvordan noe skal virke eller du kjenner at du virkelig må tenke deg om for å løse det, da passer det bra med en enhetstest. Når du derimot vet at controlleren skal kalle servicen før den returnerer navnet på viewet… da bør du faktisk få slippe.
 
