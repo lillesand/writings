@@ -7,8 +7,11 @@ Jeg var fullstendig klar over at det fantes andre, komplementære måter å gjø
 Debatten
 --------
 
-Denne bloggposten kommer sent. Senere enn tankene.
-DHH sin første blogpost
+Denne posten havner i etterkant av debatten mellom blant andre <a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">David Heinemeier Hansson</a> ("DHH"),
+<a href="http://martinfowler.com/articles/is-tdd-dead/">Martin Fowler</a> og mange andre – som til slutt <a href="https://plus.google.com/events/ci2g23mk0lh9too9bgbp3rbut0k">kuliminerte med en live debatt mellom de to og Kent Beck</a>.
+Dersom du har fulgt denne debatten tett vil ikke denne blogposten inneholde så mye nytt for deg, men kanskje heller gi en marginalt ny vinkling av det samme på norsk.
+
+Til mitt eget forsvar startet jeg på denne posten før DHH publiserte sin "TDD is dead. Long live testing", men så stoppet skrivingen helt opp. Nå kommer den heller som et apropos siden debatten stort sett har blåst over. Forhåpentligvis kan noen finne noe av interesse i den uansett.
 
 Problemet med enhetstesten
 --------------------------
@@ -82,12 +85,4 @@ Hva kan du gjøre?
 -----------------
 Å introdusere ende-til-ende tester er ikke kampen du bør ta hvis du sitter på et stort gammelt beist av en applikasjon. For det kan virkelig være vanskelig. Først og fresmt har vi som utviklere har et ansvar for å sørge for at nye applikasjoner vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
 
-Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal leve og hvilke feil du kan leve med.
-
-
-Outtakes
---------
-
-I den applikasjonen jeg jobber på nå timer vi tiden det tar å starte applikasjonen. Hvis det tar mer enn seks sekunder feiler testene. Vi kan øke grensen for hva som får det til å feile, men det tvinger oss til å være bevisste på hvor lang tid det faktisk tar.
-
-Etter min erfaring har arkitekturen til applikasjonen en del å si for testbarheten. Single Page Applications har et REST-grensesnitt du kan kjøre testene dine mot, og på den måten få testet alt fra fra webserveren og inn. MVC kan av og til være litt tøffere å få gjort skikkelig. Trikset her er å gå tilbake til røttene og faktisk jobbe med å rendyrke skillet mellom modeller, visninger og oppførsel (controllers). Controllere skal nærmest per definisjon være ganske gode å teste mot.
+Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal leve og hvilke feil du kan du kan tåle.
