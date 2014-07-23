@@ -2,11 +2,45 @@
 
 <html>
   <head>
-    <title>CoffeeScript</title>
+    <title>Autonomous cars</title>
 
     <meta charset='utf-8'>
     <script src="lib/slides.js"></script>
     <script src="lib/jquery.js"></script>
+
+      <style>
+          #pulse {
+              font-size: 50px;
+              position: absolute;
+              bottom: 5px;
+              left: 10px;
+              font-family: 'Open Sans', Arial, sans-serif;
+              border: solid 1px #00003f;
+              padding: 10px 25px;
+              background-color: lightgrey;
+              border-radius: 5px;
+          }
+
+          #pulse.low {
+              background-color: lightgreen;
+          }
+
+          #pulse.medium {
+              background-color: lightyellow;
+          }
+
+          #pulse.high {
+              background-color: peachpuff;
+          }
+
+          #pulse.overdrive {
+              background-color: red;
+          }
+
+          #pulse.yikes {
+              background-color: darkred;
+          }
+      </style>
     
   </head>
 
@@ -14,7 +48,7 @@
 
     <section class='slides layout-regular'>
         <article>
-            <h1><center>The future is now:<br> driverless cars!</center></h1>
+            <h1><center>The future is now:<br> autonomous cars!</center></h1>
         </article>
 
         <article>
@@ -67,29 +101,10 @@
 
         <article>
             <center><h1>Så når faen får <br>jeg min!?</h1></center>
-        </article>
-
-        <article>
-            <center><img src="img/brands.jpg" style="margin-top: 50px;"/></center>
-            <p style="font-size: 18px; line-height: 22px;">Mercedes-Benz, General Motors, Continental Automotive Systems, Autoliv Inc., Bosch, Nissan, Toyota, Audi, Volvo, Vislab from University of Parma, Oxford University og <b>Google</b>.</p>
-        </article>
-
-        <article>
-            <center><img src="img/bmw-autonomous.jpg" style="width: 100%; margin-top: 50px"/></center>
-        </article>
-
-        <article>
-            <h3>Why own a car?</h3>
-            <center><img src="img/google-car.jpg" style="margin-top: 150px"/></center>
-        </article>
-
-        <article>
-            <h3>Et steg om gangen…</h3>
-            <ul>
-                <li>Parkeringshjelp</li>
-                <li>Collision avoidance</li>
-                <li>Selvkjøring i kø</li>
-            </ul>
+            <!--
+                Fortsatt et godt stykke unna. Teknologien er dyr og i stor grad uferdig. Vi har bra prototyper,
+                men vi er et langt stykke unna noe som kan navigere seg gjennom tett trafikk i barcelona helt på egen hånd.
+            -->
         </article>
 
         <article>
@@ -104,12 +119,71 @@
         </article>
 
         <article>
+            <center><img src="img/brands.jpg" style="margin-top: 50px;"/></center>
+            <p style="font-size: 18px; line-height: 22px;">Mercedes-Benz, General Motors, Continental Automotive Systems, Autoliv Inc., Bosch, Nissan, Toyota, Audi, Volvo, Vislab from University of Parma, Oxford University og <b>Google</b>.</p>
+        </article>
+
+        <article>
+            <center><img src="img/bmw-autonomous.jpg" style="width: 100%; margin-top: 50px"/></center>
+            <!--
+            <h3>Et steg om gangen…</h3>
+            <ul>
+                <li>Parkeringshjelp</li>
+                <li>Collision avoidance</li>
+                <li>Selvkjøring i kø</li>
+            </ul>
+            -->
+        </article>
+
+        <article>
+            <h3>Why own a car?</h3>
+            <center><img src="img/google-car.jpg" style="margin-top: 150px"/></center>
+        </article>
+
+        <article>
             <iframe id="ytplayer" type="text/html" width="640" height="390"
-                    src="http://www.youtube.com/embed/cdgQpa1pUUE?t=1m40s"
+                    src="http://www.youtube.com/embed/LHqB47F12vI?t=1m40s"
                     frameborder="0" style="height: 95%"></iframe>
             <p style="font-size: 16px;">1m40s</p>
         </article>
 
     </section>
+
+  <div id="pulse">
+  </div>
+
+  <script type="application/javascript">
+      fetchPulse();
+      setInterval(fetchPulse, 1000);
+
+      function fetchPulse() {
+          $.get('http://localhost:2000', function(data) {
+              var pulse = parseInt(data);
+
+              if (isNaN(pulse)) {
+                  return;
+              }
+
+              var pulseText;
+              if (pulse < 75) {
+                  pulseText = 'low';
+              }
+              else if (pulse < 95) {
+                  pulseText = 'medium';
+              }
+              else if (pulse < 115) {
+                  pulseText = 'high';
+              }
+              else if (pulse < 135) {
+                  pulseText = 'overdrive';
+              }
+              else {
+                  pulseText = 'yikes';
+              }
+
+              $('#pulse').text(data).removeClass().addClass(pulseText);
+          });
+      }
+  </script>
   </body>
 </html>
