@@ -87,3 +87,14 @@ Hva kan du gjøre?
 Å introdusere ende-til-ende tester er ikke kampen du bør ta hvis du sitter på et stort gammelt beist av en applikasjon. For det kan virkelig være vanskelig. Først og fremst har vi som utviklere et ansvar for å sørge for at nye applikasjoner vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
 
 Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal leve og hvilke feil du kan du kan tåle.
+
+
+
+######### Feedback #########
+Har bare endret noen små skrivefeil.
+
+Syns det ser bra ut foreløpig. Passende nivå og de som ikke har satt seg inn i debatten kan fortsatt lære noe.
+Supert med realistisk kodeeksempel istedenfor noe jalla.
+
+
+Si i fra når du har revidert osv, så kan jeg se over igjen
