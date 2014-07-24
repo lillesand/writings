@@ -41,6 +41,11 @@ Gode tester er godt for mye. For meg er det ett aspekt som trumfer alt: trygghet
 
 Den perfekte metaforen på gode tester er for meg sikringstauet til en fjellklatrer. Det er litt jobb med det, men stort sett merker du ikke så mye til det med mindre du faktisk faller. Da kjenner du et kraftig rykk, før du trygt kan fire deg ned til bakken og prøve på nytt.
 
+<p class="caption">
+<img src="https://bekkopen.blob.core.windows.net/attachments/86f45f40-8e09-4e0f-a3a9-1d0c109891d8" alt="illustrasjonsbilde av fjellklatrere"></img>
+Kilde: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V på flickr</a>.
+</p>
+
 Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogien for langt, føles det mer som å klatre opp en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover. Du faller ikke nødvendigvis ned. Men det går forferdelig trått. Og det er fortsatt fullstendig mulig å gjøre feil som skader deg.
 
 Hvis det å flytte en kodelinje fra én komponent til en annen (uten å endre funksjonalitet) knekker flerfoldige tester og krever 10-15 endrede linjer testkode – da er det noe som har gått feil. Du henger fast i et fiskegarn.
@@ -49,13 +54,13 @@ En god testsuite gjør det lett å gjøre endringer, samtidig som den klasker de
 
 Programmér for testbarhet
 -------------------------
-Et mye brukt argument for testdriving er at det driver frem et testbart design med god isolasjon. Det er sant. Problemet er at testdriving med bare enhetstester har en tendens til å gi et _dårlig_ design: overdrevent små komponenter, unaturlig tilgjengeliggjøring av felter og funksjonalitet, overdrevent fokus på injiserbarhet. Å bruke testdrevet utvikling som et verktøy for å skrive testbar kode er en god ide; å bruke enhetstester som dene eneste teknikken for dette er en tilsvarende dårlig ide.
+Et mye brukt argument for testdriving er at det driver frem et testbart design med god isolasjon. Det er sant. Problemet er at testdriving _med bare enhetstester_ har en tendens til å gi et _dårlig_ design: overdrevent små komponenter, unaturlig tilgjengeliggjøring av felter og funksjonalitet og overdrevent fokus på injiserbarhet. Å bruke testdrevet utvikling som et verktøy for å skrive testbar kode er en god ide; å bruke enhetstester som dene eneste teknikken for dette er en tilsvarende dårlig ide.
 
 Jeg tror grunnen til at vi lener mot enhetstester er at det, relativt sett, er lett. Konseptene er lett å forstå, det er et begrenset sett med teknikker involvert og verktøystøtten er god. Å introdusere ende til ende-tester på en stor applikasjon som ikke er bygd for det er smertefullt: en bråte komplekse integrasjoner som det ikke er støtte for å bytte ut, treg oppstart av applikasjonen, sideeffekter og masse tilstand.
 
-Hvis du er så heldig at du starter opp en ny applikasjon i dag vil jeg påstå at det grenser mot uansvarlig å ikke allerede fra starten av bygge applikasjonen for enhetstesting. Rigg det for automatisert kjøring fra dag 1. Sørg for at alle eksterne avhengigheter kan byttes ut med dummies hvor du styrer tilstanden, hold oppstartstiden lav, ha kontroll på sideeffekter som skriving til database og ha støtte for automatisk lasting av testdata.
+Hvis du er så heldig at du starter opp en ny applikasjon i dag vil jeg påstå at det grenser mot uansvarlig å ikke allerede fra starten av bygge applikasjonen for ende-til-ende testing. Rigg det for automatisert kjøring fra dag 1. Sørg for at alle eksterne avhengigheter kan byttes ut med dummies hvor du styrer tilstanden, hold oppstartstiden lav, ha kontroll på sideeffekter som skriving til database og ha støtte for automatisk lasting av testdata.
 
-Dette gir en applikasjon som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en datamaskin klarer å teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene den kan komme i også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er designet vi ønsker å oppnå!
+Dette gir en applikasjon som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en datamaskin klarer å teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene den kan komme i også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er det testbare designet vi ønsker å oppnå!
 
 
 Programmér for mennesker
