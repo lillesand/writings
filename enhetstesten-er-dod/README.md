@@ -17,13 +17,9 @@ Debatten
 Denne posten havner i etterkant av debatten mellom blant andre
 <a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">David Heinemeier Hansson</a>
 ("DHH"), <a href="http://martinfowler.com/articles/is-tdd-dead/">Martin Fowler</a> og mange andre – som til slutt
-<a href="https://plus.google.com/events/ci2g23mk0lh9too9bgbp3rbut0k">kuliminerte med en live debatt mellom de to og
+<a href="https://www.youtube.com/watch?v=z9quxZsLcfo">kuliminerte med fem live-debatter mellom de to og
 Kent Beck</a>. Dersom du har fulgt denne debatten tett vil ikke denne blogposten inneholde så mye nytt for deg,
-men kanskje heller gi en marginalt ny vinkling av det samme på norsk.
-
-Til mitt eget forsvar startet jeg på denne posten før DHH publiserte sin "TDD is dead. Long live testing", men så
-stoppet skrivingen helt opp. Nå kommer den heller som et apropos siden debatten stort sett har blåst over.
-Forhåpentligvis kan noen finne noe av interesse i den uansett.
+men heller gi en ny vinkling på norsk.
 
 Problemet med enhetstesten
 --------------------------
@@ -35,7 +31,7 @@ som rett og slett kan være litt kjelkete å få riktig – er de glimrende.
 Problemet er den dritten her:
 
     @Test
-    public void find_user_and_check_privileges() {
+    public void check_privileges_when_finding_user() {
         when(userService.findUser(5L)).thenReturn(user);
         when(userResponseMapper.map(user)).thenReturn(responseUser);
 
@@ -71,17 +67,18 @@ Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogie
 en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover. Du faller ikke nødvendigvis ned.
 Men det går forferdelig trått. Og det er fortsatt fullstendig mulig å gjøre feil som skader deg.
 
-Hvis det å flytte en kodelinje fra én komponent til en annen (uten å endre funksjonalitet) knekker flerfoldige tester
+Hvis det å flytte en kodelinje fra én komponent til en annen – uten å endre funksjonalitet – knekker flerfoldige tester
 og krever 10-15 endrede linjer testkode – da er det noe som har gått feil. Du henger fast i et fiskegarn.
 
 En god testsuite gjør det lett å gjøre endringer, samtidig som den klasker deg på lanken når du gjør noe feil.
 
 Programmér for testbarhet
 -------------------------
+
 Et mye brukt argument for testdriving er at det driver frem et testbart design med god isolasjon. Det er sant.
 Problemet er at testdriving _med bare enhetstester_ har en tendens til å gi et _dårlig_ design: overdrevent små
-komponenter, unaturlig tilgjengeliggjøring av felter og funksjonalitet og overdrevent fokus på injiserbarhet. Å bruke
-testdrevet utvikling som et verktøy for å skrive testbar kode er en god idé; å bruke enhetstester som dene eneste
+komponenter, unaturlig tilgjengeliggjøring av felter og funksjonalitet, og overdrevent fokus på injiserbarhet. Å bruke
+testdrevet utvikling som et verktøy for å skrive testbar kode er en god idé; å bruke enhetstester som den eneste
 teknikken for dette er en tilsvarende dårlig idé.
 
 Jeg tror grunnen til at vi lener mot enhetstester er at det, relativt sett, er lett. Konseptene er lette å forstå, det
@@ -98,9 +95,9 @@ Dette gir en applikasjon som er bygd for testbarhet. Dersom applikasjonen er str
 teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene den kan komme i
 også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er det testbare designet vi ønsker å oppnå!
 
-
 Programmér for mennesker
 ------------------------
+
 Testdriving styrer virkelig designet. For at enhetstester ikke skal bli svære beist med et gigantisk, uforståelig
 oppsett og sinnsykt sammenhengende mocker må kompoenentene bli små. Bittesmå. Da jeg var på høyden av troen min på
 enhetstesting forankret jeg denne tanken i Single Responsibility Princple. Det føltes som jeg gjorde Det Rette og var
@@ -121,7 +118,8 @@ endring.
 
 Testing har en kontekst
 ----------------------
-Testing foregår alt i en kontekst. Ingen applikasjoner er like, og det begynner virkelig å se ut som vi ikke har noen
+
+Testing foregår alltid i en kontekst. Ingen applikasjoner er like, og det begynner virkelig å se ut som vi ikke har noen
 sølvkuler. Å teste mobilklienter, JavaScript-frontends og tunge Java-backends på samme måte er i beste fall naivt.
 
 I en mobilklient (app) med lite forretningslogikk kan den beste formen for testing være at applikasjonen lett kan sette
@@ -135,18 +133,20 @@ grundig gjennom hvordan vi rigger oss for å lettest mulig verifisere at en appl
 
 Er enhetstesten virkelig død?
 -----------------------------
+
 Enhetstesten er selvsagt ikke død. Enhetstester er glimrende til det de gjør best: å teste ting som er litt vanskelig
 eller litt kronglete. Hvis du ser deg selv være litt usikker på hvordan en algoritme skal gjøres, hvordan matching av
-noe tekst blir riktig, på hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå… da passer
+noe tekst blir riktig, på hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå – da passer
 enhetstesten perfekt! Dette fordi du har et _problem_ som er en enhet arbeid. Det er ikke noe vits å enhetsteste noe
-det er åpenbart om er riktig eller feil!
+det er åpenbart om er riktig eller feil.
 
 Hvis du er usikker på hvordan noe skal virke eller du kjenner at du virkelig må tenke deg om for å løse det, da passer
-det bra med en enhetstest. Når du derimot vet at controlleren skal kalle servicen før den returnerer navnet på viewet…
+det bra med en enhetstest. Når du derimot vet at controlleren skal kalle servicen før den returnerer navnet på viewet,
 da bør du faktisk få slippe.
 
 Hva kan du gjøre?
 -----------------
+
 Å introdusere ende til ende-tester er ikke kampen du bør ta hvis du sitter på et stort gammelt beist av en applikasjon.
 For det kan virkelig være vanskelig. Først og fremst har vi som utviklere et ansvar for å sørge for at nye applikasjoner
 vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
