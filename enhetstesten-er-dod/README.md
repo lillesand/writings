@@ -54,11 +54,11 @@ En god testsuite gjør det lett å gjøre endringer, samtidig som den klasker de
 
 Programmér for testbarhet
 -------------------------
-Et mye brukt argument for testdriving er at det driver frem et testbart design med god isolasjon. Det er sant. Problemet er at testdriving _med bare enhetstester_ har en tendens til å gi et _dårlig_ design: overdrevent små komponenter, unaturlig tilgjengeliggjøring av felter og funksjonalitet og overdrevent fokus på injiserbarhet. Å bruke testdrevet utvikling som et verktøy for å skrive testbar kode er en god ide; å bruke enhetstester som dene eneste teknikken for dette er en tilsvarende dårlig idé.
+Et mye brukt argument for testdriving er at det driver frem et testbart design med god isolasjon. Det er sant. Problemet er at testdriving _med bare enhetstester_ har en tendens til å gi et _dårlig_ design: overdrevent små komponenter, unaturlig tilgjengeliggjøring av felter og funksjonalitet og overdrevent fokus på injiserbarhet. Å bruke testdrevet utvikling som et verktøy for å skrive testbar kode er en god idé; å bruke enhetstester som dene eneste teknikken for dette er en tilsvarende dårlig idé.
 
 Jeg tror grunnen til at vi lener mot enhetstester er at det, relativt sett, er lett. Konseptene er lette å forstå, det er et begrenset sett med teknikker involvert og verktøystøtten er god. Å introdusere ende til ende-tester på en stor applikasjon som ikke er bygd for det er smertefullt: en bråte komplekse integrasjoner som det ikke er støtte for å bytte ut, treg oppstart av applikasjonen, sideeffekter og masse tilstand.
 
-Hvis du er så heldig at du starter opp en ny applikasjon i dag vil jeg påstå at det grenser mot uansvarlig å ikke allerede fra starten av bygge applikasjonen for ende-til-ende testing. Rigg det for automatisert kjøring fra dag 1. Sørg for at alle eksterne avhengigheter kan byttes ut med dummies hvor du styrer tilstanden, hold oppstartstiden lav, ha kontroll på sideeffekter som skriving til database og ha støtte for automatisk lasting av testdata.
+Hvis du er så heldig at du starter opp en ny applikasjon i dag vil jeg påstå at det grenser mot uansvarlig å ikke allerede fra starten av bygge applikasjonen for ende til ende-testing. Rigg det for automatisert kjøring fra dag 1. Sørg for at alle eksterne avhengigheter kan byttes ut med dummies hvor du styrer tilstanden, hold oppstartstiden lav, ha kontroll på sideeffekter som skriving til database og ha støtte for automatisk lasting av testdata.
 
 Dette gir en applikasjon som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en datamaskin klarer å teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene den kan komme i også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er det testbare designet vi ønsker å oppnå!
 
@@ -70,7 +70,7 @@ Da jeg var på høyden av troen min på enhetstesting forankret jeg denne tanken
 
 Programmering er åpenbart kommunikasjon. I sin enkleste form handler det om å forklare en datamaskin hva den skal gjøre. Men nesten like viktig er det å kommunisere med andre utviklere. De aller fleste kodebaser skal i løpet av livssyklusen sin besøkes av mange titalls, om ikke hundretalls, utviklere. At koden passer inn i hodet og virkelighetsoppfattelsen til andre utviklere er derfor ekstremt viktig. Utviklere som skal gjøre endringer på et system de ikke skjønner vil veldig fort gjøre feil. Og hvis koden primært er strukturert for å passe til enhetstester har du da et problem. Lag komponenter som gir mening for mennesker, ikke tester!
 
-Med tester som sjekker at applikasjonen din overordnet gjør det den skal står du fritt til å fokusere noe av det aller viktigste når du programmerer; at koden du skriver formidler dine tanker og din kontekst til den neste utvikleren som skal inn og gjøre en endring. I tillegg vil ende-til-ende-tester --- Må avgjøre om du vil bruke "ende-til-ende" eller "ende til ende" --- gi henne beskjed dersom han har tråkket feil ved en endring. --- Kjønnsforvirret eller bare politisk korrekt? :)---
+Med tester som sjekker at applikasjonen din overordnet gjør det den skal står du fritt til å fokusere noe av det aller viktigste når du programmerer; at koden du skriver formidler dine tanker og din kontekst til den neste utvikleren som skal inn og gjøre en endring. I tillegg vil ende til ende-tester gi ham beskjed dersom han har tråkket feil ved en endring.
 
 Testing har en kontekst
 ----------------------
@@ -82,24 +82,12 @@ Poenget er at dette varierer. Derfor bør vi ikke velge enhetstest som verktøy 
 
 Er enhetstesten virkelig død?
 -----------------------------
-Enhetstesten er selvsagt ikke død. Enhetstester er faktisk helt fantastiske til det de gjør best. Og det er å teste ting som er litt vanskelig eller litt kronglete.
----Kanskje noe sånt isteden: "Enhetstester er faktisk helt fantastiske til det de gjør best: teste ting som er litt vanskelig eller litt kronglete" --- Hvis du ser deg selv være litt usikker på hvordan en algoritme skal gjøres, hvordan matching av noe tekst blir riktig, på hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå… da passer enhetstesten perfekt! Dette fordi du har et _problem_ som er en enhet arbeid. Det er ikke noe vits å enhetsteste noe det er åpenbart om er riktig eller feil!
+Enhetstesten er selvsagt ikke død. Enhetstester er glimrende til det de gjør best: å teste ting som er litt vanskelig eller litt kronglete. Hvis du ser deg selv være litt usikker på hvordan en algoritme skal gjøres, hvordan matching av noe tekst blir riktig, på hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå… da passer enhetstesten perfekt! Dette fordi du har et _problem_ som er en enhet arbeid. Det er ikke noe vits å enhetsteste noe det er åpenbart om er riktig eller feil!
 
 Hvis du er usikker på hvordan noe skal virke eller du kjenner at du virkelig må tenke deg om for å løse det, da passer det bra med en enhetstest. Når du derimot vet at controlleren skal kalle servicen før den returnerer navnet på viewet… da bør du faktisk få slippe.
 
 Hva kan du gjøre?
 -----------------
-Å introdusere ende-til-ende tester er ikke kampen du bør ta hvis du sitter på et stort gammelt beist av en applikasjon. For det kan virkelig være vanskelig. Først og fremst har vi som utviklere et ansvar for å sørge for at nye applikasjoner vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
+Å introdusere ende til ende-tester er ikke kampen du bør ta hvis du sitter på et stort gammelt beist av en applikasjon. For det kan virkelig være vanskelig. Først og fremst har vi som utviklere et ansvar for å sørge for at nye applikasjoner vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
 
 Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal leve og hvilke feil du kan du kan tåle.
-
-
-
-######### Feedback #########
-Har bare endret noen små skrivefeil.
-
-Syns det ser bra ut foreløpig. Passende nivå og de som ikke har satt seg inn i debatten kan fortsatt lære noe.
-Supert med realistisk kodeeksempel istedenfor noe jalla.
-
-
-Si i fra når du har revidert osv, så kan jeg se over igjen
