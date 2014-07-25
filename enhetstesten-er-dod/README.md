@@ -8,7 +8,8 @@ arkitekturen og sørge for modulær kode, solid testdekning og høy kodekvalitet
 
 Jeg var fullstendig klar over at det fantes andre, komplementære måter å gjøre testing på. Integrasjonstesting,
 akseptansetesting, ende til ende-testing og – gud forby – manuell testing. Vi dabbet litt borti alt sammen: CubicTest,
-Selenium, WebDriver, SoapUI og alt annet seriøse testere skal kunne. Men ingenting funket skikkelig. Ingenting gikk så
+Selenium, Cucumber, WebDriver, SoapUI og alt annet seriøse testere skal kunne. Men ingenting funket skikkelig.
+Ingenting gikk så
 glatt som enhetstester i JUnit!
 
 Debatten
@@ -80,7 +81,8 @@ Den perfekte metaforen på gode tester er for meg sikringstauet til en fjellklat
 sett merker du ikke så mye til det med mindre du faktisk faller. Da kjenner du et kraftig rykk, før du trygt kan fire
 deg ned til bakken og prøve på nytt.
 
-<img src="https://bekkopen.blob.core.windows.net/attachments/7910c159-2554-4e5e-a208-9d66d76d2e90" alt="illustrasjonsbilde av fjellklatrere"></img>
+<img src="https://bekkopen.blob.core.windows.net/attachments/7910c159-2554-4e5e-a208-9d66d76d2e90"
+    alt="Illustrasjonsbilde av fjellklatrer"></img>
 
 Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogien for langt, føles det mer som å klatre opp
 en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover. Du faller ikke nødvendigvis ned.
@@ -116,6 +118,9 @@ også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det
 
 Programmér for mennesker
 ------------------------
+
+<img src="https://bekkopen.blob.core.windows.net/attachments/57bc659b-dc0c-4bec-9d16-50173d67fc60"
+alt="Illustrasjonsbilde: Sint legomann som programmerer"/>
 
 Testdriving styrer virkelig designet. For at enhetstester ikke skal bli svære beist med et gigantisk, uforståelig
 oppsett og sinnsykt sammenhengende mocker må kompoenentene bli små. Bittesmå. Da jeg var på høyden av troen min på
@@ -176,5 +181,6 @@ leve og hvilke feil du kan du kan tåle.
 Bilder
 ------
 
-* Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> på flickr
-* Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> på flickr
+Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> på flickr<br/>
+Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> på flickr<br/>
+Legomann: <a href="https://www.flickr.com/photos/cyol/">Cyol Ternyan</a> på flickr<br/>
