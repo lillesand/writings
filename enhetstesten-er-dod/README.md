@@ -41,8 +41,8 @@ Problemet er den dritten her:
     }
 
 "Men det var jo ikke så ille!" kan du si. Og du har et poeng. Det der er ikke ille i det hele tatt. Problemet er at det
-koden som testes er fullstendig triviell. Vi sjekker at tre komponenter vi vet veldig lite om henger sammen, men
-ingenting om de faktisk henger sammen på rett måte. Og det er jo der feilene faktisk oppstår; i hvordan komponentene
+koden som testes er fullstendig triviell. Vi sjekker at tre komponenter henger sammen, men
+ingenting om de faktisk henger sammen på rett måte og fungerer som forventet med virkelig input. Og det er jo der feilene faktisk oppstår; i hvordan komponentene
 spiller sammen.
 
 Og en slik test kommer sjelden alene. Hvis man først enhetstester på dette nivået vil en kodebase av litt størrelse
