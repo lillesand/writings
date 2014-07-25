@@ -7,7 +7,7 @@ var _måten_ å utvikle software på. For meg var testdriving religionen og enhe
 arkitekturen og sørge for modulær kode, solid testdekning og høy kodekvalitet.
 
 Jeg var fullstendig klar over at det fantes andre, komplementære måter å gjøre testing på. Integrasjonstesting,
-akseptansetesting, ende til ende-testing og – gud forby – manuell testing. Vi dabbet litt borti alt sammen: cubicTest,
+akseptansetesting, ende til ende-testing og – gud forby – manuell testing. Vi dabbet litt borti alt sammen: CubicTest,
 Selenium, WebDriver, SoapUI og alt annet seriøse testere skal kunne. Men ingenting funket skikkelig. Ingenting gikk så
 glatt som enhetstester i JUnit!
 
@@ -28,8 +28,7 @@ Jeg kommer til å skrive mye om enhetstester og ende til ende-testing i denne bl
 
 Med enhetstester mener jeg spissede tester som tester isolerte komponenter – gjerne klasser i språk som Java eller
 C#, eller funksjoner i språk som JavaScript. I forbindelse med enhetstesting brukes gjerne mocker eller spies til å
-isolere komponenten som testes fra resten av systemet. Dette er en type testing som gjerne gjør at man i stor grad
-ikke får testet underliggende rammeverk.
+isolere komponenten som testes fra resten av systemet.
 
 Jeg bruker ende til ende-testing i en løsere forstand. Snarere enn en spesifikk teknisk definisjon tenker jeg på å
 teste koden på et hensiktsmessig nivå sett opp mot hvordan den vil brukes. Med hensiktsmessig mener jeg at man ikke
