@@ -100,7 +100,7 @@ Programmér for mennesker
 
 Testdriving styrer virkelig designet. For at enhetstester ikke skal bli svære beist med et gigantisk, uforståelig
 oppsett og sinnsykt sammenhengende mocker må kompoenentene bli små. Bittesmå. Da jeg var på høyden av troen min på
-enhetstesting forankret jeg denne tanken i Single Responsibility Princple. Det føltes som jeg gjorde Det Rette og var
+enhetstesting forankret jeg denne tanken i Single Responsibility Principle. Det føltes som jeg gjorde Det Rette og var
 en skikkelig craftsman. Senere har jeg reflektert en del over hvor riktig det egentlig er. Problemet er at komponentene
 er så små at de egentlig ikke løser et stykke arbeid som gir mening for noe annet enn testene.
 
