@@ -9,8 +9,7 @@ arkitekturen og sørge for modulær kode, solid testdekning og høy kodekvalitet
 Jeg var fullstendig klar over at det fantes andre, komplementære måter å gjøre testing på. Integrasjonstesting,
 akseptansetesting, ende til ende-testing og – gud forby – manuell testing. Vi dabbet litt borti alt sammen: CubicTest,
 Selenium, Cucumber, WebDriver, SoapUI og alt annet seriøse testere skal kunne. Men ingenting funket skikkelig.
-Ingenting gikk så
-glatt som enhetstester i JUnit!
+Ingenting gikk så glatt som enhetstester i JUnit!
 
 Debatten
 --------
@@ -74,15 +73,15 @@ gjerne innholde mange tusen tester. Og det er da det begynner å gjøre vondt.
 Disse endringene, disse jævla endringene…
 -----------------------------------------
 
+<img src="https://bekkopen.blob.core.windows.net/attachments/7910c159-2554-4e5e-a208-9d66d76d2e90"
+    alt="Illustrasjonsbilde av fjellklatrer" />
+
 Gode tester er godt for mye. For meg er det ett aspekt som trumfer alt: trygghet til å gjøre endringer i koden med
 visshet om at det ikke brekker eksisterende funksjonalitet.
 
 Den perfekte metaforen på gode tester er for meg sikringstauet til en fjellklatrer. Det er litt jobb med det, men stort
 sett merker du ikke så mye til det med mindre du faktisk faller. Da kjenner du et kraftig rykk, før du trygt kan fire
 deg ned til bakken og prøve på nytt.
-
-<img src="https://bekkopen.blob.core.windows.net/attachments/7910c159-2554-4e5e-a208-9d66d76d2e90"
-    alt="Illustrasjonsbilde av fjellklatrer"></img>
 
 Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogien for langt, føles det mer som å klatre opp
 en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover. Du faller ikke nødvendigvis ned.
@@ -120,7 +119,7 @@ Programmér for mennesker
 ------------------------
 
 <img src="https://bekkopen.blob.core.windows.net/attachments/57bc659b-dc0c-4bec-9d16-50173d67fc60"
-alt="Illustrasjonsbilde: Sint legomann som programmerer"/>
+    alt="Illustrasjonsbilde: Sint legomann som programmerer"/>
 
 Testdriving styrer virkelig designet. For at enhetstester ikke skal bli svære beist med et gigantisk, uforståelig
 oppsett og sinnsykt sammenhengende mocker må kompoenentene bli små. Bittesmå. Da jeg var på høyden av troen min på
