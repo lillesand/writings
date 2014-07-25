@@ -36,12 +36,12 @@ nødvendigvis trenger å gå til det ekstreme for teste alt som det oppleves fra
 nødvendig å isolere systemer fra hverandre og gjøre forenklinger. For eksempel vil det være meningsfylt å teste en
 frontend-applikasjon (for eksempel en mobilapp), et bibliotek og en MVC-applikasjon vidt forskjellig.
 
-I kontekst av webapplikasjonene jeg jobber på til daglig betyr ende til ende-testing at testene kjører fra
-inngangspunktet til applikasjonen, med eksterne avhengigheter isolert (eller snarere simulert). For eksempel kan dette
-i Java bety å starte en Jetty-server med hele applikasjonen hostet, og så kalle REST-endepunkter fra testene.
+I kontekst av webapplikasjonene jeg jobber på til daglig betyr ende til ende-testing at testene kjører mot
+grensesnittet til applikasjonen, med eksterne avhengigheter isolert (eller snarere simulert). I en Java-applikasjon
+kan det bety å starte en Jetty-server med applikasjonen, og så kalle REST-endepunkter fra testene.
 Eksterne avhengigheter kan fjernes ved hjelp enten av mock-rammeverk som WireMock eller ved å injisere egne
-mock-klasser. Hvilke tester og teststrategier som lønner seg for ulike kontekster er en veldig interessant diskusjon
-som fortjener sin egen blogpost.
+mock-klasser. Hvilke teststrategier som lønner seg for ulike kontekster er en veldig interessant diskusjon
+som fortjener sin egen behandling.
 
 Problemet med enhetstesten
 --------------------------
