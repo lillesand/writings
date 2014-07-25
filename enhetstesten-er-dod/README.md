@@ -80,10 +80,7 @@ Den perfekte metaforen på gode tester er for meg sikringstauet til en fjellklat
 sett merker du ikke så mye til det med mindre du faktisk faller. Da kjenner du et kraftig rykk, før du trygt kan fire
 deg ned til bakken og prøve på nytt.
 
-<p class="caption">
-<img src="https://bekkopen.blob.core.windows.net/attachments/86f45f40-8e09-4e0f-a3a9-1d0c109891d8" alt="illustrasjonsbilde av fjellklatrere"></img>
-Kilde: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V på flickr</a>.
-</p>
+<img src="https://bekkopen.blob.core.windows.net/attachments/7910c159-2554-4e5e-a208-9d66d76d2e90" alt="illustrasjonsbilde av fjellklatrere"></img>
 
 Sånn føles ikke en svær samling enhetstester. Med fare for å trekke analogien for langt, føles det mer som å klatre opp
 en fjellvegg med et fiskegarn rundt kroppen. Du klarer alltids å komme deg fremover. Du faller ikke nødvendigvis ned.
@@ -175,3 +172,9 @@ vi lager har skikkelige tester som verifiserer at applikasjonene virker som de s
 
 Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal
 leve og hvilke feil du kan du kan tåle.
+
+Bilder
+------
+
+* Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> på flickr
+* Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> på flickr
