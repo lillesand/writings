@@ -73,8 +73,8 @@ gjerne innholde mange tusen tester. Og det er da det begynner å gjøre vondt.
 Disse endringene, disse jævla endringene…
 -----------------------------------------
 
-<img src="https://bekkopen.blob.core.windows.net/attachments/7910c159-2554-4e5e-a208-9d66d76d2e90"
-    alt="Illustrasjonsbilde av fjellklatrer" />
+<img src="https://bekkopen.blob.core.windows.net/attachments/9e2e3e08-f772-4e6b-b248-9102d181a74a"
+    alt="Illustrasjonsbilde av en sommerfugl" />
 
 Gode tester er godt for mye. For meg er det ett aspekt som trumfer alt: trygghet til å gjøre endringer i koden med
 visshet om at det ikke brekker eksisterende funksjonalitet.
@@ -94,6 +94,9 @@ En god testsuite gjør det lett å gjøre endringer, samtidig som den klasker de
 
 Programmér for testbarhet
 -------------------------
+
+<img src="https://bekkopen.blob.core.windows.net/attachments/7910c159-2554-4e5e-a208-9d66d76d2e90"
+    alt="Illustrasjonsbilde av fjellklatrer" />
 
 Et mye brukt argument for testdriving er at det driver frem et testbart design med god isolasjon. Det er sant.
 Problemet er at testdriving _med bare enhetstester_ har en tendens til å gi et _dårlig_ design: overdrevent små
@@ -142,6 +145,8 @@ endring.
 Testing har en kontekst
 ----------------------
 
+Ill: silver bullet
+
 Testing foregår alltid i en kontekst. Ingen applikasjoner er like, og det begynner virkelig å se ut som vi ikke har noen
 sølvkuler. Å teste mobilklienter, JavaScript-frontends og tunge Java-backends på samme måte er i beste fall naivt.
 
@@ -156,6 +161,9 @@ grundig gjennom hvordan vi rigger oss for å lettest mulig verifisere at en appl
 
 Er enhetstesten virkelig død?
 -----------------------------
+
+<img src="https://bekkopen.blob.core.windows.net/attachments/a9e89b67-0d95-463c-951e-a0c8100046c1"
+    alt="Illustrasjonsbilde: død cowboy" />
 
 Enhetstesten er selvsagt ikke død. Enhetstester er glimrende til det de gjør best: å teste ting som er litt vanskelig
 eller litt kronglete. Hvis du ser deg selv være litt usikker på hvordan en algoritme skal gjøres, hvordan matching av
@@ -181,5 +189,7 @@ Bilder
 ------
 
 Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> (flickr).<br/>
+Sommerfugl: <a href="https://www.flickr.com/photos/axlefoley/">Axel.Foley</a> (flickr).<br/>
 Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> (flickr).<br/>
 Legomann: <a href="https://www.flickr.com/photos/cyol/">Cyol Ternyan</a> (flickr).<br/>
+Død cowboy: <a href="https://www.flickr.com/photos/bbcworldservice/">BBC World Service</a> (flickr).<br/>
