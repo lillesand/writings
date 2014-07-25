@@ -15,8 +15,8 @@ Debatten
 --------
 
 Denne posten havner i etterkant av debatten mellom blant andre
-<a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">David Heinemeier Hansson</a>
-("DHH"), <a href="http://martinfowler.com/articles/is-tdd-dead/">Martin Fowler</a> og mange andre – som til slutt
+<a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">David Heinemeier Hansson</a>,
+<a href="http://martinfowler.com/articles/is-tdd-dead/">Martin Fowler</a> og mange andre – som til slutt
 <a href="https://www.youtube.com/watch?v=z9quxZsLcfo">kuliminerte med fem live-debatter mellom de to og
 Kent Beck</a>. Dersom du har fulgt denne debatten tett vil ikke denne blogposten inneholde så mye nytt for deg,
 men heller gi en ny vinkling på norsk.
