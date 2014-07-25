@@ -21,6 +21,29 @@ Denne posten havner i etterkant av debatten mellom blant andre
 Kent Beck</a>. Dersom du har fulgt denne debatten tett vil ikke denne blogposten inneholde så mye nytt for deg,
 men heller gi en ny vinkling på norsk.
 
+Noen definisjoner
+-----------------
+
+Jeg kommer til å skrive mye om enhetstester og ende til ende-testing i denne blogposten.
+
+Med enhetstester mener jeg spissede tester som tester isolerte komponenter – gjerne klasser i språk som Java eller
+C#, eller funksjoner i språk som JavaScript. I forbindelse med enhetstesting brukes gjerne mocker eller spies til å
+isolere komponenten som testes fra resten av systemet. Dette er en type testing som gjerne gjør at man i stor grad
+ikke får testet underliggende rammeverk.
+
+Jeg bruker ende til ende-testing i en løsere forstand. Snarere enn en spesifikk teknisk definisjon tenker jeg på å
+teste koden på et hensiktsmessig nivå sett opp mot hvordan den vil brukes. Med hensiktsmessig mener jeg at man ikke
+nødvendigvis trenger å gå til det ekstreme for teste alt som det oppleves fra brukeren; det vil nesten alltid være
+nødvendig å isolere systemer fra hverandre og gjøre forenklinger. For eksempel vil det være meningsfylt å teste en
+frontend-applikasjon (for eksempel en mobilapp), et bibliotek og en MVC-applikasjon vidt forskjellig.
+
+I kontekst av webapplikasjonene jeg jobber på til daglig betyr ende til ende-testing at testene kjører fra
+inngangspunktet til applikasjonen, med eksterne avhengigheter isolert (eller snarere simulert). For eksempel kan dette
+i Java bety å starte en Jetty-server med hele applikasjonen hostet, og så kalle REST-endepunkter fra testene.
+Eksterne avhengigheter kan fjernes ved hjelp enten av mock-rammeverk som WireMock eller ved å injisere egne
+mock-klasser. Hvilke tester og teststrategier som lønner seg for ulike kontekster er en veldig interessant diskusjon
+som fortjener sin egen blogpost.
+
 Problemet med enhetstesten
 --------------------------
 
