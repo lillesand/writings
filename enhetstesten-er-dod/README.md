@@ -180,6 +180,6 @@ leve og hvilke feil du kan du kan tåle.
 Bilder
 ------
 
-Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> på flickr<br/>
-Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> på flickr<br/>
-Legomann: <a href="https://www.flickr.com/photos/cyol/">Cyol Ternyan</a> på flickr<br/>
+Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> (flickr)<br/>
+Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> (flickr)<br/>
+Legomann: <a href="https://www.flickr.com/photos/cyol/">Cyol Ternyan</a> (flickr)<br/>
