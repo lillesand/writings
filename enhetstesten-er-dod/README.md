@@ -1,5 +1,3 @@
-Jeg har hatt gleden av å se mine egne applikasjoner bli voksne.
-
 Jeg begynte å jobbe som programmerer i 2008. Det var omtrent samtidig som fokuset på craftsmanship, parprogrammering og
 enhetstesting virkelig etablerte seg i den mer enterprisey utviklingsverdenen. Og jeg omfavnet det med åpne armer.
 Flasket opp på high-fives, hyppig utrulling og enorm stolthet over alt jeg jobbet med var jeg ikke i tvil om at dette
@@ -14,12 +12,12 @@ Ingenting gikk så glatt som enhetstester i JUnit!
 Debatten
 --------
 
-Denne posten havner i etterkant av debatten mellom blant andre
+Denne posten havner i etterkant av debatten mellom
 <a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">David Heinemeier Hansson</a>,
 <a href="http://martinfowler.com/articles/is-tdd-dead/">Martin Fowler</a> og mange andre – som til slutt
 <a href="https://www.youtube.com/watch?v=z9quxZsLcfo">kuliminerte med fem live-debatter mellom de to og
 Kent Beck</a>. Dersom du har fulgt denne debatten tett vil ikke denne blogposten inneholde så mye nytt for deg,
-men heller gi en ny vinkling på norsk.
+men heller gi en annen vinkling på norsk.
 
 Noen definisjoner
 -----------------
@@ -30,18 +28,12 @@ Med enhetstester mener jeg spissede tester som tester isolerte komponenter – g
 C#, eller funksjoner i språk som JavaScript. I forbindelse med enhetstesting brukes gjerne mocker eller spies til å
 isolere komponenten som testes fra resten av systemet.
 
-Jeg bruker ende til ende-testing i en løsere forstand. Snarere enn en spesifikk teknisk definisjon tenker jeg på å
-teste koden på et hensiktsmessig nivå sett opp mot hvordan den vil brukes. Med hensiktsmessig mener jeg at man ikke
-nødvendigvis trenger å gå til det ekstreme for teste alt som det oppleves fra brukeren; det vil nesten alltid være
-nødvendig å isolere systemer fra hverandre og gjøre forenklinger. For eksempel vil det være meningsfylt å teste en
-frontend-applikasjon (for eksempel en mobilapp), et bibliotek og en MVC-applikasjon vidt forskjellig.
-
-I kontekst av webapplikasjonene jeg jobber på til daglig betyr ende til ende-testing at testene kjører mot
-grensesnittet til applikasjonen, med eksterne avhengigheter isolert (eller snarere simulert). I en Java-applikasjon
-kan det bety å starte en Jetty-server med applikasjonen, og så kalle REST-endepunkter fra testene.
-Eksterne avhengigheter kan fjernes ved hjelp enten av mock-rammeverk som WireMock eller ved å injisere egne
-mock-klasser. Hvilke teststrategier som lønner seg for ulike kontekster er en veldig interessant diskusjon
-som fortjener sin egen behandling.
+Jeg bruker ende til ende-testing i en løsere forstand. Snarere enn en spesifikk teknisk definisjon,
+legger jeg i det at man tester koden på et hensiktsmessig nivå sett opp mot hvordan den skal brukes. Med
+hensiktsmessig mener jeg at man ikke nødvendigvis trenger å teste alt som det oppleves fra
+sluttbrukeren; det vil nesten alltid være nødvendig å isolere systemer fra hverandre og gjøre forenklinger. For
+eksempel vil det være meningsfylt å teste en frontend-applikasjon, et rammeverk/bibliotek og en MVC-applikasjon vidt
+forskjellig.
 
 Problemet med enhetstesten
 --------------------------
@@ -145,7 +137,8 @@ endring.
 Testing har en kontekst
 ----------------------
 
-Ill: silver bullet
+<img src="https://bekkopen.blob.core.windows.net/attachments/599e5fb7-0b3c-45ff-9735-06e2b26205d1"
+    alt="Illustrasjonsbilde: Rykende pistol" />
 
 Testing foregår alltid i en kontekst. Ingen applikasjoner er like, og det begynner virkelig å se ut som vi ikke har noen
 sølvkuler. Å teste mobilklienter, JavaScript-frontends og tunge Java-backends på samme måte er i beste fall naivt.
@@ -189,7 +182,8 @@ Bilder
 ------
 
 Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> (flickr).<br/>
-Sommerfugl: <a href="https://www.flickr.com/photos/axlefoley/">Axel.Foley</a> (flickr).<br/>
+Sommerfugl: <a href="https://www.flickr.com/photos/axlefoley/">Axel.Foleysivler</a> (flickr).<br/>
 Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> (flickr).<br/>
 Legomann: <a href="https://www.flickr.com/photos/cyol/">Cyol Ternyan</a> (flickr).<br/>
+Rykende pistol: <a href="https://www.flickr.com/photos/theknowlesgallery/">Charles Knowles</a> (flickr).<br/>
 Død cowboy: <a href="https://www.flickr.com/photos/bbcworldservice/">BBC World Service</a> (flickr).<br/>
