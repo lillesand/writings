@@ -33,7 +33,7 @@ legger jeg i det at man tester koden på et hensiktsmessig nivå sett opp mot hv
 hensiktsmessig mener jeg at man ikke nødvendigvis trenger å teste alt som det oppleves fra
 sluttbrukeren; det vil nesten alltid være nødvendig å isolere systemer fra hverandre og gjøre forenklinger. For
 eksempel vil det være meningsfylt å teste en frontend-applikasjon, et rammeverk/bibliotek og en MVC-applikasjon vidt
-forskjellig.
+forskjellig. Fokuset er på å teste at koden henger sammen og som helhet gjør det den skal.
 
 Problemet med enhetstesten
 --------------------------
@@ -57,7 +57,7 @@ Problemet er den dritten her:
 "Men det var jo ikke så ille!" kan du si. Og du har et poeng. Det der er ikke ille i det hele tatt. Problemet er at det
 koden som testes er fullstendig triviell. Vi sjekker at tre komponenter henger sammen, men
 ingenting om de faktisk henger sammen på rett måte og fungerer som forventet med virkelig input. Og det er jo der
-feilene faktisk oppstår; i hvordan komponentene spiller sammen.
+feilene faktisk oppstår; i hvordan komponenter spiller sammen.
 
 Og en slik test kommer sjelden alene. Hvis man først enhetstester på dette nivået vil en kodebase av litt størrelse
 gjerne innholde mange tusen tester. Og det er da det begynner å gjøre vondt.
@@ -71,7 +71,7 @@ Disse endringene, disse jævla endringene…
 Gode tester er godt for mye. For meg er det ett aspekt som trumfer alt: trygghet til å gjøre endringer i koden med
 visshet om at det ikke brekker eksisterende funksjonalitet.
 
-Den perfekte metaforen på gode tester er for meg sikringstauet til en fjellklatrer. Det er litt jobb med det, men stort
+En god metafor på tester er for meg sikringstauet til en fjellklatrer. Det er litt jobb med det, men stort
 sett merker du ikke så mye til det med mindre du faktisk faller. Da kjenner du et kraftig rykk, før du trygt kan fire
 deg ned til bakken og prøve på nytt.
 
@@ -92,8 +92,8 @@ Programmér for testbarhet
 
 Et mye brukt argument for testdriving er at det driver frem et testbart design med god isolasjon. Det er sant.
 Problemet er at testdriving _med bare enhetstester_ har en tendens til å gi et _dårlig_ design: overdrevent små
-komponenter, unaturlig tilgjengeliggjøring av felter og funksjonalitet, og overdrevent fokus på injiserbarhet. Å bruke
-testdrevet utvikling som et verktøy for å skrive testbar kode er en god idé; å bruke enhetstester som den eneste
+komponenter, unaturlig tilgjengeliggjøring av variabler og funksjonalitet, og overdrevent fokus på injiserbarhet. Å
+bruke testdrevet utvikling som et verktøy for å skrive testbar kode er en god idé; å bruke enhetstester som den eneste
 teknikken for dette er en tilsvarende dårlig idé.
 
 Jeg tror grunnen til at vi lener mot enhetstester er at det, relativt sett, er lett. Konseptene er lette å forstå, det
@@ -106,11 +106,12 @@ allerede fra starten av bygge applikasjonen for ende til ende-testing. Rigg det 
 Sørg for at alle eksterne avhengigheter kan byttes ut med dummies hvor du styrer tilstanden, hold oppstartstiden lav,
 ha kontroll på sideeffekter som skriving til database og ha støtte for automatisk lasting av testdata.
 
-Dette gir en applikasjon som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en datamaskin klarer å
-teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene den kan komme i
-også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er det testbare designet vi ønsker å oppnå!
+Dette gir en applikasjon virkelig som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en
+datamaskin klarer å teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene
+den kan komme i også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er det testbare
+designet vi ønsker å oppnå!
 
-Programmér for mennesker
+Programmer for mennesker
 ------------------------
 
 <img src="https://bekkopen.blob.core.windows.net/attachments/57bc659b-dc0c-4bec-9d16-50173d67fc60"
@@ -119,15 +120,15 @@ Programmér for mennesker
 Testdriving styrer virkelig designet. For at enhetstester ikke skal bli svære beist med et gigantisk, uforståelig
 oppsett og sinnsykt sammenhengende mocker må kompoenentene bli små. Bittesmå. Da jeg var på høyden av troen min på
 enhetstesting forankret jeg denne tanken i Single Responsibility Principle. Det føltes som jeg gjorde Det Rette og var
-en skikkelig craftsman. Senere har jeg reflektert en del over hvor riktig det egentlig er. Problemet er at komponentene
-er så små at de egentlig ikke løser et stykke arbeid som gir mening for noe annet enn testene.
+en skikkelig craftsman. Senere har jeg reflektert en del over hvor riktig det egentlig er. Disse
+komponentene blir fort så små at de egentlig ikke løser et stykke arbeid som gir mening for noe annet enn testene.
 
-Programmering er åpenbart kommunikasjon. I sin enkleste form handler det om å forklare en datamaskin hva den skal gjøre.
-Men nesten like viktig er det å kommunisere med andre utviklere. De aller fleste kodebaser skal i løpet av livssyklusen
-sin besøkes av mange titalls, om ikke hundretalls, utviklere. At koden passer inn i hodet og virkelighetsoppfattelsen
-til andre utviklere er derfor ekstremt viktig. Utviklere som skal gjøre endringer på et system de ikke skjønner vil
-veldig fort gjøre feil. Og hvis koden primært er strukturert for å passe til enhetstester har du da et problem. Lag
-komponenter som gir mening for mennesker, ikke tester!
+Programmering handler om kommunikasjon. I sin enkleste form handler det om å forklare en datamaskin hva den
+skal gjøre. Men nesten like viktig er det å kommunisere med andre utviklere. De aller fleste kodebaser skal i løpet av
+livssyklusen sin besøkes av mange titalls, om ikke hundretalls, utviklere. At koden passer inn i hodet og
+virkelighetsoppfatningen til andre utviklere er derfor ekstremt viktig. Utviklere som skal gjøre endringer på et
+system de ikke skjønner vil veldig fort gjøre feil. Og hvis koden primært er strukturert for å passe til enhetstester
+har du da et problem. Lag komponenter som gir mening for mennesker, ikke tester!
 
 Med tester som sjekker at applikasjonen din overordnet gjør det den skal står du fritt til å fokusere noe av det aller
 viktigste når du programmerer; at koden du skriver formidler dine tanker og din kontekst til den neste utvikleren som
@@ -159,8 +160,8 @@ Er enhetstesten virkelig død?
     alt="Illustrasjonsbilde: død cowboy" />
 
 Enhetstesten er selvsagt ikke død. Enhetstester er glimrende til det de gjør best: å teste ting som er litt vanskelig
-eller litt kronglete. Hvis du ser deg selv være litt usikker på hvordan en algoritme skal gjøres, hvordan matching av
-noe tekst blir riktig, på hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå – da passer
+eller kronglete. Hvis du er litt usikker på hvordan en algoritme skal implementeres, hvordan matching av
+noe tekst blir riktig, hvordan utregning av en pris som inneholder mye forretningslogikk skal foregå – da passer
 enhetstesten perfekt! Dette fordi du har et _problem_ som er en enhet arbeid. Det er ikke noe vits å enhetsteste noe
 det er åpenbart om er riktig eller feil.
 
@@ -176,7 +177,8 @@ For det kan virkelig være vanskelig. Først og fremst har vi som utviklere et a
 vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
 
 Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal
-leve og hvilke feil du kan du kan tåle.
+leve og hvilke feil du kan du kan tåle. Ha enhetstester som et verktøy i verktøykassa di, 
+men sørg for at de ikke blir liggende der alene.
 
 Bilder
 ------
