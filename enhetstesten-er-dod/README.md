@@ -106,7 +106,7 @@ allerede fra starten av bygge applikasjonen for ende til ende-testing. Rigg det 
 Sørg for at alle eksterne avhengigheter kan byttes ut med dummies hvor du styrer tilstanden, hold oppstartstiden lav,
 ha kontroll på sideeffekter som skriving til database og ha støtte for automatisk lasting av testdata.
 
-Dette gir en applikasjon _virkelig_ som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en
+Dette gir en applikasjon som _virkelig_ er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en
 datamaskin klarer å teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene
 den kan komme i også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er det testbare
 designet vi ønsker å oppnå!
@@ -118,7 +118,7 @@ Programmer for mennesker
     alt="Illustrasjonsbilde: Sint legomann som programmerer"/>
 
 Testdriving styrer virkelig designet. For at enhetstester ikke skal bli svære beist med et gigantisk, uforståelig
-oppsett og sinnsykt sammenhengende mocker må kompoenentene bli små. Bittesmå. Da jeg var på høyden av troen min på
+oppsett må kompoenentene være små. Bittesmå. Da jeg var på høyden av troen min på
 enhetstesting forankret jeg denne tanken i Single Responsibility Principle. Det føltes som jeg gjorde Det Rette og var
 en skikkelig craftsman. Senere har jeg reflektert en del over hvor riktig det egentlig er. Disse
 komponentene blir fort så små at de egentlig ikke løser et stykke arbeid som gir mening for noe annet enn testene.
@@ -146,7 +146,7 @@ sølvkuler. Å teste mobilklienter, JavaScript-frontends og tunge Java-backends 
 
 I en mobilklient (app) med lite forretningslogikk kan den beste formen for testing være at applikasjonen lett kan sette
 seg i en tilstand som viser de viktigste bruksmønstrene uten å være avhengig av å laste ekte data, slik at et menneske
-kan verfisere at det ser ut som det skal. For en JavaScript-klientapplikasjon kan det viktigste være å sjekke at koden
+kan verifisere at det ser ut som det skal. For en JavaScript-klientapplikasjon kan det viktigste være å sjekke at koden
 fungerer likt i alle nettlesere. For en svær Java-applikasjon kan det være masse tung forretningslogikk som fortjener å
 bli enhetstestet ned i den minste detalj for å sikre seg mot feil.
 
