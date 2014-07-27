@@ -17,7 +17,7 @@ Denne posten havner i etterkant av debatten mellom
 <a href="http://martinfowler.com/articles/is-tdd-dead/">Martin Fowler</a> og mange andre – som til slutt
 <a href="https://www.youtube.com/watch?v=z9quxZsLcfo">kuliminerte med fem live-debatter mellom de to og
 Kent Beck</a>. Dersom du har fulgt denne debatten tett vil ikke denne blogposten inneholde så mye nytt for deg,
-men heller gi en annen vinkling på norsk.
+men heller gi en vinkling på norsk.
 
 Noen definisjoner
 -----------------
@@ -182,7 +182,7 @@ Bilder
 ------
 
 Forsidebilde: <a href="https://www.flickr.com/photos/williammarlow/">Will Marlow</a> (flickr).<br/>
-Sommerfugl: <a href="https://www.flickr.com/photos/axlefoley/">Axel.Foleysivler</a> (flickr).<br/>
+Sommerfugl: <a href="https://www.flickr.com/photos/axlefoley/">Axel.Foley</a> (flickr).<br/>
 Fjellklatrer: <a href="https://www.flickr.com/photos/xevivarela/">Xevi V</a> (flickr).<br/>
 Legomann: <a href="https://www.flickr.com/photos/cyol/">Cyol Ternyan</a> (flickr).<br/>
 Rykende pistol: <a href="https://www.flickr.com/photos/theknowlesgallery/">Charles Knowles</a> (flickr).<br/>
