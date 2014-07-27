@@ -106,7 +106,7 @@ allerede fra starten av bygge applikasjonen for ende til ende-testing. Rigg det 
 Sørg for at alle eksterne avhengigheter kan byttes ut med dummies hvor du styrer tilstanden, hold oppstartstiden lav,
 ha kontroll på sideeffekter som skriving til database og ha støtte for automatisk lasting av testdata.
 
-Dette gir en applikasjon virkelig som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en
+Dette gir en applikasjon _virkelig_ som er bygd for testbarhet. Dersom applikasjonen er strukturert slik at en
 datamaskin klarer å teste mot den er det lett å sette den i en tilstand der mennesker enkelt kan teste alle tilstandene
 den kan komme i også. Det er lett å isolere enkeltavhengigheter, og oppstartstiden er lav. Det er det testbare
 designet vi ønsker å oppnå!
@@ -177,7 +177,7 @@ For det kan virkelig være vanskelig. Først og fremst har vi som utviklere et a
 vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
 
 Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal
-leve og hvilke feil du kan du kan tåle. Ha enhetstester som et verktøy i verktøykassa di, 
+leve og hvilke feil du kan du kan tåle. Ha enhetstester som et verktøy i verktøykassa di,
 men sørg for at de ikke blir liggende der alene.
 
 Bilder
