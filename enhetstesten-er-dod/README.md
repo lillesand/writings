@@ -118,7 +118,7 @@ Programmer for mennesker
     alt="Illustrasjonsbilde: Sint legomann som programmerer"/>
 
 Testdriving styrer virkelig designet. For at enhetstester ikke skal bli svære beist med et gigantisk, uforståelig
-oppsett må kompoenentene være små. Bittesmå. Da jeg var på høyden av troen min på
+oppsett må komponentene være små. Bittesmå. Da jeg var på høyden av troen min på
 enhetstesting forankret jeg denne tanken i Single Responsibility Principle. Det føltes som jeg gjorde Det Rette og var
 en skikkelig craftsman. Senere har jeg reflektert en del over hvor riktig det egentlig er. Disse
 komponentene blir fort så små at de egentlig ikke løser et stykke arbeid som gir mening for noe annet enn testene.
@@ -176,8 +176,8 @@ Hva kan du gjøre?
 For det kan virkelig være vanskelig. Først og fremst har vi som utviklere et ansvar for å sørge for at nye applikasjoner
 vi lager har skikkelige tester som verifiserer at applikasjonene virker som de skal.
 
-Utfordre forhåndsantakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal
-leve og hvilke feil du kan du kan tåle. Ha enhetstester som et verktøy i verktøykassa di,
+Utfordre antakelser om hva testing skal være, og tenk gjennom hva applikasjonen skal løse, hvor lenge den skal
+leve og hvilke feil du kan tåle. Ha enhetstester som et verktøy i verktøykassa di,
 men sørg for at de ikke blir liggende der alene.
 
 Bilder
