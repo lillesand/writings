@@ -1,0 +1,19 @@
+#feedback-ticker {
+    width: 100%;
+    padding: 5px 0;
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+}
+
+#feedback ul {
+    list-style-type: none
+}
+
+#feedback li {
+    border-bottom: solid darkgray 1px;
+    margin: 5px auto 2px auto;
+    padding: 0 20px;
+    text-align: center;
+}
