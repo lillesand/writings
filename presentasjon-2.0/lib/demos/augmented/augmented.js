@@ -1,37 +1,8 @@
 (function () {
     window.augmented = {
-        initCamera: initCamera,
         startNavigation: startAugmentation,
         running: true
     };
-
-    var cameraInit = false;
-    function initCamera(opts) {
-        if (cameraInit) return;
-        cameraInit = true;
-        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-        window.URL = window.URL || window.webkitURL;
-
-        var camvideo = document.getElementById('monitor');
-        navigator.getUserMedia({video: true}, gotStream, noStream);
-
-        function gotStream(stream) {
-            if (window.URL) {
-                camvideo.src = window.URL.createObjectURL(stream);
-            }
-
-            camvideo.onerror = function (e) {
-                stream.stop();
-            };
-
-            stream.onended = noStream;
-            opts.success();
-        }
-
-        function noStream(e) {
-            console.error("No stream", e);
-        }
-    }
 
     var augmentationInit = false;
     function startAugmentation(opts) {
