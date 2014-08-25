@@ -20,6 +20,12 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+        <style>
+            .reveal section img {
+                border: none;
+            }
+        </style>
+
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -34,6 +40,7 @@
         <script type="application/javascript" src="lib/demos/util.js"></script>
 
         <link rel="stylesheet" href="lib/demos/feedback/feedback.css">
+        <link rel="stylesheet" href="lib/demos/pulse/pulse.css">
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -43,9 +50,13 @@
 	<body>
 
 		<div class="reveal">
+
             <div id="feedback-ticker"></div>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
+            <div id="pulse-overlay" style="display: none;">
+                <span class="live-pulse"></span>
+            </div>
+
 			<div class="slides">
 				<section>
 					<h1>Presentasjon 2.0</h1>
@@ -66,35 +77,61 @@
 
                 <section>
                     <section>
-                        <h1 id="service-url">http://jz.jvl.io</h1>
+                        <h1 id="service-url" style="font-family: 'Courier New'">jz.jvl.io</h1>
                     </section>
 
                     <section>
+                        <img src="img/feedback-ios.png" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
                         <h1>Live feedback!</h1>
+                        <img src="img/live-shoeback.jpg" />
                     </section>
 
                     <section id="feedback">
-                        <h2>Bonjour!</h2>
+                        <h2>Dere sier:</h2>
                         <ul>
                             <li>Som vi koser oss på presentasjon!</li>
                         </ul>
                     </section>
 
                     <section>
-                        Fordeler og ulemper? Is this the shit?
+                        <h2>Nyttig?</h2>
+                        <img src="img/kamphunder.gif" style="height: 50%; width: 50%"/>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        Puls!
+                        <h1>Live puls!</h1>
+                        <img src="img/fear.jpg"/>
+                    </section>
+
+                    <section data-state="huge-pulse">
+                        <h1 class="live-pulse" id="huge-live-pulse" style="font-size: 8em;">0</h1>
+                    </section>
+
+                    <section data-state="pulse-useful">
+                        <h2>Nyttig?</h2>
+                        <img src="img/skattegif.gif" style="height: 50%; width: 50%"/>
                     </section>
                 </section>
 
                 <section data-state="video">
                     <section>
-                        <h1>Video i nettleseren</h1>
+                        <h1>Video i slides</h1>
                         <video id="video-example" class="webcam" autoplay></video>
+                    </section>
+
+                    <section>
+                        <h2>Nyttig?</h2>
+                    </section>
+
+                    <section>
+
                     </section>
                 </section>
 
@@ -145,14 +182,16 @@
 		</div>
 
 
-        <script src="lib/demos/augmented/augmented.js" type="application/javascript"></script>
-        <script src="lib/demos/video/video.js" type="application/javascript"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
         <script type="application/javascript" src="lib/external/socket.io-1.0.6.min.js"></script>
         <script type="application/javascript" src="lib/demos/feedback/feedback.js"></script>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <script src="lib/demos/pulse/pulse.js" type="application/javascript"></script>
+
+        <script src="lib/demos/augmented/augmented.js" type="application/javascript"></script>
+        <script src="lib/demos/video/video.js" type="application/javascript"></script>
 
         <script type="application/javascript">
             Reveal.addEventListener('ready', function() {

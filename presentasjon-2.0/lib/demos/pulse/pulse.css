@@ -1,0 +1,32 @@
+#pulse-overlay {
+    font-size: 50px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-family: 'Open Sans', Arial, sans-serif;
+    border: solid 2px whitesmoke;
+    padding: 10px 25px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    color: black;
+}
+
+#pulse-overlay.low {
+    background-color: lightgreen;
+}
+
+#pulse-overlay.medium {
+    background-color: lightyellow;
+}
+
+#pulse-overlay.high {
+    background-color: peachpuff;
+}
+
+#pulse-overlay.overdrive {
+    background-color: red;
+}
+
+#pulse-overlay.yikes {
+    background-color: darkred;
+}

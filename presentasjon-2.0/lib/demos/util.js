@@ -2,7 +2,8 @@
 
     window.util = {
         maxInterval: maxInterval,
-        section: section
+        section: section,
+        onSection: onSection
     };
 
     var lastEvent = _now();
@@ -27,6 +28,14 @@
             }
             else {
                 func(false);
+            }
+        });
+    }
+
+    function onSection(name, func) {
+        Reveal.addEventListener('slidechanged', function(e) {
+            if (e.currentSlide.dataset.state === name) {
+                func(true)
             }
         });
     }
