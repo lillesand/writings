@@ -1,18 +1,19 @@
 (function() {
 
-    /*
-     Three.js "tutorials by example"
-     Author: Lee Stemkoski
-     Date: July 2013 (three.js v59dev)
-     */
+    window.demo3d = {
+        running: false
+    };
 
-// MAIN
+    util.section('3d-demo', function(isInSection) {
+        demo3d.running = isInSection;
+    });
 
     // standard global variables
     var container, scene, camera, renderer;
 
     // custom global variables
     var video, videoImage, videoImageContext, videoTexture;
+    var movieScreen;
 
     init();
     animate();
@@ -24,7 +25,7 @@
         scene = new THREE.Scene();
 
         // CAMERA
-        var SCREEN_WIDTH = 500, SCREEN_HEIGHT = 300;
+        var SCREEN_WIDTH = 800, SCREEN_HEIGHT = 500;
         var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
         camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
         scene.add(camera);
@@ -72,9 +73,11 @@
         var movieMaterial = new THREE.MeshBasicMaterial( { map: videoTexture, overdraw: true, side:THREE.DoubleSide } );
         // the geometry on which the movie will be displayed;
         // 		movie image will be scaled to fit these dimensions.
-        var movieGeometry = new THREE.PlaneGeometry( 100, 100, 1, 1 );
-        var movieScreen = new THREE.Mesh( movieGeometry, movieMaterial );
-        movieScreen.position.set(0,50,0);
+        var movieGeometry = new THREE.BoxGeometry(100,100,100);
+
+        movieScreen = new THREE.Mesh(movieGeometry, movieMaterial);
+
+        movieScreen.position.set(0,70,0);
         scene.add(movieScreen);
 
         camera.position.set(0,150,300);
@@ -84,7 +87,9 @@
     function animate()
     {
         requestAnimationFrame( animate );
-        render();
+        if (demo3d.running) {
+            render();
+        }
     }
 
     function render()
@@ -95,6 +100,10 @@
             if ( videoTexture )
                 videoTexture.needsUpdate = true;
         }
+
+        movieScreen.rotation.x += 0.01;
+        movieScreen.rotation.y += 0.03;
+        movieScreen.rotation.z += 0.002;
 
         renderer.render( scene, camera );
     }
