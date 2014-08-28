@@ -1,10 +1,31 @@
 #feedback-ticker {
     width: 100%;
-    padding: 5px 0;
+    padding: 10px;
     background-color: lightgray;
     color: black;
     text-align: center;
     font-size: 30px;
+    border-bottom: solid lightgray 1px;
+    margin-bottom: 5px;
+}
+
+#feedback-ticker.red {
+    background-color: palevioletred;
+}
+
+#feedback-ticker.yellow {
+    background-color: lightgoldenrodyellow;
+}
+
+#feedback-ticker.green {
+    background-color: greenyellow;
+}
+
+#feedback-ticker .smiley {
+    margin-left: 30px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: inline-block;
 }
 
 #feedback ul {
