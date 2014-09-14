@@ -24,7 +24,7 @@
     function section(name, func) {
         Reveal.addEventListener('slidechanged', function(e) {
             if (e.currentSlide.dataset.state === name || e.currentSlide.parentElement.dataset.state === name) {
-                func(true)
+                func(e.currentSlide);
             }
             else {
                 func(false);
