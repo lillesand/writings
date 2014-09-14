@@ -1,19 +1,21 @@
 (function() {
 
     var talking = false;
+    var previousTimer;
 
     window.speechSynthesis.onvoiceschanged = function() {
         console.log('Available voices', window.speechSynthesis.getVoices().map(function(voice) { return voice.name; }));
 
         util.section('self-controlling', function(slide) {
             window.speechSynthesis.cancel(); // Cancel any ongoing speech
+            clearTimeout(previousTimer); // Cancel any pending speech
             talking = false;
             if (!slide) return;
 
             var voice = getVoice(slide.querySelector('.speech').dataset.voice);
 
             var sentence = slide.querySelector('.speech').textContent;
-            setTimeout(function() {
+            previousTimer = setTimeout(function() {
                 talking = true;
                 speak(voice, sentence, function() {
                     if (talking) {
