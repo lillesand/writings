@@ -13,9 +13,8 @@
             var commands = {
                 'hello': inSlide(function() { console.log('Hello world!'); }),
                 'color :color': inSlide(function(color) {
-                    var firstElement = currentSlide.querySelector('*');
-                    window.ele = firstElement;
-                    firstElement.style.color = color;
+                    var slideBackground = document.querySelector('.slide-background.present .slide-background.present');
+                    slideBackground.style.backgroundColor = color;
                 }),
                 'previous slide': inSlide(function() { Reveal.navigateUp(); }),
                 'next slide': inSlide(function() { Reveal.navigateDown(); })
