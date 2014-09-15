@@ -1,7 +1,7 @@
 (function() {
 
-    var host = document.querySelector('#service-url').textContent;
-    var socket = io.connect(host + ':80');
+    var serviceUrl = document.querySelector('#service-url');
+    var socket = io.connect(serviceUrl.dataset.protocol + '://' + serviceUrl.textContent.trim() + ':' + serviceUrl.dataset.port);
 
     var pulseElements = document.querySelectorAll('.live-pulse');
 
