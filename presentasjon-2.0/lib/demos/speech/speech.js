@@ -1,30 +1,39 @@
 (function() {
 
     var talking = false;
-    var previousTimer;
+    var previousSpeechTimer;
+    var changeSlideTimer;
 
     window.speechSynthesis.onvoiceschanged = function() {
         console.log('Available voices', window.speechSynthesis.getVoices().map(function(voice) { return voice.name; }));
 
         util.section('self-controlling', function(slide) {
             window.speechSynthesis.cancel(); // Cancel any ongoing speech
-            clearTimeout(previousTimer); // Cancel any pending speech
+            clearTimeout(previousSpeechTimer); // Cancel any pending speech
+            clearTimeout(changeSlideTimer); // Cancel any ongoing slide change
             talking = false;
+
             if (!slide) return;
 
-            var voice = getVoice(slide.querySelector('.speech').dataset.voice);
+            var speechElement = slide.querySelector('.speech');
+            var voice = getVoice(speechElement.dataset.voice);
+            var delayBeforeTalking = speechElement.dataset.initialDelay || 1500;
+            var delayBeforeChangingSlide = speechElement.dataset.navigationDelay || 1500;
+            var sentence = speechElement.textContent;
 
-            var sentence = slide.querySelector('.speech').textContent;
-            previousTimer = setTimeout(function() {
+            previousSpeechTimer = setTimeout(function() {
                 talking = true;
                 speak(voice, sentence, function() {
                     if (talking) {
                         // If you finished talking without being canceled (i.e. a new page loaded), navigate to the next slide
-                        Reveal.navigateDown();
+                        changeSlideTimer = setInterval(function() {
+                            Reveal.navigateDown();
+                        }, delayBeforeChangingSlide);
+
                     }
                     talking = false;
                 });
-            }, 1500);
+            }, delayBeforeTalking);
         });
 
         function speak(voice, sentence, then) {
