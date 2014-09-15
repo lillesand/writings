@@ -18,31 +18,32 @@
             if (!slide) return;
 
             var speechElement = slide.querySelector('.speech');
+            var startButton = slide.querySelector('button.start');
 
             if (speechElement) {
-                var voice = getVoice(speechElement.dataset.voice);
-                var delayBeforeTalking = speechElement.dataset.initialDelay || 1500;
-                var delayBeforeChangingSlide = speechElement.dataset.navigationDelay || 1500;
-                var sentence = speechElement.textContent;
+                if (startButton) {
+                    speechElement.style.display = 'none';
+                    startButton.style.display = 'block';
 
-                timers = scheduleSpeaking(voice, sentence, delayBeforeChangingSlide, delayBeforeTalking);
+                    startButton.addEventListener('click', function() {
+                        timers = scheduleSpeaking(speechElement);
+                        speechElement.style.display = 'block';
+                        startButton.style.display = 'none';
+                    });
+                }
+                else {
+                    timers = scheduleSpeaking(speechElement);
+                }
             }
         });
 
-        function speak(voice, sentence, then) {
-            var msg = new SpeechSynthesisUtterance(sentence);
-            msg.voice = voice;
-            msg.addEventListener('end', then);
+        function scheduleSpeaking(speechElement) {
+            var voice = getVoice(speechElement.dataset.voice);
+            var delayBeforeTalking = speechElement.dataset.initialDelay || 1500;
+            var delayBeforeChangingSlide = speechElement.dataset.navigationDelay || 1500;
+            var sentence = speechElement.textContent;
 
-            //IMPORTANT!! Do not remove: Logging the object out fixes some onend firing issues.
-            console.log(msg);
-            //placing the speak invocation inside a callback fixes ordering and onend issues.
-            setTimeout(function () {
-                window.speechSynthesis.speak(msg);
-            }, 0);
-        }
 
-        function scheduleSpeaking(voice, sentence, delayBeforeChangingSlide, delayBeforeTalking) {
             var speechTimer, navigationTimer;
             speechTimer = setTimeout(function () {
                 talking = true;
@@ -62,6 +63,19 @@
                 speech: speechTimer,
                 navigation: navigationTimer
             };
+        }
+
+        function speak(voice, sentence, then) {
+            var msg = new SpeechSynthesisUtterance(sentence);
+            msg.voice = voice;
+            msg.addEventListener('end', then);
+
+            //IMPORTANT!! Do not remove: Logging the object out fixes some onend firing issues.
+            console.log(msg);
+            //placing the speak invocation inside a callback fixes ordering and onend issues.
+            setTimeout(function () {
+                window.speechSynthesis.speak(msg);
+            }, 0);
         }
 
         function getVoice(wanted) {
