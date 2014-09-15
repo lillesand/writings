@@ -14,7 +14,7 @@
         messageElement.textContent = data.message;
 
         var ul = document.querySelector('#feedback ul');
-        ul.appendChild(messageElement);
+        ul.insertBefore(messageElement, ul.firstChild);
     });
 
     socket.emit('consume');
