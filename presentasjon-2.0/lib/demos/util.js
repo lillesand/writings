@@ -35,7 +35,7 @@
     function onSection(name, func) {
         Reveal.addEventListener('slidechanged', function(e) {
             if (e.currentSlide.dataset.state === name) {
-                func(true)
+                func(e.currentSlide);
             }
         });
     }

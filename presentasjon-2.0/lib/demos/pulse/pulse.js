@@ -5,7 +5,12 @@
 
     var pulseElements = document.querySelectorAll('.live-pulse');
 
+    var pulseCounter = 0;
+    var pulseHistory = [
+    ];
+
     socket.on('pulse', function (data) {
+        pulseHistory.push([pulseCounter++, data.pulse]);
         for (var i = 0; i < pulseElements.length; ++i) {
             var pulseElement = pulseElements[i];
 
@@ -27,8 +32,34 @@
        else {
            hugeLivePulseElement.style.display = 'none';
        }
-
     });
+
+
+    (function() {
+
+        var graphDiv = slide.querySelector('.graph');
+        var graph = new Dygraph(graphDiv, pulseHistory, {
+            labels: ['tid', 'pulse'],
+            valueRange: [0, 180],
+            legend: 'always',
+            title: 'Pulse',
+            showRoller: false,
+            ylabel: 'BPM'
+        });
+
+        util.onSection('pulse-summary', function(slide) {
+            var pulseHistory = [
+                [1, 2],
+                [2, 4],
+                [3, 5],
+                [4, 2],
+                [5, 3],
+                [6, 10]
+            ];
+        });
+
+    })();
+
 
     function pulseText(pulse) {
         var pulse = parseInt(pulse);
