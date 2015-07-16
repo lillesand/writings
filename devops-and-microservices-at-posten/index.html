@@ -114,10 +114,84 @@
 						- not implemented
 					</section>
 
-					<section>
+					<section data-slide-type="poeng">
 						Automatiser alt som skal gjøres i produksjon. Manuelle operasjoner bør være et absolutt unntak.
 					</section>
 				</section>
+
+
+				<section id="micro-services-the-beginning">
+					<section>
+						Når store applikasjoner ble flyttet merket vi smerten ved store applikasjoner bedre. Det er en ting å deploye en lettbent, liten applikasjon ofte, men når beistet begynner å bli mange hundre tusen kodelinjer er det ikke like gøy. Uten at vi hadde ord for det vi drev på med, begynte vi å fokusere på å bryte opp funksjonalitet og unngå å la de store appene våre vokse videre.
+					</section>
+
+					<section>
+						Begynte å dele opp applikasjoner
+					</section>
+
+					<section data-slide-type="tabbe">
+						Applikasjoner som ble så store at utviklingen begynte å gå tregere
+					</section>
+
+					<section data-slide-type="poeng">
+						En applikasjon skal gjøre én ting. Se etter muligheten for å lage egne applikasjoner av ting som vokser i sin egen retning.
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						Når store applikasjoner ble flyttet merket vi smerten ved store applikasjoner bedre. Det er en ting å deploye en lettbent, liten applikasjon ofte, men når beistet begynner å bli mange hundre tusen kodelinjer er det ikke like gøy. Uten at vi hadde ord for det vi drev på med, begynte vi å fokusere på å bryte opp funksjonalitet og unngå å la de store appene våre vokse videre.
+					</section>
+
+					<section data-slide-type="tabbe">
+						TODO
+					</section>
+
+					<section data-slide-type="poeng">
+						TODO
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						Mens vi stadig migrerte mer kritiske applikasjoner over på ny infrastruktur som vi driftet selv, ble vi tvunget til å se i øyene at drift faktisk er et fagfelt. Vi gikk på flere smeller med backup, overvåkning, hardening og så videre. Det som er interessant å se i ettertid er hvordan våre løsninger på konkrete problemer har ledet oss til infrastruktur som er helt i henhold til det som beskrives i DevOps-litteratur – med noen interessante unntak.
+					</section>
+
+					<section data-slide-type="tabbe">
+						TODO
+					</section>
+
+					<section data-slide-type="poeng">
+						TODO
+					</section>
+				</section>
+
+				<section>
+					<section>
+						Ut fra de erfaringene vi gjorde oss, ble stadig mindre applikasjoner en naturlig følge. Kostnaden per applikasjon ble drevet ned, men med kjøpet fikk vi annen type kompleksitet enn vi var vant til. Applikasjonsutvikling og -drift måtte industrialiseres, og vi gikk inn i microservice-tidsalderen. Vi lærte at vi trengte logaggregering, monitorering, isolasjon mellom applikasjoner, automatisk failover for kritisk funksjonalitet, valg av desentraliserte teknologier som OAuth for kjernekomponenter og mye annet.
+					</section>
+
+					<section data-slide-type="tabbe">
+						TODO
+					</section>
+
+					<section data-slide-type="poeng">
+						TODO
+					</section>
+				</section>
+
+				<section>
+					<section>
+						Logaggregering
+					</section>
+
+					<section data-slide-type="tabbe">
+						TODO: Screenshot av logging fra 2 instanser av 4 applikasjoner samtidig som det deployes
+					</section>
+				</section>
+
 
 
 
@@ -125,6 +199,22 @@
 					<section>
 						Oppsummér poengene som har vært gjort så langt.
 					</section>
+
+					<section>
+						Poenger vi har notert. Sjekk om alt dette er med i timeline, og hvis ikke: bør det være det?
+
+						* Gjør ting gradvis! Ikke implementer det boka sier du skal gjøre, men løs det problemet du faktisk har. Men se hva boka sier du skal gjøre når du har problemet – det er ikke sikkert du trenger å finne opp kruttet selv.
+						* Du kan ikke "implementere DevOps" eller "lage micro services". Dette er noe som må vokse frem organisk gjennom at et ansvarliggjort team føler på smerter og har lov til å lage løsninger. Ikke bygg platform for å bygge platform!
+						* Ikke lag ting før du trenger. Løs faktiske behov, ikke implementer andre sine gode ideer.
+						* Synliggjør verdien av IT-oppgavene for andre enn IT. Sparer du penger? Kortere time to market? Vis og bevis det! Har det ingen effekt som er synlig for andre enn IT? Bør du egentlig gjøre det da..?
+						* Unngå single point of failures , komponenter som ikke kan deployes uten nedetid
+						* Driftsavdeling: inn i utviklingsteamet – eller helt ut
+						* Utviklere kan egentlig ikke Ops
+						* Overvåkning er vanskelig
+						* Har du 24/7 beredskap? Trenger du det? Har du egentlig?
+						* Det er omvendt korrelasjon mellom størrelsen på applikasjonen og hvor ofte de kan deployes. Interessant kausalitet, fordi det driver hverandre begge veier.
+					</section>
+
 				</section>
 
 				<section id="hovedpoeng">
@@ -146,6 +236,7 @@
 				<section id="ideer/backup">
 					<ul>
 						<li>Øv på feilsituasjoner – firedrills</li>
+						<li>Hvor micro er en microservice?</li>
 					</ul>
 				</section>
 
