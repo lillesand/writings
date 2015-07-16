@@ -75,6 +75,52 @@
 					</section>
 				</section>
 
+				<section id="nedetidsfri-deploy">
+					<section>
+						Etterhvert som infrastrukturen vi driftet selv vokste og ble mer stabilt økte hyppigheten på deploys veldig, og vi begynte fort å kjenne smerten ved at deployments medførte nedetid og var noe omfattende. Her begynte salg og marked å merke at dette miljøet var noe annet enn de hadde fra før, og vi begynte å migrere gamle applikasjoner over på den nye, smidige infrastrukturen.
+					</section>
+
+					<section data-slide-type="tabbe">
+						Appene vokste. Hyppige deployments. Måtte deploye på kveldstid med manuelle steg for å sikre at applikasjonen ikke ble utilgjengelig for brukerne.
+					</section>
+
+					<section data-slide-type="poeng">
+						Rigg for nedetidsfri deployment
+
+						<aside class="notes">
+							Når applikasjoene deployes ofte begynner det snart å gjøre vondt dersom det fører med seg nedetid. Dette bør være et prinsipp for alle applikasjoner som inngår, inkludert databasen.
+						</aside>
+					</section>
+				</section>
+
+
+				<section id="automatisering">
+					<section>
+						_Alle_ operasjoner som er nødvendig for drift bør automatiseres
+					</section>
+
+					<section data-slide-type="tabbe">
+						Hadde begynt å automatisere så smått, men mye manglet. Produksjonssatte bugga versjon av booking. Skulle rulle tilbake
+						`ln -sf booking.jar booking-2.11.jar`
+						`ln -sf booking-2.11.jar booking.jar`
+
+						<aside class="notes">
+							Hva er riktig syntax for symlink?
+						</aside>
+					</section>
+
+					<section data-slide-type="tabbe">
+						`be rake production:rollback`
+						- not implemented
+					</section>
+
+					<section>
+						Automatiser alt som skal gjøres i produksjon. Manuelle operasjoner bør være et absolutt unntak.
+					</section>
+				</section>
+
+
+
 				<section id="oppsummering">
 					<section>
 						Oppsummér poengene som har vært gjort så langt.
@@ -94,6 +140,13 @@
 							Flette det inn
 						</aside>
 					</section>
+				</section>
+
+
+				<section id="ideer/backup">
+					<ul>
+						<li>Øv på feilsituasjoner – firedrills</li>
+					</ul>
 				</section>
 
 			</div>
