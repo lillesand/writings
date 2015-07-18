@@ -58,7 +58,105 @@
 
 				<section id="intro">
 					<section>
-						Teamet har gått fra 2-3 utviklere som sendte WAR-filer til en dedikert driftsleverandør til å kjøre full DevOps med virtualisert infrastruktur, instrumentering med Puppet, nedetidsfri deployment på dagtid, logaggregering med Logstash og full buzzwordbonanza.
+						Fullskjermbilde av Posten og Bring (ta noe reklamemateriell)
+						<aside class="notes">
+							Introduksjon av Posten/Bring. Keep it short.
+
+							<ul>
+								<li>Alle vet hvem Posten er.</li>
+								<li>IT i Posten: Posten er, som mange andre, i stadig større grad en it-virksomhet</li>
+								<li>Si noe om størrelsen på IT i Posten</li>
+								<li>Noe standardprodukt, noe tilpasning, noe skreddersøm.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						Bring Web Team (finn passende bilde)
+
+						<aside class="notes">
+							Om teamet:
+
+							<ul>
+								<li>
+									Sped begynnelse i 2008. Jøran rett ut fra NTNU som første utvikler. Det første jeg gjorde var å designe et gigantisk databaseskjema som heldigvis aldri ble brukt.
+								</li>
+								<li>Premisset for teamet: smidig! Endre måten Posten gjør software på.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						Hva lager vi?
+
+						<aside class="notes">
+							Få med litt om hvilke tjenester vi har ansvaret for. Dropp et par navn, men fokuser primært på å vise at det ikke bare er noe smått tøyesri.
+						</aside>
+					</section>
+
+					<section>
+						TODO: Screenshots som viser en del av de fete tingene vi har.
+						Hvor er vi?
+
+						<aside class="notes">
+							Vi er stolte over hvor langt vi har kommet. Full buzzword compliance:
+							<!-- TODO: Finn ut hvordan vi skal legge fram dette! -->
+							<ul>
+								<li>instrumentering med Puppet<li>
+								<li>nedetidsfri deployment på dagtid</li>
+								<li>Automatisert overvåkning av logger basert på terskelverdier</li>
+								<li>Logaggregering</li>
+							</ul>
+
+							Dette er fortellingen om reisen dit, og hvilke lekser vi har lært på veien.<br>
+							Vi tror mye av det vi har lært er universelt. Tenk på hvor din organisasjon er i dag, og se hvilke steg vi har tatt derfra.
+						</aside>
+					</section>
+
+					<section>
+						Spørsmål?
+
+						<aside class="notes">
+							Ikke vær redd for å stille spørsmål! Det er ikke alt vi kan svare på, men ikke vær redd for å spørre.
+							Hvis du lurer på noe er det sikkert flere som lurer på det samme.
+
+							Spør underveis eller heng igjen etterpå!
+						</aside>
+					</section>
+				</section>
+
+				<section id="smidig">
+					<section>
+						Den spede begynnelsen!
+					</section>
+
+					<section>
+						Smidig deployment
+
+						<aside class="notes">
+							Finn et bilde som illustrerer en gammel server
+
+							<ul>
+								<li>Gjorde smidig til tross for at det ikke var plass til å gjøre smidig</li>
+								<li>Hadde ingen tilgang til egne QA- eller prodservere</li>
+								<li>Alle endringer disse miljøene måtte bestilles gjennom et ITIL-regime</li>
+								<li>Endte opp med å bestille prodsettinger up front: annenhver uke, med mest mulig fleks i når de skulle gjøres</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-slide-type="poeng">
+						Organisasjonen din er neppe klar for smidig. Vær en organisasjon i organisasjonen!
+
+						<aside class="notes">
+							Det er alltid utfordringer med det vi ønsker å gjøre. Where there's a will there's a way.
+							Det var mange som var uenige i det vi gjorde, og vi gjorde mye vi egentlig ikke skulle.
+						</aside>
+					</section>
+
+					<section>
+						Teamet har gått fra 2-3 utviklere som sendte WAR-filer til en dedikert driftsleverandør til å kjøre
+						full DevOps med virtualisert infrastruktur.
 
 						<ul>
 							<li>Lite smidig organisasjon</li>
@@ -66,12 +164,9 @@
 							<li>Andre deler var godt fornøyd med og satt i tingens tilstand</li>
 						</ul>
 					</section>
-					<section data-slide-type="poeng">
-						Organisasjonen din er neppe klar for smidig. Vær en organisasjon i organisasjonen!
-					</section>
 				</section>
 
-				<section id="begynnelsen">
+				<section >
 					<section>
 						Ville ha mer kontroll på hvordan deployment fungerte, siden vi brukte mye tid per deploy. Bestilte egne servere, og begynte å automatisere deployment, og byttet ut stor appserver med liten container. Prøver ut på en (liten) app.
 					</section>
@@ -262,6 +357,7 @@
 				<section id="ideer/backup">
 					<ul>
 						<li>Øv på feilsituasjoner – firedrills</li>
+						<li>Sikkerhet! Med større frihet kommer større ansvar.</li>
 						<li>Hvor micro er en microservice?</li>
 					</ul>
 				</section>
