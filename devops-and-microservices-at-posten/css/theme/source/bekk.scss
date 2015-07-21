@@ -1,0 +1,55 @@
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fast.fonts.net/cssapi/1927d443-3863-4afb-887a-5e2a888b69cb.css);
+
+// Override theme settings (see ../template/settings.scss)
+//$mainFont: "Conduit ITC W01 Regular",Arial,sans-serif;
+$mainFontSize: 38px;
+$mainColor: #C6C8CA; // BEKK standard
+//$headingFont: "Fedra Serif",Georgia,serif;
+$headingColor: #EBEBEB ; // Section title color
+$headingFontWeight: 600;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #1A1A1A; // BEKK dark
+$linkColor: #FD5158; // BEKK red
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionColor: #FFF9AE; // BEKK Yellow
+$selectionBackgroundColor: rgba(136, 126, 111, 0.99);
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+div.illustrationCircle {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+}
+.illustrationCircle p.illustrationCircle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    margin: 0;
+}
+.backgroundColor-red {
+    background-color: #DF565B;
+}
+.backgroundColor-green {
+    background-color: #28BCB3;
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
