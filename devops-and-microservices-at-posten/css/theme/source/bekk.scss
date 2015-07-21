@@ -42,6 +42,13 @@ div.illustrationCircle {
     font-size: 1.8rem;
     margin: 0;
 }
+.imgCircle, .illustrationCircle {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+}
 .backgroundColor-red {
     background-color: #DF565B;
 }
