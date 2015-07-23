@@ -31,6 +31,12 @@
 		<div class="reveal">
 
 			<div class="slides">
+				<section id="avklaringer">
+					<ul>
+						<li>Er "den røde tråden" litt for springende? Er det vanskelig å følge flyten og hva vi snakker om?</li>
+					</ul>
+				</section>
+
 
 				<section id="intro-speakers">
 					<section>
@@ -294,7 +300,7 @@
 				</section>
 
 
-				<section>
+				<section id="lær-drift">
 					<section>
 						Mens vi stadig migrerte mer kritiske applikasjoner over på ny infrastruktur som vi driftet selv, ble vi tvunget til å se i øyene at drift faktisk er et fagfelt. Vi gikk på flere smeller med backup, overvåkning, hardening og så videre. Det som er interessant å se i ettertid er hvordan våre løsninger på konkrete problemer har ledet oss til infrastruktur som er helt i henhold til det som beskrives i DevOps-litteratur – med noen interessante unntak.
 					</section>
@@ -304,7 +310,19 @@
 					</section>
 
 					<section data-slide-type="poeng">
-						TODO
+						Det er mye du skal kunne for å gjøre drift riktig. Hvis du er ren utvikler er det stor sjanse for at du ikke kan det.
+
+						<aside class="notes">
+							Alt kan læres!
+							<ul>
+								<li>Sikkerhet: OS-hardening</li>
+								<li>Sonemodeller</li>
+								<li>Virtualisering</li>
+								<li>Nettverk</li>
+								<li>Backup</li>
+								<li>Overvåkning</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 
@@ -335,8 +353,6 @@
 					</section>
 				</section>
 
-
-
 				<section id="devops-er-en-markedsfordel">
 					<section>
 						Etterhvert som stadig flere applikasjoner begynte salgsorganisasjonen å irritere seg over at endringer på noen applikasjoner kunne komme ut på under en dag, mens andre kunne ta opp til flere uker. Hvorfor måtte det være sånn!? Det endte med at Salg finansierte migreringen av resten av porteføljen over på den nye infrastrukturen. Dette ble på mange måte en øyeåpner for resten av organisasjonen, som innså at infrastruktur er for flere enn IT.
@@ -358,7 +374,7 @@
 					</section>
 				</section>
 
-				<section>
+				<section id="industrialisering">
 					<section>
 						Ut fra de erfaringene vi gjorde oss, ble stadig mindre applikasjoner en naturlig følge. Kostnaden per applikasjon ble drevet ned, men med kjøpet fikk vi annen type kompleksitet enn vi var vant til. Applikasjonsutvikling og -drift måtte industrialiseres, og vi gikk inn i microservice-tidsalderen. Vi lærte at vi trengte logaggregering, monitorering, isolasjon mellom applikasjoner, automatisk failover for kritisk funksjonalitet, valg av desentraliserte teknologier som OAuth for kjernekomponenter og mye annet.
 					</section>
@@ -374,7 +390,7 @@
 
 				<section>
 					<section>
-						Logaggregering
+						Logaggregering og monitorering
 					</section>
 
 					<section data-slide-type="tabbe">
