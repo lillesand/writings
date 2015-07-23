@@ -56,6 +56,7 @@
 					</section>
 
 					<aside class="notes">
+						Typ: 30 sek hver.
 						Bittekort bio om hver av oss. Hva gjør vi her? Bakgrunn osv.
 						Forslag til twist: bytt om bilde og navn! Sjekk om folk følger med! Hoho!
 					</aside>
@@ -64,6 +65,7 @@
 				<section id="intro">
 					<section>
 						Fullskjermbilde av Posten og Bring (ta noe reklamemateriell)
+
 						<aside class="notes">
 							Introduksjon av Posten/Bring. Keep it short.
 
@@ -71,6 +73,7 @@
 								<li>Alle vet hvem Posten er.</li>
 								<li>IT i Posten: Posten er, som mange andre, i stadig større grad en it-virksomhet</li>
 								<li>Si noe om størrelsen på IT i Posten</li>
+								<li>En del vekst gjennom oppkjøp: typisk kjøper seg inn i nye markeder. Bud, Cargo, osv.</li>
 								<li>Noe standardprodukt, noe tilpasning, noe skreddersøm.</li>
 							</ul>
 						</aside>
@@ -83,9 +86,7 @@
 							Om teamet:
 
 							<ul>
-								<li>
-									Sped begynnelse i 2008. Jøran rett ut fra NTNU som første utvikler. Det første jeg gjorde var å designe et gigantisk databaseskjema som heldigvis aldri ble brukt.
-								</li>
+								<li>Sped begynnelse i 2008. Jøran rett ut fra NTNU som første utvikler. Det første jeg gjorde var å designe et gigantisk databaseskjema som heldigvis aldri ble brukt.</li>
 								<li>Premisset for teamet: smidig! Endre måten Posten gjør software på.</li>
 							</ul>
 						</aside>
@@ -95,7 +96,13 @@
 						Hva lager vi?
 
 						<aside class="notes">
-							Få med litt om hvilke tjenester vi har ansvaret for. Dropp et par navn, men fokuser primært på å vise at det ikke bare er noe smått tøyesri.
+							<ul>
+								<li>Få med litt om hvilke tjenester vi har ansvaret for. Dropp et par navn, men fokuser primært på å vise at det ikke bare er noe smått tøyesri.</li>
+								<li>Brukstall</li>
+								<li>Omsetningstall</li>
+								<li>Dette er ikke et rent tech-miljø, men forretningskritiske systemer.</li>
+							</ul>
+
 						</aside>
 					</section>
 
@@ -104,8 +111,10 @@
 						Hvor er vi?
 
 						<aside class="notes">
+							Fang oppmerksomheten sånn at folk våkner opp.
+
+
 							Vi er stolte over hvor langt vi har kommet. Full buzzword compliance:
-							<!-- TODO: Finn ut hvordan vi skal legge fram dette! -->
 							<ul>
 								<li>instrumentering med Puppet<li>
 								<li>nedetidsfri deployment på dagtid</li>
@@ -119,6 +128,7 @@
 					</section>
 
 					<section>
+						TODO: Ta med slide eller ikke?
 						Spørsmål?
 
 						<aside class="notes">
@@ -129,6 +139,7 @@
 						</aside>
 					</section>
 				</section>
+
 
 				<section id="smidig">
 					<section>
@@ -171,7 +182,7 @@
 					</section>
 				</section>
 
-				<section >
+				<section id="egen-deploy">
 					<section>
 						Ville ha mer kontroll på hvordan deployment fungerte, siden vi brukte mye tid per deploy. Bestilte egne servere, og begynte å automatisere deployment, og byttet ut stor appserver med liten container. Prøver ut på en (liten) app.
 					</section>
@@ -261,21 +272,36 @@
 
 					<section data-slide-type="poeng">
 						En applikasjon skal gjøre én ting. Se etter muligheten for å lage egne applikasjoner av ting som vokser i sin egen retning.
+
+						<aside class="notes">
+							<ul>
+								<li>Vurdér om vi skal snakke om hva som er riktig størrelse på en micro service.</li>
+								<li>Er det riktig å skille ut funksjonaliteten? Dette kommer an på flere faktorer, inkludert endringstakt av koden.</li>
+								<li>Arkitektur er ikke et mål i seg selv!!</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 
 
-				<section>
+				<section id="devops-er-en-markedsfordel">
 					<section>
-						Når store applikasjoner ble flyttet merket vi smerten ved store applikasjoner bedre. Det er en ting å deploye en lettbent, liten applikasjon ofte, men når beistet begynner å bli mange hundre tusen kodelinjer er det ikke like gøy. Uten at vi hadde ord for det vi drev på med, begynte vi å fokusere på å bryte opp funksjonalitet og unngå å la de store appene våre vokse videre.
+						Etterhvert som stadig flere applikasjoner begynte salgsorganisasjonen å irritere seg over at endringer på noen applikasjoner kunne komme ut på under en dag, mens andre kunne ta opp til flere uker. Hvorfor måtte det være sånn!? Det endte med at Salg finansierte migreringen av resten av porteføljen over på den nye infrastrukturen. Dette ble på mange måte en øyeåpner for resten av organisasjonen, som innså at infrastruktur er for flere enn IT.
 					</section>
 
-					<section data-slide-type="tabbe">
-						TODO
+					<section data-slide-type="smerte">
+						Finansiering :(
+
+						<aside class="notes">
+							<ul>
+								<li>"De høye herrer" i IT så ikke nytten med at vi kasta masse penger på å drive infrastrukturen på annen måte enn de var vant til. Hvorfor skulle de betale for å vi skulle løse samme problem som driftsleverandøren?</li>
+								<li>Endte med at salgsorganisasjonen betalte for å migrere resten av appene over på det "smidige driftsmiljøet"</li>
+							</ul>
+						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
-						TODO
+						Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene!
 					</section>
 				</section>
 
