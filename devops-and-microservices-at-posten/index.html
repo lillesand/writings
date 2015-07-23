@@ -62,6 +62,38 @@
 					</aside>
 				</section>
 
+				<section id="premisser">
+					<section>
+						Vi skal ikke introdusere DevOps, men…
+
+						<aside class="notes">
+							Det vi snakker om her fordrer at det interesse – eller på et eller annet nivå mulighet for – å integrere eller smelte sammen drifts- og utviklingsorganisasjonen. Det <i>er</i> vanskelig, men det er - etter vår mening - et premiss for å lykkes med drift.
+						</aside>
+					</section>
+
+					<section>
+						Tilstanden til produksjonsmiljøer
+						<div class="emoticon">💩</div>
+
+						<aside class="notes">
+							<ul>
+								<li>Marginene på å selge drift er knøttsmå</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Du tror du har…</h2>
+						<ul>
+							<li>Backup</li>
+							<li>Overvåkning</li>
+							<li>Sikkerhet</li>
+							<li>Likt konfigurte servere</li>
+							<li>Mulighet til å restore servere</li>
+						</ul>
+					</section>
+				</section>
+
 				<section id="intro">
 					<section>
 						Fullskjermbilde av Posten og Bring (ta noe reklamemateriell)
@@ -257,6 +289,21 @@
 				</section>
 
 
+				<section>
+					<section>
+						Mens vi stadig migrerte mer kritiske applikasjoner over på ny infrastruktur som vi driftet selv, ble vi tvunget til å se i øyene at drift faktisk er et fagfelt. Vi gikk på flere smeller med backup, overvåkning, hardening og så videre. Det som er interessant å se i ettertid er hvordan våre løsninger på konkrete problemer har ledet oss til infrastruktur som er helt i henhold til det som beskrives i DevOps-litteratur – med noen interessante unntak.
+					</section>
+
+					<section data-slide-type="tabbe">
+						Tok litt tid før vi etablerte mye av det som kommer "ut av boksen" når man kjøper ferdig drift. Backup, overvåkning, hardening av hosts. Men, vær også klar over: mange driftsleverandører leverer dette. Men er du sikker på at det funker?
+					</section>
+
+					<section data-slide-type="poeng">
+						TODO
+					</section>
+				</section>
+
+
 				<section id="micro-services-the-beginning">
 					<section>
 						Når store applikasjoner ble flyttet merket vi smerten ved store applikasjoner bedre. Det er en ting å deploye en lettbent, liten applikasjon ofte, men når beistet begynner å bli mange hundre tusen kodelinjer er det ikke like gøy. Uten at vi hadde ord for det vi drev på med, begynte vi å fokusere på å bryte opp funksjonalitet og unngå å la de store appene våre vokse videre.
@@ -284,6 +331,7 @@
 				</section>
 
 
+
 				<section id="devops-er-en-markedsfordel">
 					<section>
 						Etterhvert som stadig flere applikasjoner begynte salgsorganisasjonen å irritere seg over at endringer på noen applikasjoner kunne komme ut på under en dag, mens andre kunne ta opp til flere uker. Hvorfor måtte det være sånn!? Det endte med at Salg finansierte migreringen av resten av porteføljen over på den nye infrastrukturen. Dette ble på mange måte en øyeåpner for resten av organisasjonen, som innså at infrastruktur er for flere enn IT.
@@ -302,21 +350,6 @@
 
 					<section data-slide-type="poeng">
 						Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene!
-					</section>
-				</section>
-
-
-				<section>
-					<section>
-						Mens vi stadig migrerte mer kritiske applikasjoner over på ny infrastruktur som vi driftet selv, ble vi tvunget til å se i øyene at drift faktisk er et fagfelt. Vi gikk på flere smeller med backup, overvåkning, hardening og så videre. Det som er interessant å se i ettertid er hvordan våre løsninger på konkrete problemer har ledet oss til infrastruktur som er helt i henhold til det som beskrives i DevOps-litteratur – med noen interessante unntak.
-					</section>
-
-					<section data-slide-type="tabbe">
-						TODO
-					</section>
-
-					<section data-slide-type="poeng">
-						TODO
 					</section>
 				</section>
 
