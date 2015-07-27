@@ -277,10 +277,18 @@
 				<section id="nedetidsfri-deploy">
 					<section>
 						Etterhvert som infrastrukturen vi driftet selv vokste og ble mer stabilt økte hyppigheten på deploys veldig, og vi begynte fort å kjenne smerten ved at deployments medførte nedetid og var noe omfattende. Her begynte salg og marked å merke at dette miljøet var noe annet enn de hadde fra før, og vi begynte å migrere gamle applikasjoner over på den nye, smidige infrastrukturen.
+
+						<aside class="notes">
+							Unngå single point of failures , komponenter som ikke kan deployes uten nedetid
+						</aside>
 					</section>
 
 					<section data-slide-type="tabbe">
 						Appene vokste. Hyppige deployments. Måtte deploye på kveldstid med manuelle steg for å sikre at applikasjonen ikke ble utilgjengelig for brukerne.
+
+						<aside class="notes">
+							Diskuter hvordan dette også gjelder infrastruktur. Vi satt en hel fredags kveld for å oppgradere MySQL én minorversjon.
+						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
@@ -289,6 +297,10 @@
 						<aside class="notes">
 							Når applikasjoene deployes ofte begynner det snart å gjøre vondt dersom det fører med seg nedetid. Dette bør være et prinsipp for alle applikasjoner som inngår, inkludert databasen.
 						</aside>
+					</section>
+
+					<section>
+						TODO: Dette er enkelt for webapps, men en jævla pandoras shitbox for persistent state.
 					</section>
 				</section>
 
@@ -318,6 +330,30 @@
 					</section>
 				</section>
 
+				<section id="overvåkning">
+					<section>
+						Overvåkning er vanskelig!
+
+						<aside class="notes">
+							Har du 24/7 beredskap? Trenger du det? Har du egentlig?
+						</aside>
+					</section>
+
+					<section>
+						TODO: Problem.
+
+						Applikasjoner som går ned uten at vi merker det.
+					</section>
+
+					<section>
+						TODO: Poeng
+
+						Riktig nivå på logging, riktig nivå på alarmer som går. Den personen som får alarmen må kjenne applikasjonen og ha mulighet til å gjøre tilpasninger.
+
+						Bruk Digipost sine erfaringer her
+					</section>
+
+				</section>
 
 				<section id="lær-drift">
 					<section>
@@ -373,6 +409,10 @@
 
 					<section data-slide-type="visdomsord">
 						Micro Services er en konsekvens av DevOps
+
+						<aside class="notes">
+							Det er omvendt korrelasjon mellom størrelsen på applikasjonen og hvor ofte de kan deployes. Interessant kausalitet, fordi det driver hverandre begge veier.
+						</aside>
 					</section>
 				</section>
 
@@ -394,6 +434,10 @@
 
 					<section data-slide-type="poeng">
 						Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene!
+
+						<aside class="notes">
+							Synliggjør verdien av IT-oppgavene for andre enn IT. Sparer du penger? Kortere time to market? Vis og bevis det! Har det ingen effekt som er synlig for andre enn IT? Bør du egentlig gjøre det da..?
+						</aside>
 					</section>
 				</section>
 
@@ -421,31 +465,6 @@
 					</section>
 				</section>
 
-
-
-
-				<section id="oppsummering">
-					<section>
-						Oppsummér poengene som har vært gjort så langt.
-					</section>
-
-					<section>
-						Poenger vi har notert. Sjekk om alt dette er med i timeline, og hvis ikke: bør det være det?
-
-						* Gjør ting gradvis! Ikke implementer det boka sier du skal gjøre, men løs det problemet du faktisk har. Men se hva boka sier du skal gjøre når du har problemet – det er ikke sikkert du trenger å finne opp kruttet selv.
-						* Du kan ikke "implementere DevOps" eller "lage micro services". Dette er noe som må vokse frem organisk gjennom at et ansvarliggjort team føler på smerter og har lov til å lage løsninger. Ikke bygg platform for å bygge platform!
-						* Ikke lag ting før du trenger. Løs faktiske behov, ikke implementer andre sine gode ideer.
-						* Synliggjør verdien av IT-oppgavene for andre enn IT. Sparer du penger? Kortere time to market? Vis og bevis det! Har det ingen effekt som er synlig for andre enn IT? Bør du egentlig gjøre det da..?
-						* Unngå single point of failures , komponenter som ikke kan deployes uten nedetid
-						* Driftsavdeling: inn i utviklingsteamet – eller helt ut
-						* Utviklere kan egentlig ikke Ops
-						* Overvåkning er vanskelig
-						* Har du 24/7 beredskap? Trenger du det? Har du egentlig?
-						* Det er omvendt korrelasjon mellom størrelsen på applikasjonen og hvor ofte de kan deployes. Interessant kausalitet, fordi det driver hverandre begge veier.
-					</section>
-
-				</section>
-
 				<section id="hovedpoeng">
 					<section>
 						<ul>
@@ -455,9 +474,18 @@
 						</ul>
 
 						<aside class="notes">
-							TODO: Finn ut hvordan vi strukturerer disse. Egne slides per poeng?
-							Flette det inn
+							TODO: Finn ut hvordan vi strukturerer disse. Egne slides per poeng?<br/>
+
+							Du kan ikke "implementere DevOps" eller "lage micro services". Dette er noe som må vokse frem organisk gjennom at et ansvarliggjort team føler på smerter og har lov til å lage løsninger. Ikke bygg platform for å bygge platform!
 						</aside>
+					</section>
+				</section>
+
+
+
+				<section id="oppsummering">
+					<section>
+						Oppsummér poengene som har vært gjort så langt.
 					</section>
 				</section>
 
