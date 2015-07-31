@@ -62,9 +62,9 @@
 					</aside>
 				</section>
 
-				<section id="intro">
+				<section id="intro" data-owner="jøran">
 					<section>
-						Fullskjermbilde av Posten og Bring (ta noe reklamemateriell)
+						TODO: Skaff video av sorteringssystem
 
 						<aside class="notes">
 							Introduksjon av Posten/Bring. Keep it short.
@@ -74,7 +74,7 @@
 							<ul>
 								<li>Alle vet hvem Posten er.</li>
 								<li>IT i Posten: Posten er, som mange andre, i stadig større grad en it-virksomhet</li>
-								<li>Si noe om størrelsen på IT i Posten</li>
+								<li>Si noe om størrelsen på IT i Posten: nesten all produksjon er IT-styrt (sortering osv)</li>
 								<li>En del vekst gjennom oppkjøp: typisk kjøper seg inn i nye markeder. Bud, Cargo, osv.</li>
 								<li>Noe standardprodukt, noe tilpasning, noe skreddersøm.</li>
 							</ul>
@@ -94,7 +94,7 @@
 						</aside>
 					</section>
 
-					<section>
+					<section data-owner="stian">
 						Hva lager vi?
 
 						<aside class="notes">
@@ -104,13 +104,16 @@
 								<li>Omsetningstall</li>
 								<li>Dette er ikke et rent tech-miljø, men forretningskritiske systemer.</li>
 							</ul>
-
 						</aside>
 					</section>
 
-					<section>
-						TODO: Screenshots som viser en del av de fete tingene vi har.
-						Hvor er vi?
+					<section data-owner="stian">
+						Vis hvor langt vi har kommet:
+
+						* Vis Kibana
+						* Vis dashboardet
+						* Vis Slack med feilvarsling basert på terskelverdier (automatisert overvåkning)
+						* Lag screencast/video av deployment
 
 						<aside class="notes">
 							Fang oppmerksomheten sånn at folk våkner opp.
@@ -130,7 +133,7 @@
 					</section>
 				</section>
 
-				<section id="hovedpoeng-teaser">
+				<section id="hovedpoeng-teaser" data-owner="jøran">
 					<section>
 						Konklusjonen
 					</section>
@@ -170,14 +173,14 @@
 					</section>
 
 					<section>
-						http://a.abcnews.com/images/US/ht_jean_claude_van_damme_volvo_truck_split_ll_131115_16x9_992.jpg
 						Ekstern driftsorganisasjon
-						<div class="emoticon fragment" style="font-size: 250px;">💩</div>
+						<div class="emoticon fragment" style="font-size: 150px;">💩</div>
 
 						<aside class="notes">
 							<ul>
 								<li>Vi startet med ekstern drift</li>
 								<li>Prøvde å jobbe med de forutsetningene</li>
+								<li>Lang lead time</li>
 								<li>Men alt vi trengte tok mye tid og det var mye feil</li>
 							</ul>
 						</aside>
@@ -261,7 +264,7 @@
 					</section>
 				</section>
 
-				<section id="egen-deploy" data-owner="stian">
+				<section id="start-smått" data-owner="stian">
 					<section>
 						Ville ha mer kontroll på hvordan deployment fungerte, siden vi brukte mye tid per deploy. Bestilte egne servere, og begynte å automatisere deployment, og byttet ut stor appserver med liten container. Prøver ut på en (liten) app.
 					</section>
@@ -292,13 +295,14 @@
 					</section>
 
 					<section data-slide-type="visdomsord">
+						TODO: Dette passer ikke inn.
 						Det finnes ingen Smidig uten kontinuerlige leveranser
 					</section>
 				</section>
 
 				<section id="nedetidsfri-deploy" data-owner="stian">
 					<section>
-						Etterhvert som infrastrukturen vi driftet selv vokste og ble mer stabilt økte hyppigheten på deploys veldig, og vi begynte fort å kjenne smerten ved at deployments medførte nedetid og var noe omfattende. Her begynte salg og marked å merke at dette miljøet var noe annet enn de hadde fra før, og vi begynte å migrere gamle applikasjoner over på den nye, smidige infrastrukturen.
+						Etterhvert som infrastrukturen vi driftet selv vokste og ble mer stabilt økte hyppigheten på deploys veldig, og vi begynte fort å kjenne smerten ved at deployments medførte nedetid og var noe omfattende.
 
 						<aside class="notes">
 							Unngå single point of failures , komponenter som ikke kan deployes uten nedetid
@@ -307,10 +311,6 @@
 
 					<section data-slide-type="tabbe">
 						Appene vokste. Hyppige deployments. Måtte deploye på kveldstid med manuelle steg for å sikre at applikasjonen ikke ble utilgjengelig for brukerne.
-
-						<aside class="notes">
-							Diskuter hvordan dette også gjelder infrastruktur. Vi satt en hel fredags kveld for å oppgradere MySQL én minorversjon.
-						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
@@ -318,10 +318,14 @@
 
 						<aside class="notes">
 							Når applikasjoene deployes ofte begynner det snart å gjøre vondt dersom det fører med seg nedetid. Dette bør være et prinsipp for alle applikasjoner som inngår, inkludert databasen.
+
+							<br/>
+
+							Bakoverkompatibiliet!
 						</aside>
 					</section>
 
-					<section>
+					<section data-slide-type="visdomsord">
 						TODO: Dette er enkelt for webapps, men en jævla pandoras shitbox for persistent state.
 					</section>
 				</section>
@@ -334,12 +338,12 @@
 
 					<section data-slide-type="tabbe">
 						`be rake production:rollback`
-						- not implemented
+						<div class="fragment">- not implemented</div>
 					</section>
 
 					<section data-slide-type="tabbe">
-						Hadde begynt å automatisere så smått, men mye manglet. Produksjonssatte bugga versjon av booking. Skulle rulle tilbake
-						`ln -sf booking.jar booking-2.11.jar`
+						Hadde begynt å automatisere så smått, men mye manglet. Produksjonssatte bugga versjon av booking. Skulle rulle tilbake<br>
+						`ln -sf booking.jar booking-2.11.jar`<br>
 						`ln -sf booking-2.11.jar booking.jar`
 
 						<aside class="notes">
@@ -379,11 +383,22 @@
 
 				<section id="lær-drift" data-owner="stian">
 					<section>
-						Mens vi stadig migrerte mer kritiske applikasjoner over på ny infrastruktur som vi driftet selv, ble vi tvunget til å se i øyene at drift faktisk er et fagfelt. Vi gikk på flere smeller med backup, overvåkning, hardening og så videre. Det som er interessant å se i ettertid er hvordan våre løsninger på konkrete problemer har ledet oss til infrastruktur som er helt i henhold til det som beskrives i DevOps-litteratur – med noen interessante unntak.
+						Lær kidsa drifting
+
+						<aside class="notes">
+							Mens vi stadig migrerte mer kritiske applikasjoner over på ny infrastruktur som vi driftet selv, ble vi tvunget til å se i øyene at drift faktisk er et fagfelt. Vi gikk på flere smeller med backup, overvåkning, hardening og så videre. Det som er interessant å se i ettertid er hvordan våre løsninger på konkrete problemer har ledet oss til infrastruktur som er helt i henhold til det som beskrives i DevOps-litteratur – med noen interessante unntak.
+						</aside>
 					</section>
 
 					<section data-slide-type="tabbe">
-						Tok litt tid før vi etablerte mye av det som kommer "ut av boksen" når man kjøper ferdig drift. Backup, overvåkning, hardening av hosts. Men, vær også klar over: mange driftsleverandører leverer dette. Men er du sikker på at det funker?
+						Tok litt tid før vi etablerte mye av det som kommer "ut av boksen" når man kjøper ferdig drift. Backup, overvåkning, hardening av hosts.
+						<aside class="notes">
+							<ul>
+								<li>Når dette gjøres i et DevOps-miljø av dumme utviklere er det naturlig for oss å bygge inn verifikasjon at det virker</li>
+								<li>Driftsleverandør setter opp backup og er fornøyd</li>
+								<li>Vi endte med å bygge inn automatisert verifikasjon både av løpende replisering og av fulle databasebackups</li>
+							</ul>
+						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
@@ -422,9 +437,10 @@
 
 						<aside class="notes">
 							<ul>
-								<li>Vurdér om vi skal snakke om hva som er riktig størrelse på en micro service.</li>
-								<li>Er det riktig å skille ut funksjonaliteten? Dette kommer an på flere faktorer, inkludert endringstakt av koden.</li>
-								<li>Arkitektur er ikke et mål i seg selv!!</li>
+								<li>Riktig størrelse for en micro service</li>
+								<li>Endringstakt for koden er faktor</li>
+								<li>Arkitektur er ikke et mål i seg selv: viktig å gradvis lære seg å drifte små applikasjoner</li>
+								<li>Vi lå lenge på 4-5 og vokste sakte. Mye måtte på plass før vi var klare for mange små</li>
 							</ul>
 						</aside>
 					</section>
@@ -500,9 +516,17 @@
 				</section>
 
 
+				<section>
+					The end is near
+				</section>
+
 				<section id="hovedpoeng">
 					<section>
-						Hovedpoeng!!! :D :D
+						Konklusjon
+
+						<aside class="notes">
+							Pek tilbake til konklusjonen vi teasa med tidligere
+						</aside>
 					</section>
 
 					<section>
@@ -524,16 +548,17 @@
 				<section id="oppsummering">
 					<section>
 						Oppsummér poengene som har vært gjort så langt.
+
+						<aside class="notes">
+							Denne kan fjernes hvis presentasjonen blir for lang
+						</aside>
 					</section>
 				</section>
 
+				<section>
+					<section>Spørsmål?</section>
 
-				<section id="ideer/backup">
-					<ul>
-						<li>Øv på feilsituasjoner – firedrills</li>
-						<li>Sikkerhet! Med større frihet kommer større ansvar.</li>
-						<li>Hvor micro er en microservice?</li>
-					</ul>
+					<section>Takk for oss!</section>
 				</section>
 
 			</div>
