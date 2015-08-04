@@ -571,10 +571,23 @@
 
 		<script>
 
+
 			var firstSectionInSection = document.querySelectorAll('section:first-child');
 			Array.prototype.forEach.call(firstSectionInSection, function(firstInSection) {
-				firstInSection.dataset['background'] = 'red';
+				firstInSection.dataset['background'] = '#887E6F';
 			});
+
+			var slideTypeToBackground = {
+				tabbe: '#FD5158',
+				smerte: '#FD5158',
+				poeng: '#FFF9AE',
+				visdomsord: '#36BDB2',
+			};
+
+			_.chain(document.getElementsByTagName('section'))
+				.filter(function(e) { return e.dataset['slideType']; })
+				.each(function(e) { e.dataset['background'] = slideTypeToBackground[e.dataset['slideType']]; });
+
 
 			// Add speaker notes to all slides
 			_.chain(document.getElementsByTagName("section"))
