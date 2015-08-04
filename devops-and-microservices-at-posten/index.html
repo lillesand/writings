@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- vim: set tabstop=4 shiftwidth=4 noexpandtab: -->
+<!-- vim: set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab: -->
 <html lang="en">
 
 	<head>
@@ -143,7 +143,6 @@
 					</section>
 				</section>
 
-
 				<section id="hoveddel-intro">
 					And now something completely different
 
@@ -222,7 +221,6 @@
 					</section>
 				</section>
 
-
 				<section id="organisasjon-i-organisasjonen" data-owner="jøran">
 					<section>
 						Smidig utvikling
@@ -266,62 +264,129 @@
 
 				<section id="start-smått" data-owner="stian">
 					<section>
-						Ville ha mer kontroll på hvordan deployment fungerte, siden vi brukte mye tid per deploy. Bestilte egne servere, og begynte å automatisere deployment, og byttet ut stor appserver med liten container. Prøver ut på en (liten) app.
+						Deployment
+						<aside class="notes">
+							<ul>
+								<li>Kontroll på utvikling</li>
+								<li>Vil prodsette oftere</li>
+								<li>Bruker mye tid per deploy</li>
+								<li>Stor appserver</li>
+							</ul>
+						</aside>
+						<!--
+						Ville ha mer kontroll på hvordan deployment fungerte,
+						siden vi brukte mye tid per deploy. Bestilte egne
+						servere, og begynte å automatisere deployment, og
+						byttet ut stor appserver med liten container. Prøver ut
+						på en (liten) app.
+						-->
 					</section>
 
 					<section>
-						Videre gikk på noen problemer mens dette miljøet var i startgropa. Lærte mye om drift og at dette faktisk er et fag i seg selv. Å ta ansvar for driftsmiljø krever mye kunnskap om infrastruktur osv. Et eksempel på en mindre smart ting vi gjorde var å eksplodere war-fila vår i tmp-folderen som blir wipa regelmessig av OSet. Ikke smart.
-					</section>
-
-					<section>
-						TODO: Finn stacktrace med file not found for en jsp-fil
+						Egne servere, automatiserer med script
+						<aside class="notes">
+							<ul>
+								<li>Liten appserver</li>
+								<li>Bestiller egne servere</li>
+								<li>Ansvar for drift krever kunnskap</li>
+							</ul>
+						</aside>
+						<!--
+						Videre gikk på noen problemer mens dette miljøet var i
+						startgropa. Lærte mye om drift og at dette faktisk er
+						et fag i seg selv. Å ta ansvar for driftsmiljø krever
+						mye kunnskap om infrastruktur osv. Et eksempel på en
+						mindre smart ting vi gjorde var å eksplodere war-fila
+						vår i tmp-folderen som blir wipa regelmessig av OSet.
+						Ikke smart.
+						-->
 					</section>
 
 					<section data-slide-type="tabbe">
-						Embedded jetty med en war-fil inne i jaren som pakkes ut. I /tmp/.
+						<img src="img/404.png">
+						<aside class="notes">
+							<ul>
+								<li>Jetty exploded war i /tmp/</li>
+								<li>Fungerer når vi deployer ofte</li>
+								<li>Sletted hver 3. dag</li>
+							</ul>
+						</aside>
+						<!-- TODO: Finn stacktrace med file not found for en jsp-fil -->
 					</section>
 
-
 					<section data-slide-type="poeng">
-						Start med noe smått med lav risiko. Du har fortsatt mye å lære!
+						<p>Lav risiko i begynnelsen.</p>
 
 						<aside class="notes">
 							<ul>
-								<li>Vi begynte med helt ny applikasjon</li>
+								<li>Vi begynte med helt ny/liten applikasjon</li>
 								<li>Det viktigste er at kompleksiteten i applikasjonen er lav</li>
 								<li>… og at risikoen er lav. Folk bør ikke miste jobben dersom det gjøres feil i starten.</li>
+								<li>Du har fortsatt mye å lære!</li>
 							</ul>
 						</aside>
 					</section>
 
 					<section data-slide-type="visdomsord">
+						TODO!!!
+						<!--
 						TODO: Dette passer ikke inn.
 						Det finnes ingen Smidig uten kontinuerlige leveranser
+						-->
 					</section>
 				</section>
 
 				<section id="nedetidsfri-deploy" data-owner="stian">
 					<section>
-						Etterhvert som infrastrukturen vi driftet selv vokste og ble mer stabilt økte hyppigheten på deploys veldig, og vi begynte fort å kjenne smerten ved at deployments medførte nedetid og var noe omfattende.
-
+						<q>&ldquo;Faster, harder, Scooter&rdquo;</q>
+						<!--
+						Etterhvert som infrastrukturen vi driftet selv vokste
+						og ble mer stabilt økte hyppigheten på deploys veldig,
+						og vi begynte fort å kjenne smerten ved at deployments
+						medførte nedetid og var noe omfattende.
+						-->
 						<aside class="notes">
-							Unngå single point of failures , komponenter som ikke kan deployes uten nedetid
+							<ul>
+								<li>Begynte å deploy oftere og oftere</li>
+								<li>Få brukere, ikke problem med litt nedetid</li>
+							</ul>
 						</aside>
 					</section>
 
 					<section data-slide-type="tabbe">
-						Appene vokste. Hyppige deployments. Måtte deploye på kveldstid med manuelle steg for å sikre at applikasjonen ikke ble utilgjengelig for brukerne.
+						Nedetid
+						<!--
+						Appene vokste. Hyppige deployments. Måtte deploye på
+						kveldstid med manuelle steg for å sikre at
+						applikasjonen ikke ble utilgjengelig for brukerne.
+						-->
+						<aside class="notes">
+							<ul>
+								<li>Begynte å deploy oftere og oftere</li>
+								<li>Få brukere, ikke problem med litt nedetid</li>
+							</ul>
+						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
-						Rigg for nedetidsfri deployment
+						Nedetidsfri deploy
 
 						<aside class="notes">
-							Når applikasjoene deployes ofte begynner det snart å gjøre vondt dersom det fører med seg nedetid. Dette bør være et prinsipp for alle applikasjoner som inngår, inkludert databasen.
+							<ul>
+								<li>Deploy på dagtid</li>
+								<li>Alle er på jobb</li>
+								<li>NB! Bakoverkompatibilitet</li>
+							</ul>
+							<!--
+							Når applikasjoene deployes ofte begynner det snart
+							å gjøre vondt dersom det fører med seg nedetid.
+							Dette bør være et prinsipp for alle applikasjoner
+							som inngår, inkludert databasen.
 
+							Unngå single point of failures , komponenter som
+							ikke kan deployes uten nedetid
+							-->
 							<br/>
-
-							Bakoverkompatibiliet!
 						</aside>
 					</section>
 
