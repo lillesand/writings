@@ -32,7 +32,7 @@
 		<div class="reveal">
 
 			<div class="slides">
-				<section id="intro-speakers">
+				<section id="intro-speakers" data-owner="jøran">
 					<section>
 						<h2>DevOps og Microservices hos Posten og Bring!</h2>
 					</section>
@@ -565,6 +565,7 @@
 
 		</div>
 
+		<script src="lib/js/underscore-min.js"></script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
@@ -574,6 +575,68 @@
 			Array.prototype.forEach.call(firstSectionInSection, function(firstInSection) {
 				firstInSection.dataset['background'] = 'red';
 			});
+
+			// Add speaker notes to all slides
+			_.chain(document.getElementsByTagName("section"))
+				.filter(function(e) { return _.isEmpty(e.getElementsByTagName("section"))})
+				.filter(function(e) { return _.isEmpty(e.querySelectorAll("aside.notes"))})
+				.forEach(function(e) {
+					var notes = document.createElement("aside");
+					notes.className = "notes";
+					e.appendChild(notes);
+				});
+
+			// Add owner to all speaker notes
+			_.chain(document.getElementsByTagName("section"))
+				.filter(function(e) { return e.dataset.owner })
+				.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
+					n.dataset.owner = e.dataset.owner;
+				})
+			})
+
+			// Add next owner of next slide to notes
+			_.chain(document.querySelectorAll("aside.notes"))
+				.reduce(function(prev, next) {
+					prev.dataset.nextowner = next.dataset.owner;
+					return next;
+				})
+
+			var people = {
+				stian: "../../img/hovercat.jpg",
+				'jøran': "../../img/lillesand.jpeg",
+			};
+
+			_.chain(document.querySelectorAll("aside.notes"))
+				.each(function(e) {
+					var current = document.createElement("img");
+					var next = document.createElement("img");
+
+					var size = 4;
+
+					current.style.position = "fixed";
+					current.style.left = "0em";
+					current.style.bottom = "0em";
+					current.style.height = size + "em";
+					current.style.width = size + "em";
+					current.style.zIndex = 100;
+
+					next.style.position = "fixed";
+					next.style.left = size + "em";
+					next.style.bottom = "0em";
+					next.style.height = size + "em";
+					next.style.width = size + "em";
+					next.style.zIndex = 100;
+
+					current.src = people[e.dataset.owner];
+					next.src = people[e.dataset.nextowner];
+
+					e.appendChild(current);
+					if (e.dataset.owner !== e.dataset.nextowner) {
+						e.appendChild(next);
+					}
+			});
+
+
 
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
