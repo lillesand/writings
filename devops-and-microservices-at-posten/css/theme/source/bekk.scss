@@ -5,27 +5,37 @@
 
 
 // Include theme-specific fonts
-@import url(https://fast.fonts.net/cssapi/1927d443-3863-4afb-887a-5e2a888b69cb.css);
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
 
 // Override theme settings (see ../template/settings.scss)
-//$mainFont: "Conduit ITC W01 Regular",Arial,sans-serif;
-$mainFontSize: 38px;
-$mainColor: #C6C8CA; // BEKK standard
-//$headingFont: "Fedra Serif",Georgia,serif;
+$backgroundColor: #1A1A1A; // BEKK dark
+
+$mainColor: #FFFFFF; // BEKK paper white
 $headingColor: #EBEBEB ; // Section title color
-$headingFontWeight: 600;
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingTextTransform: none;
-$backgroundColor: #1A1A1A; // BEKK dark
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
 $linkColor: #FD5158; // BEKK red
 $linkColorHover: lighten( $linkColor, 20% );
-$selectionColor: #FFF9AE; // BEKK Yellow
 $selectionBackgroundColor: rgba(136, 126, 111, 0.99);
+$selectionColor: #FFF9AE; // BEKK Yellow
+$headingFontWeight: 600;
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: $backgroundColor;
+	}
+}
 
 div.illustrationCircle {
     display: inline-block;

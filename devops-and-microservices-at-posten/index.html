@@ -1,5 +1,8 @@
 <!doctype html>
 <!-- vim: set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab: -->
+<!-- vim: set foldexpr=SectionFold(v\:lnum) : -->
+<!-- vim: set foldcolumn=5 foldlevel=99 foldmethod=expr : -->
+
 <html lang="en">
 
 	<head>
@@ -16,8 +19,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<!--<link rel="stylesheet" href="css/theme/bekk.css" id="theme">-->
+		<!--
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		-->
+		<link rel="stylesheet" href="css/theme/bekk.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -43,15 +48,11 @@
 
 						<div style="width: 49%; float: left;">
 							<img src="img/hovercat.jpg" />
-							<div class="illustrationCircle backgroundColor-red">
-								<p class="illustrationCircle-text">Stian</p>
-							</div>
+							<p class="">Stian</p>
 						</div>
 						<div style="width: 49%; float: left;" class="fragment">
 							<img src="img/lillesand.jpeg" />
-							<div class="illustrationCircle backgroundColor-red">
-								<p class="illustrationCircle-text">Jøran</p>
-							</div>
+							<p class="">Jøran</p>
 						</div>
 					</section>
 
@@ -95,7 +96,8 @@
 					</section>
 
 					<section data-owner="stian">
-						Hva lager vi?
+						<h1>Hva lager vi?</h1>
+						<img src="img/sporing.png" class="fragment">
 
 						<aside class="notes">
 							<ul>
@@ -105,6 +107,37 @@
 								<li>Dette er ikke et rent tech-miljø, men forretningskritiske systemer.</li>
 							</ul>
 						</aside>
+					</section>
+
+					<section data-owner="stian">
+						<h1>Hva lager vi?</h1>
+						<img src="img/booking.png">
+					</section>
+
+					<section data-owner="stian">
+						<h1>Hva lager vi?</h1>
+						<img src="img/developer.png">
+					</section>
+					<section data-owner="stian">
+						<h1>Hva lager vi?</h1>
+						<img src="img/fraktguide.png">
+					</section>
+
+					<section data-owner="stian">
+						<h1>Her er vi</h1>
+						<img src="img/dashboard.png">
+					</section>
+					<section data-owner="stian">
+						<h1>Her er vi</h1>
+						<img src="img/kibana1.png">
+					</section>
+					<section data-owner="stian">
+						<h1>Her er vi</h1>
+						<img src="img/kibana2.png">
+					</section>
+					<section data-owner="stian">
+						<h1>Her er vi</h1>
+						<img src="img/slack.png">
 					</section>
 
 					<section data-owner="stian">
@@ -460,17 +493,40 @@
 						Lær kidsa drifting
 
 						<aside class="notes">
-							Mens vi stadig migrerte mer kritiske applikasjoner over på ny infrastruktur som vi driftet selv, ble vi tvunget til å se i øyene at drift faktisk er et fagfelt. Vi gikk på flere smeller med backup, overvåkning, hardening og så videre. Det som er interessant å se i ettertid er hvordan våre løsninger på konkrete problemer har ledet oss til infrastruktur som er helt i henhold til det som beskrives i DevOps-litteratur – med noen interessante unntak.
+							<ul>
+								<li>Til nå en app</li>
+								<li>Budsjett til å migrere noen flere</li>
+								<li>Drift er eget fagfelt!</li>
+							</ul>
+							<!--
+							Mens vi stadig migrerte mer kritiske applikasjoner
+							over på ny infrastruktur som vi driftet selv, ble
+							vi tvunget til å se i øyene at drift faktisk er et
+							fagfelt. Vi gikk på flere smeller med backup,
+							overvåkning, hardening og så videre. Det som er
+							interessant å se i ettertid er hvordan våre
+							løsninger på konkrete problemer har ledet oss til
+							infrastruktur som er helt i henhold til det som
+							beskrives i DevOps-litteratur – med noen
+							interessante unntak.
+							-->
 						</aside>
 					</section>
 
 					<section data-slide-type="tabbe">
-						Tok litt tid før vi etablerte mye av det som kommer "ut av boksen" når man kjøper ferdig drift. Backup, overvåkning, hardening av hosts.
+						Ting tar tid
+						<!--
+						Tok litt tid før vi etablerte mye av det som
+						kommer "ut av boksen" når man kjøper ferdig drift.
+						Backup, overvåkning, hardening av hosts.
+						-->
 						<aside class="notes">
 							<ul>
-								<li>Når dette gjøres i et DevOps-miljø av dumme utviklere er det naturlig for oss å bygge inn verifikasjon at det virker</li>
-								<li>Driftsleverandør setter opp backup og er fornøyd</li>
-								<li>Vi endte med å bygge inn automatisert verifikasjon både av løpende replisering og av fulle databasebackups</li>
+								<li>Flere smeller med backup, overvåkning, hardening</li>
+								<li>Mangler det man får ut av boksen</li>
+								<li>Bruker utviklerpraksis i drift. Tester, automatisering, verifisering</li>
+								<li>Kontroll på at det virker</li>
+								<li>Lave marginer i drift, lite proaktive</li>
 							</ul>
 						</aside>
 					</section>
@@ -479,7 +535,7 @@
 						Lær drift
 
 						<aside class="notes">
-							Det er mye du skal kunne for å gjøre drift riktig. Hvis du er ren utvikler er det stor sjanse for at du ikke kan det.
+							Mye å lære om drift. Du kan det antagelig ikke.
 							<ul>
 								<li>Sikkerhet: OS-hardening</li>
 								<li>Sonemodeller</li>
@@ -489,6 +545,10 @@
 								<li>Overvåkning</li>
 							</ul>
 						</aside>
+					</section>
+
+					<section data-slite-type="visdomsord">
+						TODO: Visdomsord
 					</section>
 				</section>
 
@@ -530,7 +590,23 @@
 
 				<section id="devops-er-en-markedsfordel" data-owner="stian">
 					<section>
-						Etterhvert som stadig flere applikasjoner begynte salgsorganisasjonen å irritere seg over at endringer på noen applikasjoner kunne komme ut på under en dag, mens andre kunne ta opp til flere uker. Hvorfor måtte det være sånn!? Det endte med at Salg finansierte migreringen av resten av porteføljen over på den nye infrastrukturen. Dette ble på mange måte en øyeåpner for resten av organisasjonen, som innså at infrastruktur er for flere enn IT.
+						Kommer ikke helt i mål
+						<aside class="notes">
+							<ul>
+								<li>Hadde kun råd til å migrere noen apper</li>
+							</ul>
+						</aside>
+						<!--
+						Etterhvert som stadig flere applikasjoner begynte
+						salgsorganisasjonen å irritere seg over at endringer på
+						noen applikasjoner kunne komme ut på under en dag, mens
+						andre kunne ta opp til flere uker. Hvorfor måtte det
+						være sånn!? Det endte med at Salg finansierte
+						migreringen av resten av porteføljen over på den nye
+						infrastrukturen. Dette ble på mange måte en øyeåpner
+						for resten av organisasjonen, som innså at
+						infrastruktur er for flere enn IT.
+						-->
 					</section>
 
 					<section data-slide-type="smerte">
@@ -538,43 +614,105 @@
 
 						<aside class="notes">
 							<ul>
+								<li>Salg/produkteier lei av IT-oppgaver</li>
+								<li>"Høye herrer" i IT betaler jo allerede for drift</li>
+								<li>Hvorfor betale dobbelt for oss</li>
+								<!--
 								<li>"De høye herrer" i IT så ikke nytten med at vi kasta masse penger på å drive infrastrukturen på annen måte enn de var vant til. Hvorfor skulle de betale for å vi skulle løse samme problem som driftsleverandøren?</li>
 								<li>Endte med at salgsorganisasjonen betalte for å migrere resten av appene over på det "smidige driftsmiljøet"</li>
+								-->
 							</ul>
 						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
-						Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene!
-
+						IT-arkitektur er forretningsbehov
+						<!-- Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene! -->
 						<aside class="notes">
-							Synliggjør verdien av IT-oppgavene for andre enn IT. Sparer du penger? Kortere time to market? Vis og bevis det! Har det ingen effekt som er synlig for andre enn IT? Bør du egentlig gjøre det da..?
+							<ul>
+								<li>"Hvorfor tar noen apper kort tid å endre?"</li>
+								<li>Salg/produkteiere betalte for migrering</li>
+								<li>Forretning må skjønne hva vi gjør</li>
+								<li>Kortere time to marked</li>
+								<li>Vis og bevis!</li>
+								<li>Ingen effekt for andre enn IT? Bør du?</li>
+							</ul>
+							<!--
+							Synliggjør verdien av IT-oppgavene for andre enn
+							IT. Sparer du penger? Kortere time to market? Vis
+							og bevis det! Har det ingen effekt som er synlig
+							for andre enn IT? Bør du egentlig gjøre det da..?
+							-->
 						</aside>
+					</section>
+					<section data-slide-type="visdomsord">
+						TODO
 					</section>
 				</section>
 
 				<section id="industrialisering" data-owner="stian">
 					<section>
-						Ut fra de erfaringene vi gjorde oss, ble stadig mindre applikasjoner en naturlig følge. Kostnaden per applikasjon ble drevet ned, men med kjøpet fikk vi annen type kompleksitet enn vi var vant til. Applikasjonsutvikling og -drift måtte industrialiseres, og vi gikk inn i microservice-tidsalderen. Vi lærte at vi trengte logaggregering, monitorering, isolasjon mellom applikasjoner, automatisk failover for kritisk funksjonalitet, valg av desentraliserte teknologier som OAuth for kjernekomponenter og mye annet.
+						Mange applikasjoner, ny kompleksitet
 
 						<aside class="notes">
-							Micro service fører til industrialisering
+							<ul>
+								<li>Kostnad per app ned</li>
+								<li>Fikk ny type kompleksitet</li>
+								<li>Micro service fører til industrialisering</li>
+							</ul>
 						</aside>
+						<!--
+						Ut fra de erfaringene vi gjorde oss, ble stadig mindre
+						applikasjoner en naturlig følge. Kostnaden per
+						applikasjon ble drevet ned, men med kjøpet fikk vi
+						annen type kompleksitet enn vi var vant til.
+						Applikasjonsutvikling og -drift måtte industrialiseres,
+						og vi gikk inn i microservice-tidsalderen. Vi lærte at
+						vi trengte logaggregering, monitorering, isolasjon
+						mellom applikasjoner, automatisk failover for kritisk
+						funksjonalitet, valg av desentraliserte teknologier som
+						OAuth for kjernekomponenter og mye annet.
+						-->
 					</section>
 
 					<section data-slide-type="smerte">
-
-						TODO: Screenshot av logging fra 2 instanser av 4 applikasjoner samtidig som det deployes
-
+						<img src="img/logs.png" alt="Logs across applications">
 						<aside class="notes">
-							Det ble veldig komplekst å deploye en app. Måtte følge med i 4 fire logger på 2 servere samtidig!
-							<br/>
-							Var vanskelig å gjøre drift, for miljøet begynte å bli komplekst.
+							<ul>
+								<li>Det ble veldig komplekst å deploye en app.</li>
+								<li>Måtte følge med i 4 fire logger på 2 servere samtidig!</li>
+								<li>Var vanskelig å gjøre drift, for miljøet begynte å bli komplekst.</li>
+							</ul>
 						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
-						Investere mer i infrastrukturen og drift av den. Automatiserte ikke lengre eksplisitte oppgaver, men mer implisitte oppgaver. (Logger, overvåking, helsesjekker, osv)
+						Lag/ta i bruk støtteverktøy
+						<!--
+						Investere mer i infrastrukturen og drift av den.
+						Automatiserte ikke lengre eksplisitte oppgaver, men mer
+						implisitte oppgaver. (Logger, overvåking, helsesjekker,
+						osv)
+						-->
+						<aside class="notes">
+							<ul>
+								<li>Invester mer i infrastruktur</li>
+								<li>Automatiserer implisitte oppgaver</li>
+								<li>Trenger nye verktøy:
+									<ul>
+										<li>Loggagregering</li>
+										<li>Helsesjekk</li>
+										<li>Monitorering</li>
+										<li>Isolasjon mellom apper</li>
+										<li>Automatisk failover?</li>
+									</ul>
+								</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-slide-type="visdomsord">
+						TODO
 					</section>
 				</section>
 
@@ -728,7 +866,7 @@
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
