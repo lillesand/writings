@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Internet of Things - en introduksjon</title>
+
+		<meta name="description" content="En introduksjon til Internet of Things for Oslo IoT Meetup">
+		<meta name="author" content="Jøran Lillesand">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+        <style>
+            .reveal section img:not(.shadow) {
+                box-shadow: none;
+                border: none;
+            }
+
+            .img-subtext {
+                text-align: right;
+                font-size: 14px;
+                color: black;
+            }
+
+            .image-wrapper {
+                display: inline-block;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+            <div class="slides">
+
+                <section id="intro">
+                    <section data-background-color="black">
+                        <div class="image-wrapper">
+                            <img src="img/back-to-the-future-iot.png"/>
+                            <div class="img-subtext" style="color: lightgray; margin-right: 100px; margin-top: -50px; font-size: 2em;">
+                                En intro
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-background-color="white">
+                        <h2 style="color: black;">Multi <b>trillion</b> dollar industry</h2>
+                        <div class="fragment">
+                            <img class="shadow" src="img/idc-iot-forecast-zdnet.png" style="width: 75%;"/>
+                            <div class="img-subtext">ZDNet 5.juni 2014</div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            $7.1 trillion<br/>
+                            =<br/>
+                            $7 100 000 000 000<br/>
+                            <div class="fragment">
+                                =<br/>
+                                46 342 339 000 000 kr<br/>
+                                =<br/>
+                                <span style="font-size: 2.5em;">46 000 milliarder kroner</span><br/>
+                            </div>
+                            <div class="fragment">
+                                =<br/>
+                                ≈ 37 statsbudsjetter
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <img src="img/sceptical-fry.jpg" class="stretch" />
+                    </section>
+                </section>
+
+                <section id="bio-and-agenda">
+
+                    <section data-background-color="white">
+                        <img src="img/joran_lillesand.png" class="stretch"/>
+                    </section>
+
+                    <section>
+                        <h2>Program for dagen</h2>
+                        <ul>
+                            <li>Om Internet of Things &lt;––</li>
+                            <li class="fragment">Intro til IoT-snekring</li>
+                            <li class="fragment">Prototypebrett</li>
+                            <li class="fragment">Lag noe tøft – fordi du kan</li>
+                            <li class="fragment">Driver statens veivesen med IoT!?</li>
+                        </ul>
+
+                    </section>
+                </section>
+
+                <section id="iot-hype">
+
+                    <section>
+                        <span style="font-size: 3em">46 000 milliarder…</span>
+                    </section>
+
+                    <section data-background-color="white">
+                        <div>
+                            <img src="img/gartner-hype-curve.jpg"/>
+                            <div class="img-subtext">Gartner Hype Cycle for Emerging Tech</div>
+                        </div>
+                    </section>
+                </section>
+
+                <section id="what-is-iot">
+                    <section>
+                        <h2>For hva <i>er</i> egentlig IoT?</h2>
+
+                        <aside class="notes">
+                            Hvor kommer disse pengene fra? Hvordan finansieres dette?
+                        </aside>
+                    </section>
+                </section>
+
+                <section id="makers">
+                    <section>
+                        <h1>Maker-bevegelsen</h1>
+                    </section>
+
+                    <section data-background-color="black">
+                        <div>
+                            <img src="img/ninjablocks.jpg" style="width: 25%; margin: 30px; float: left">
+                            <img src="img/beaglebone.png" style="width: 26%; margin: 30px; float: right" class="fragment">
+                        </div>
+                        <div>
+                            <img src="img/arduino-tin.jpg" style="width: 30%; margin: 30px; float: left" class="fragment">
+                            <img src="img/The-Inebriator-Arduino-Powered-Robot-Bartender.jpg" style="width: 60%;" class="fragment">
+                        </div>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Dette er det <i>vi</i> driver med. Dette er viktig, men det er ikke mye penger i det.</li>
+                                <li>
+                                    Kickstarter er en fet tjeneste for å skalere opp ting litt her, men lider under at det er vanskelig å
+                                    gå fra god ide til god implementasjon.
+                                </li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Problem of Scale</h2>
+                    </section>
+                </section>
+
+                <section id="home-electronics">
+                    <section>
+                        <h1>Personlig elektronikk</h1>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Personlig elektronikk og hjemmeelektronikk</li>
+                                <li>Her er det mye penger, mye hype, men kanskje ikke så mye verdiskapning (enda)?</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section data-background-color="white">
+                        <div style="margin-top: 50px;">
+                            <img src="img/cotton_sense.jpg" style="width: 25%; margin: 30px; float: left">
+                            <img src="img/glowcap.png" style="width: 25%; margin: 30px; float: right" class="fragment">
+                        </div>
+                        <div>
+                            <img src="img/motorola-360.png" style="width: 30%; margin: 30px; float: left" class="fragment">
+                            <img src="img/philips-hue.png" style="width: 60%;" class="fragment">
+                        </div>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Sense fra Hello</li>
+                                <li>Glowcap fra Vitality</li>
+                                <li>Motorola 360</li>
+                                <li>Philips Hue </li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Internet of Things</h2>
+                        <div style="margin: 2% auto">vs</div>
+                        <h2>Things on the Internet</h2>
+                    </section>
+
+                    <section data-background-color="white">
+                        <img src="img/nest.jpg" class="strech">
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Nest er et eksempel på en Internet of Things-ting.</li>
+                                <li>Kan integrere med jawbone, sier fra når du holder på å våkne sånn at huset er ferdig oppvarmet</li>
+                                <li>Kan snakke med Mercedes-biler og styre varmen ut fra om du er på vei hjem eller drar bort</li>
+                                <li>…jævelig gimmicky.</li>
+
+                                <li>Men dette er veien ting trenger å gå: åpne platformer, der alt kan snakke med alt.</li>
+                                <li>
+                                    Dette må være basert på feature discovery, ikke point til point integrasjoner.
+                                    Mad standardisering trengs for at dette skal være noe mer enn gøy.
+                                </li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section data-background-color="white">
+                        <img src="img/jawbone-nest.png" />
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Nest er et eksempel på en Internet of Things-ting.</li>
+                                <li>Kan integrere med jawbone, sier fra når du holder på å våkne sånn at huset er ferdig oppvarmet</li>
+                                <li>Kan snakke med Mercedes-biler og styre varmen ut fra om du er på vei hjem eller drar bort</li>
+                                <li>…jævelig gimmicky.</li>
+
+                                <li>Men dette er veien ting trenger å gå: åpne platformer, der alt kan snakke med alt.</li>
+                                <li>
+                                    Dette må være basert på feature discovery, ikke point til point integrasjoner.
+                                    Mad standardisering trengs for at dette skal være noe mer enn gøy.
+                                </li>
+                            </ul>
+                        </aside>
+
+                    </section>
+                </section>
+
+                <section id="industrien">
+                    <section>
+                        <h1>Internet of Things i industrien</h1>
+                    </section>
+
+                    <section>
+                        <img src="img/automatisk-strommaler.jpg" class="stretch">
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Dette er ting som er Internet of Things, men som vi sjelden tenker over eller ser</li>
+                                <li>Her skjer det ting i masse forskjellige bransjer, på masse forskjellige fronter</li>
+                                <li>Ting rundt oss blir… litt smartere</li>
+                                <li>Tenk pakker som til enhver tid rapporterer hvor de er innen logistikk</li>
+                                <li>Tenk roboter som kjører rundt med medisin og utstyr på sykehus</li>
+                                <li>Tenk mesh-nettverk av sensorer som hives ut fra en båt og gjør seismiske undersøkelser</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>Så… er dette egentlig noe vits?</h1>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Seriøst mye hype</li>
+                            <li>Det skjer utrolig mye positivt, men det er ingen tvil om at vi skal en tur ned i grøfta</li>
+                            <li>Hold på med det vi holder på med, lag kule greier, bygg kompetanse. For IoT er her for å bli!</li>
+                        </ul>
+                    </aside>
+                </section>
+            <section>
+                <h1 style="line-height: 1.4em;">Kommentarer? <br/>
+                    <span style="font-size: 0.8em">Spørsmål?</span>
+                </h1>
+            </section>
+
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

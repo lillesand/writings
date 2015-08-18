@@ -19,8 +19,8 @@
                 'color :color': inSlide(function(color) {
                     currentSlide.querySelector('*').style.color = color;
                 }),
-                'previous slide': inSlide(function() { Reveal.navigateUp(); }),
-                'next slide': inSlide(function() { Reveal.navigateDown(); })
+                'previous slide': inSlide(function() { Reveal.prev(); }),
+                'next slide': inSlide(function() { Reveal.next(); })
             };
 
             // Add our commands to annyang
