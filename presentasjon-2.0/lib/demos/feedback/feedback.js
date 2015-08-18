@@ -1,7 +1,7 @@
 (function() {
 
     var host = document.querySelector('#service-url').textContent;
-    var socket = io.connect(host + ':80');
+    var socket = io.connect('https://' + host + ':443');
 
     var voteMapping = {
         '1': 'red',
