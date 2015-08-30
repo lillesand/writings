@@ -49,23 +49,11 @@
 			<div class="slides">
 
                 <section>
-                    <h1>Amazing Web</h1>
-                </section>
-
-                <section>
-                    <h1 style="text-decoration: line-through">Amazing Web</h1>
-                </section>
-
-                <section>
                     <h1>Presentasjon 2.0</h1>
                 </section>
 
-                <section>
-                    <h1>Amazing <br/>Presentasjon 2.0</h1>
-                </section>
-
                 <section data-background-color="white">
-                    <img src="img/joran_lillesand.png" style="box-shadow:none"/>
+                    <img src="img/joran_lillesand.png" class="stretch" style="box-shadow:none"/>
                     <div style="color: gray; margin-top: -20px;">@lillesand</div>
                 </section>
 
@@ -165,7 +153,7 @@
                         <aside class="speech" data-voice="Alex" data-initialDelay="3000" data-navigationDelay="1500">
                             <ol>
                                 <li>So… is this useful?.</li>
-                                <li>Well, that's doubtful. But it sure is cool! The technology has its uses outside presentations though!</li>
+                                <li>Not really. But it sure is cool! The technology has its uses outside presentations though!</li>
                             </ol>
                         </aside>
                     </section>
@@ -175,9 +163,8 @@
 
                         <aside class="speech" data-voice="Zarvox" data-initialDelay="2000" data-navigationDelay="1500">
                             <ol>
-                                <li>Should you ever be using it?.</li>
+                                <li>Should you be using it?.</li>
                                 <li>No. Programming against it is horrible, and it's fucking unstable.</li>
-                                <li>But, you can do some cool stuff!</li>
                             </ol>
                         </aside>
                     </section>
@@ -305,11 +292,11 @@
                     success: function() {
                         augmented.startNavigation({
                             red: util.maxInterval(function() {
-                                Reveal.up();
+                                Reveal.prev();
                             }),
 
                             blue: util.maxInterval(function() {
-                                Reveal.down();
+                                Reveal.next();
                             })
                         });
                     }
