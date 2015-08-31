@@ -35,6 +35,7 @@
 			.reveal section img {
 				border: none;
 			}
+
 		</style>
 	</head>
 
@@ -816,17 +817,20 @@
 				firstInSection.dataset['background'] = '#887E6F';
 			});
 
-			var slideTypeToBackground = {
-				tabbe: '#FD5158',
-				smerte: '#FD5158',
-				poeng: '#FFF9AE',
-				visdomsord: '#36BDB2',
+			var slideTypeToBgImage = {
+				tabbe: 'img/pain.jpg', // http://www.oxfordtoday.ox.ac.uk/features/pain-always-real
+				smerte: 'img/pain.jpg',
+				poeng: 'img/aha.png', // http://www.healthyplace.com/blogs/speakingoutaboutselfinjury/2015/01/07/an-ah-ha-moment-could-stop-your-self-harm/
+				//visdomsord: '',
 			};
 
 			_.chain(document.getElementsByTagName('section'))
 				.filter(function(e) { return e.dataset['slideType']; })
-				.each(function(e) { e.dataset['background'] = slideTypeToBackground[e.dataset['slideType']]; });
-
+				.filter(function(e) { return slideTypeToBgImage[e.dataset['slideType']]; })
+				.each(function(e) {
+					e.dataset['background'] = slideTypeToBgImage[e.dataset['slideType']];
+					e.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+				});
 
 			// Add speaker notes to all slides
 			_.chain(document.getElementsByTagName("section"))
