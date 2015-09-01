@@ -36,6 +36,20 @@
 				border: none;
 			}
 
+			section .header {
+				position: relative;
+				background-color: black
+			}
+
+			section .header .caption {
+				position: absolute;
+				font-size: 20px;
+				text-align: left;
+				background-color:inherit;
+				top: -24px;
+				padding: 2px 10px;
+			}
+
 		</style>
 	</head>
 
@@ -270,7 +284,12 @@
 				<section id="organisasjon-i-organisasjonen" data-owner="jøran">
 
 					<section data-background-image="img/jcvd-volvosplitt.jpg" data-background-repeat="no-repeat" data-background-size="100%">
-						<h2 style="background-color: black; padding: 10px">Utfordre premissene</h2>
+						<div class="header">
+							<div class="caption">Vi har…</div>
+							<h2 style="color: inherit;">
+								Utfordret premisser
+							</h2>
+						</div>
 
 						<aside class="notes">
 							<ul>
@@ -442,7 +461,12 @@
 
 				<section id="automatisering" data-owner="jøran">
 					<section data-background-image="img/automatisering.jpg" data-background-size="100%">
-						<h1 style="background-color: black; color: #0CADD1;">Automatisering</h1>
+						<div class="header" style="color: #0CADD1">
+							<div class="caption">Vi har…</div>
+							<h1 style="color: inherit;">
+								Automatisert
+							</h1>
+						</div>
 					</section>
 
 					<section data-slide-type="tabbe">
@@ -488,7 +512,13 @@
 
 				<section id="overvåkning" data-owner="jøran">
 					<section data-background-image="img/overvåkning.jpg" data-background-repeat="no-repeat" data-background-color="white" data-background-position="center">
-						<h1 style="background-color:white; color:black;">Overvåkning</h1>
+
+						<div class="header" style="background-color: white;">
+							<div class="caption">Vi har…</div>
+							<h2>
+								Overvåket
+							</h2>
+						</div>
 
 						<aside class="notes">
 							Har du 24/7 beredskap? Trenger du det? Har du egentlig?
@@ -863,7 +893,7 @@
 
 			var people = {
 				stian: "../../img/hovercat.jpg",
-				'jøran': "../../img/lillesand.jpeg",
+				'jøran': "../../img/lillesand.jpeg"
 			};
 
 			_.chain(document.querySelectorAll("aside.notes"))
@@ -895,6 +925,8 @@
 						e.appendChild(next);
 					}
 			});
+
+
 
 
 
