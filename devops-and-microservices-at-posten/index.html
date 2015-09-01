@@ -378,14 +378,6 @@
 							</ul>
 						</aside>
 					</section>
-
-					<section data-slide-type="visdomsord">
-						TODO!!!
-						<!--
-						TODO: Dette passer ikke inn.
-						Det finnes ingen Smidig uten kontinuerlige leveranser
-						-->
-					</section>
 				</section>
 
 				<section id="nedetidsfri-deploy" data-owner="stian">
@@ -449,27 +441,48 @@
 
 
 				<section id="automatisering" data-owner="jøran">
-					<section>
-						Automatisering
+					<section data-background-image="img/automatisering.jpg" data-background-size="100%">
+						<h1 style="background-color: black; color: #0CADD1;">Automatisering</h1>
 					</section>
 
 					<section data-slide-type="tabbe">
-						`be rake production:rollback`
-						<div class="fragment">- not implemented</div>
+
+						<pre style="margin-bottom: 30px;"><code style="font-size:30px; line-height:60px;" data-trim>
+							$ be rake production:rollback
+						</code></pre>
+
+
+						<div class="fragment">– not implemented. perform manual rollback.</div>
 					</section>
 
 					<section data-slide-type="tabbe">
-						Hadde begynt å automatisere så smått, men mye manglet. Produksjonssatte bugga versjon av booking. Skulle rulle tilbake<br>
-						`ln -sf booking.jar booking-2.11.jar`<br>
-						`ln -sf booking-2.11.jar booking.jar`
+						<h2>Manual rollback time…</h2>
+						<pre style="margin-bottom: 30px;"><code style="font-size:30px; line-height:60px;" data-trim>
+							ln -sf booking.jar booking-2.11.jar
+						</code></pre>
+
+						<pre class="fragment"><code style="font-size:30px; line-height:60px;" data-trim>
+							ln -sf booking-2.11.jar booking.jar
+						</code></pre>
 
 						<aside class="notes">
+							Hadde begynt å automatisere så smått, men mye manglet. Produksjonssatte bugga versjon av booking. Skulle rulle tilbake<br>
+
 							Hva er riktig syntax for symlink?
 						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
-						Automatiser alt som skal gjøres i produksjon. Manuelle operasjoner bør være et absolutt unntak.
+						<h1>Automatiser, <span class="fragment">automatiser,</span> <span class="fragment">automatiser!</span></h1>
+
+						<aside class="notes">
+							<ul>
+								<li>Eksempelet vårt er selvsagt ekstremt</li>
+								<li>Manuelle operasjoner er roten til mye vondt!</li>
+								<li>Tar mye tid og gir mye feil</li>
+								<li>Vanskelig å reprodusere og vite hva som har skjedd</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 
