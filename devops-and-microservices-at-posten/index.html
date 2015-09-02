@@ -285,7 +285,7 @@
 
 				<section id="organisasjon-i-organisasjonen" data-owner="jøran">
 
-					<section data-background-image="img/jcvd-volvosplitt.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
@@ -335,7 +335,7 @@
 				</section>
 
 				<section id="start-smått" data-owner="stian">
-					<section data-background-image="img/jcvd-volvosplitt.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
@@ -404,7 +404,7 @@
 				</section>
 
 				<section id="nedetidsfri-deploy" data-owner="stian">
-					<section data-background-image="img/jcvd-volvosplitt.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
@@ -470,7 +470,7 @@
 
 
 				<section id="automatisering" data-owner="jøran">
-					<section data-background-image="img/automatisering.jpg" data-background-size="100%">
+					<section data-background="img/automatisering.jpg">
 						<div class="header" style="color: #0CADD1">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
@@ -521,7 +521,7 @@
 				</section>
 
 				<section id="overvåkning" data-owner="jøran">
-					<section data-background-image="img/overvåkning.jpg" data-background-repeat="no-repeat" data-background-color="white" data-background-position="center">
+					<section data-background-image="img/overvåkning.jpg" data-background-color="white">
 
 						<div class="header" style="background-color: white;">
 							<div class="caption">Vi har…</div>
@@ -561,7 +561,7 @@
 				</section>
 
 				<section id="lær-drift" data-owner="stian">
-					<section data-background-image="img/jcvd-volvosplitt.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
@@ -662,7 +662,7 @@
 				</section>
 
 				<section id="devops-er-en-markedsfordel" data-owner="stian">
-					<section data-background-image="img/jcvd-volvosplitt.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
@@ -725,7 +725,7 @@
 				</section>
 
 				<section id="industrialisering" data-owner="stian">
-					<section data-background-image="img/jcvd-volvosplitt.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
@@ -763,6 +763,10 @@
 								<li>Var vanskelig å gjøre drift, for miljøet begynte å bli komplekst.</li>
 							</ul>
 						</aside>
+					</section>
+
+					<section data-slide-type="poeng">
+						<img src="img/kibana2.png" alt="Kibana">
 					</section>
 
 					<section data-slide-type="poeng">
@@ -857,12 +861,6 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
-
-
-			var firstSectionInSection = document.querySelectorAll('section:first-child');
-			Array.prototype.forEach.call(firstSectionInSection, function(firstInSection) {
-				firstInSection.dataset['background'] = '#887E6F';
-			});
 
 			var slideTypeToBgImage = {
 				tabbe: 'img/pain.jpg', // http://www.oxfordtoday.ox.ac.uk/features/pain-always-real
