@@ -656,23 +656,55 @@
 
 
 				<section id="micro-services-the-beginning" data-owner="jøran">
-					<section>
-						Når store applikasjoner ble flyttet merket vi smerten ved store applikasjoner bedre. Det er en ting å deploye en lettbent, liten applikasjon ofte, men når beistet begynner å bli mange hundre tusen kodelinjer er det ikke like gøy. Uten at vi hadde ord for det vi drev på med, begynte vi å fokusere på å bryte opp funksjonalitet og unngå å la de store appene våre vokse videre.
-					</section>
-
-					<section>
-						Begynte å dele opp applikasjoner
-					</section>
-
-					<section data-slide-type="tabbe">
-						Applikasjoner som ble så store at utviklingen begynte å gå tregere
-					</section>
-
-					<section data-slide-type="poeng">
-						En applikasjon skal gjøre én ting. Se etter muligheten for å lage egne applikasjoner av ting som vokser i sin egen retning.
+					<section data-background-image="img/neural-network.jpg">
+						<div class="header" style="color: #E2E7CF">
+							<div class="caption">Vi har…</div>
+							<h2 style="color: inherit;">
+								Flyttet kompleksitet
+							</h2>
+						</div>
 
 						<aside class="notes">
 							<ul>
+								<li>Når store applikasjoner ble flyttet merket vi smerten ved store applikasjoner bedre.</li>
+								<li>Det er en ting å deploye en lettbent, liten applikasjon ofte, men når beistet begynner å bli mange hundre tusen kodelinjer er det ikke like gøy.</li>
+								<li>Uten at vi hadde ord for det vi drev på med, begynte vi å fokusere på å bryte opp funksjonalitet og unngå å la de store appene våre vokse videre.</li>
+							</ul>
+
+						</aside>
+					</section>
+
+
+					<section data-slide-type="tabbe">
+						<h2>Vår venn monolitten</h2>
+						<ul>
+							<li>Det er mye bra med monolitter!</li>
+							<li class="fragment">… men det er faen meg mye dårlig også</li>
+						</ul>
+
+						<aside class="notes">
+							Det er ikke noe feil med monolitter i seg selv!
+							
+							<ul>
+								<li>Lenge fungerte det bra med store applikasjoner</li>
+								<li>Men når de større appene kom over på ny infrastruktur ble det verre</li>
+								<li>Høyere hyppighet på deploys</li>
+								<li>Stor kompleksitet i apper, vanskelig å endre og teste</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-slide-type="poeng">
+						<h2>En nødvendig konsekvens</h2>
+						<ul>
+							<li>Fokus på mindre applikasjoner</li>
+							<li class="fragment">Flytter kompleksiteten over i samspillet</li>
+							<li class="fragment">The Right Size™</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Splittet aldri opp eksisterende applikasjoner (selv om det var planen!)</li>
 								<li>Riktig størrelse for en micro service</li>
 								<li>Endringstakt for koden er faktor</li>
 								<li>Arkitektur er ikke et mål i seg selv: viktig å gradvis lære seg å drifte små applikasjoner</li>
@@ -681,15 +713,17 @@
 						</aside>
 					</section>
 
-					<!--
-					<section data-slide-type="visdomsord">
-						Micro Services er en konsekvens av DevOps
+					<section data-slide-type="poeng" style="width: 110%">
+						<h2>
+							Micro Services er en konsekvens<br/>
+							av å lykkes med DevOps
+						</h2>
 
 						<aside class="notes">
 							Det er omvendt korrelasjon mellom størrelsen på applikasjonen og hvor ofte de kan deployes. Interessant kausalitet, fordi det driver hverandre begge veier.
 						</aside>
 					</section>
-					-->
+
 				</section>
 
 				<section id="devops-er-en-markedsfordel" data-owner="stian">
