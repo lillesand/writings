@@ -532,11 +532,31 @@
 					</section>
 
 					<section data-slide-type="poeng">
+						<h2>Automatiser alt</h2>
+
+						<ul>
+							<li>Deployments</li>
+							<li>Konfigurasjon</li>
+							<li>Ryddejobber</li>
+							<li>Engangsjobber</li>
+						</ul>
+
+						<aside class="notes">
+							Eksempelet vårt er selvsagt ekstremt. Men automatisering gir
+							<ul>
+								<li>dokumentasjon (hva har faktisk blitt gjort)</li>
+								<li>reproduserbarhet</li>
+								<li>likhet på tvers av mijøer</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-slide-type="poeng">
 						<h1>Automatiser, <span class="fragment">automatiser,</span> <span class="fragment">automatiser!</span></h1>
 
 						<aside class="notes">
 							<ul>
-								<li>Eksempelet vårt er selvsagt ekstremt</li>
+
 								<li>Manuelle operasjoner er roten til mye vondt!</li>
 								<li>Tar mye tid og gir mye feil</li>
 								<li>Vanskelig å reprodusere og vite hva som har skjedd</li>
@@ -654,7 +674,6 @@
 					</section>
 				</section>
 
-
 				<section id="micro-services-the-beginning" data-owner="jøran">
 					<section data-background-image="img/neural-network.jpg">
 						<div class="header" style="color: #E2E7CF">
@@ -684,7 +703,7 @@
 
 						<aside class="notes">
 							Det er ikke noe feil med monolitter i seg selv!
-							
+
 							<ul>
 								<li>Lenge fungerte det bra med store applikasjoner</li>
 								<li>Men når de større appene kom over på ny infrastruktur ble det verre</li>
@@ -796,7 +815,7 @@
 						<div class="header" style="color: #F10000">
 							<div class="caption">Vi har…</div>
 							<h2 style="color: inherit;">
-								Industrialisert utvikling og deploy
+								Industrialisert utvikling og utrulling
 							</h2>
 						</div>
 
@@ -837,26 +856,33 @@
 					</section>
 
 					<section data-slide-type="poeng">
-						<h2>Lag/ta i bruk støtteverktøy</h2>
+						<h2>Støtteverktøy</h2>
+						<ul>
+							<li>Loggagregering</li>
+							<li>Helsesjekker</li>
+							<li>Monitorering</li>
+							<li>Isolasjon mellom apper</li>
+							<li>Automatisk failover</li>
+							<li>Autentisering av applikasjoner</li>
+						</ul>
+
 						<aside class="notes">
-							<!--
-							Investere mer i infrastrukturen og drift av den.
-							Automatiserte ikke lengre eksplisitte oppgaver, men mer
-							implisitte oppgaver. (Logger, overvåking, helsesjekker,
-							osv)
-							-->
 							<ul>
+								<li>Fjerner kompleksiteten med monolitter, men introduserer en ny kompleksitet</li>
 								<li>Invester mer i infrastruktur</li>
 								<li>Automatiserer implisitte oppgaver</li>
-								<li>Trenger nye verktøy:
-									<ul>
-										<li>Loggagregering</li>
-										<li>Helsesjekk</li>
-										<li>Monitorering</li>
-										<li>Isolasjon mellom apper</li>
-										<li>Automatisk failover?</li>
-									</ul>
-								</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-slide-type="poeng">
+						<h2>Standardisering?</h2>
+
+						<aside class="notes">
+							<ul>
+								<li>Micro services brukes som et argument for at man kan bruke flere teknologier</li>
+								<li>Vår erfaring er at man i meste fall tåler like mange</li>
+								<li>Prisen for kontekstbytte for både utviklere og driftere er stor</li>
 							</ul>
 						</aside>
 					</section>
