@@ -433,61 +433,41 @@
 								Deployet mitt på dagen
 							</h2>
 						</div>
-						<!--
-						Etterhvert som infrastrukturen vi driftet selv vokste
-						og ble mer stabilt økte hyppigheten på deploys veldig,
-						og vi begynte fort å kjenne smerten ved at deployments
-						medførte nedetid og var noe omfattende.
-						-->
 						<aside class="notes">
 							<ul>
 								<li>Begynte å deploy oftere og oftere</li>
-								<li>Få brukere, ikke problem med litt nedetid</li>
+								<li>Inge/Få brukere, ikke problem med litt nedetid</li>
 							</ul>
 						</aside>
 					</section>
 
 					<section data-slide-type="tabbe">
 						<h2>Nedetid</h2>
-						<!--
-						Appene vokste. Hyppige deployments. Måtte deploye på
-						kveldstid med manuelle steg for å sikre at
-						applikasjonen ikke ble utilgjengelig for brukerne.
-						-->
 						<aside class="notes">
 							<ul>
-								<li>Begynte å deploy oftere og oftere</li>
-								<li>Få brukere, ikke problem med litt nedetid</li>
+								<li>Jøran kan ikke sitte å se når folk ikke bruker appen</li>
+								<li>Skalerer ikke</li>
 							</ul>
 						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
 						<h2>Nedetidsfri deploy</h2>
+						<ul>
+							<li class="fragment">Bakoverkompatibilitet</li>
+							<li class="fragment">To versjoner kjører samtidig</li>
+						</ul>
 						<aside class="notes">
 							<ul>
-								<li>Deploy på dagtid</li>
-								<li>Alle er på jobb</li>
+								<li>Deploy på dagtid. Lettere å deploye ofte</li>
+								<li>Alle er på jobb, i tilfelle feil</li>
+								<li>Realistisk trafikk på appen, vet om man må gjør rollback</li>
 								<li>NB! Bakoverkompatibilitet</li>
+								<li>API, databaseskjema, sesjoner</li>
+								<li>Må tenke mer på deploy når man utvikler</li>
 							</ul>
-							<!--
-							Når applikasjoene deployes ofte begynner det snart
-							å gjøre vondt dersom det fører med seg nedetid.
-							Dette bør være et prinsipp for alle applikasjoner
-							som inngår, inkludert databasen.
-
-							Unngå single point of failures , komponenter som
-							ikke kan deployes uten nedetid
-							-->
-							<br/>
 						</aside>
 					</section>
-
-					<!--
-					<section data-slide-type="visdomsord">
-						TODO: Dette er enkelt for webapps, men en jævla pandoras shitbox for persistent state.
-					</section>
-					-->
 				</section>
 
 				<section id="automatisering" data-owner="jøran" data-summary="Automatiser produksjonsmiljøene">
