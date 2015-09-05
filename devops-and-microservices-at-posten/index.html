@@ -715,6 +715,7 @@
 						<ul>
 							<li>Det er mye bra med monolitter!</li>
 							<li class="fragment">… men det er faen meg mye dårlig også</li>
+							<li class="fragment">Vanskelig å deploye ofte, krever mye testing</li>
 						</ul>
 
 						<aside class="notes">
@@ -730,20 +731,20 @@
 					</section>
 
 					<section data-slide-type="poeng">
-						<h2>En nødvendig konsekvens</h2>
+						<h2>Mikrotjenester gir <br/>effektivitet</h2>
 						<ul>
-							<li>Fokus på mindre applikasjoner</li>
-							<li class="fragment">Flytter kompleksiteten over i samspillet</li>
-							<li class="fragment">The Right Size™</li>
+							<li>Lar deg deploye ofte</li>
+							<li>Mer greenfield-utvikling</li>
+							<li>Lettere å eksperimentere med teknologi</li>
+							<li>Senker risiko på endringer</li>
+							<li>Tydelige kontrakter</li>
 						</ul>
 
 						<aside class="notes">
 							<ul>
-								<li>Splittet aldri opp eksisterende applikasjoner (selv om det var planen!)</li>
-								<li>Riktig størrelse for en mikrotjeneste</li>
-								<li>Endringstakt for koden er faktor</li>
-								<li>Arkitektur er ikke et mål i seg selv: viktig å gradvis lære seg å drifte små applikasjoner</li>
-								<li>Vi lå lenge på 4-5 og vokste sakte. Mye måtte på plass før vi var klare for mange små</li>
+								<li>Senker risiko: fordi det gir isolasjon. Applikasjoner kan endres for seg selv</li>
+								<li>Tydelige kontrakter: en mikrotjeneste er konseptuelt ikke så ulikt en modul</li>
+								<li>Et veldig tydelig definert API med klokkeklare boundaries</li>
 							</ul>
 						</aside>
 					</section>
@@ -758,6 +759,66 @@
 							Det er omvendt korrelasjon mellom størrelsen på applikasjonen og hvor ofte de kan deployes. Interessant kausalitet, fordi det driver hverandre begge veier.
 						</aside>
 					</section>
+
+				</section>
+
+				<section id="la-monolitten-leve" data-owner="jøran">
+					<section data-background-image="img/monolitten.jpg">
+						<div class="header" style="color: #F9E9CE">
+							<div class="caption">Vi har…</div>
+							<h2 style="color: inherit;">
+								Latt monolitten leve
+							</h2>
+						</div>
+
+						<aside class="notes">
+							<ul>
+								<li>Brukte mye tid på å snakke om hvordan vi skulle stykke opp de store applikasjonene</li>
+								<li>Endte opp med å ikke gjøre det</li>
+								<li>Å ikke levere ny funksjonalitet på månedsvis mens du "introduserer mikrotjenester" flyr dårlig</li>
+							</ul>
+						</aside>
+					</section>
+
+
+					<section data-slide-type="tabbe">
+						<h2>Skap verdi først!</h2>
+						<p>
+								Det er vanskelig å splitte opp eksisterende applikasjoner<br>
+								… og det tilfører veldig liten verdi
+						</p>
+
+						<aside class="notes">
+							Det er ikke noe feil med monolitter i seg selv!
+
+							<ul>
+								<li>Arkitektur er ikke et mål i seg selv: viktig å gradvis lære seg å drifte små applikasjoner</li>
+								<li>Vi lå lenge på 4-5 og vokste sakte. Mye måtte på plass før vi var klare for mange små</li>
+								<li>Du kan være smidig og jobbe effektivt med en (eller noen) monolitter</li>
+								<li>Vi hadde aldri én megamonolitt, men definitivt noen applikasjoner som fikk vokse for mye</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-slide-type="poeng">
+						<h2>La monolitten din leve lenge</h2>
+
+						<ul>
+							<li>Skaff erfaring med mikrotjenester først</li>
+							<li>Riktig Størrelse™ er relativt</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Bygg forretning først, så kan teknologien komme etterhvert</li>
+								<li>Monolitten din går ingen plass. Kan du fikse den i dag, kan du fikse den i morgen</li>
+								<li>Bli god på mikrotjenester først</li>
+								<li>Ikke la knøttsmå applikasjoner være et poeng i seg selv</li>
+								<li>Å splitte opp en eksisterende applikasjon er en vanskelig engineering-øvelse</li>
+							</ul>
+						</aside>
+					</section>
+
 
 				</section>
 
@@ -916,6 +977,14 @@
 					</section>
 
 					<section data-slide-type="pain">
+						<h2>Verifisere oppførsel på tvers av 4 applikasjoner :(</h2>
+
+						<aside class="notes">
+							Dette er et problem vi ikke har løst (enda).
+						</aside>
+					</section>
+
+					<section data-slide-type="pain">
 						<img src="img/monolithconf.png"/>
 					</section>
 
@@ -930,6 +999,7 @@
 							<ul>
 								<li>Automatisert testing er vanskeligere en noensinne</li>
 								<li>Debugging likeså</li>
+								<li>Mikrotjenester er heller ikke sølvkula vi leter etter. Men det er bra.</li>
 							</ul>
 						</aside>
 					</section>
