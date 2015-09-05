@@ -236,7 +236,7 @@
 					</aside>
 				</section>
 
-				<section id="premisser" data-owner="jøran">
+				<section id="devops-er-en-konsekvens-av-smidig" data-owner="jøran" data-summary="Ikke gjør DevOps for å gjøre DevOps">
 
 					<section data-background-image="img/o-rly.png">
 						<div class="header" style="color: #FB8015">
@@ -248,10 +248,6 @@
 
 						<aside class="notes">
 							Det er naturlig å begynne historien vår med hvordan vi endte opp med DevOps.
-
-							<ul>
-								<li>Slide fra Stein Inge</li>
-							</ul>
 						</aside>
 					</section>
 
@@ -316,7 +312,7 @@
 					</section>
 				</section>
 
-				<section id="utfordre-premissene" data-owner="jøran">
+				<section id="utfordre-premissene" data-owner="jøran" data-summary="Utfordre premissene, vær litt naughty">
 
 					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header" style="color: #B79A79">
@@ -373,7 +369,7 @@
 					</section>
 				</section>
 
-				<section id="start-smått" data-owner="stian">
+				<section id="start-smått" data-owner="stian" data-summary="Start med et lite eksperiment">
 					<!-- http://www.designswan.com/archives/beautiful-miniature-world-created-by-tilt-shift-photography.html -->
 					<section data-background="img/miniature.jpg">
 						<div class="header" style="color: #3281AD"><!-- colors: #FBC32B #3281AD -->
@@ -427,7 +423,7 @@
 					</section>
 				</section>
 
-				<section id="nedetidsfri-deploy" data-owner="stian">
+				<section id="nedetidsfri-deploy" data-owner="stian" data-summary="Deploy hyppig, på dagtid">
 					<!-- http://www.wallconvert.com/wallpapers/space/sunrise-28446.html -->
 					<section data-background="img/sunrise.jpg">
 						<div class="header" style="color: #FCE677">
@@ -493,8 +489,7 @@
 					-->
 				</section>
 
-
-				<section id="automatisering" data-owner="jøran">
+				<section id="automatisering" data-owner="jøran" data-summary="Automatiser produksjonsmiljøene">
 					<section data-background="img/automatisering.jpg">
 						<div class="header" style="color: #0CADD1">
 							<div class="caption">Vi har…</div>
@@ -565,7 +560,7 @@
 					</section>
 				</section>
 
-				<section id="overvåkning" data-owner="jøran">
+				<section id="overvåkning" data-owner="jøran" data-summary="Etabler overvåkning">
 					<section data-background="img/overvåkning.jpg" data-background-repeat="no-repeat" data-background-color="white" data-background-position="center" data-background-size="70%">
 
 						<div class="header" style="background-color: white;">
@@ -610,7 +605,7 @@
 
 				</section>
 
-				<section id="lær-drift" data-owner="stian">
+				<section id="lær-drift" data-owner="stian" data-summary="Lær driftsfaget">
 					<!-- https://commons.wikimedia.org/wiki/File:Rock_crusher_gears.jpg -->
 					<section data-background="img/gears.jpg">
 						<div class="header" style="color: #C66659">
@@ -674,7 +669,7 @@
 					</section>
 				</section>
 
-				<section id="micro-services-the-beginning" data-owner="jøran">
+				<section id="micro-services-the-beginning" data-owner="jøran" data-summary="Lag mikrotjenester ved behov">
 					<section data-background-image="img/neural-network.jpg">
 						<div class="header" style="color: #E2E7CF">
 							<div class="caption">Vi har…</div>
@@ -746,7 +741,7 @@
 
 				</section>
 
-				<section id="la-monolitten-leve" data-owner="jøran">
+				<section id="la-monolitten-leve" data-owner="jøran" data-summary="Og la monolitten leve">
 					<section data-background-image="img/monolitten.jpg">
 						<div class="header" style="color: #F9E9CE">
 							<div class="caption">Vi har…</div>
@@ -806,7 +801,7 @@
 
 				</section>
 
-				<section id="devops-er-en-markedsfordel" data-owner="stian">
+				<section id="devops-er-en-markedsfordel" data-owner="stian" data-summary="Demonstrer forretningsverdi">
 					<!-- https://en.wikipedia.org/wiki/File:Cash_register,_built_1904_in_Ohio.jpg -->
 					<section data-background="img/cashregister.jpg">
 						<div class="header">
@@ -870,7 +865,7 @@
 					</section>
 				</section>
 
-				<section id="industrialisering" data-owner="stian">
+				<section id="industrialisering" data-owner="stian" data-summary="Industrialiser infrastrukturen">
 					<!-- http://www.iso.org/iso/news.htm?refid=Ref1701 -->
 					<section data-background="img/cake.jpg">
 						<div class="header" style="color: #F10000">
@@ -949,7 +944,6 @@
 					</section>
 				</section>
 
-
 				<section id="ende-til-ende-testing" data-owner="jøran">
 					<section data-background-image="img/curiosity.jpg">
 						<div class="header" style="color: #EAA96B">
@@ -1026,13 +1020,13 @@
 				</section>
 
 
-				<section id="oppsummering">
-					<section>
-						Oppsummér poengene som har vært gjort så langt.
+				<section>
+					<section id="oppsummering">
+						<h2 style="margin-bottom: 10px;">Oppsummering</h2>
+						<ol id="summary-list">
 
-						<aside class="notes">
-							Denne kan fjernes hvis presentasjonen blir for lang
-						</aside>
+						</ol>
+
 					</section>
 				</section>
 
@@ -1083,14 +1077,14 @@
 				.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
 					n.dataset.owner = e.dataset.owner;
 				})
-			})
+			});
 
 			// Add next owner of next slide to notes
 			_.chain(document.querySelectorAll("aside.notes"))
 				.reduce(function(prev, next) {
 					prev.dataset.nextowner = next.dataset.owner;
 					return next;
-				})
+				});
 
 			var people = {
 				stian: "../../img/hovercat.jpg",
@@ -1127,8 +1121,11 @@
 					}
 			});
 
-
-
+			var summary = document.querySelector('#summary-list');
+			_.chain(document.querySelectorAll('section[data-summary]'))
+					.each(function(e) {
+						summary.innerHTML += ("<li>" + e.dataset.summary + "</li>");
+					});
 
 
 			// Full list of configuration options available at:
