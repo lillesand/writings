@@ -385,38 +385,12 @@
 						<aside class="notes">
 							<ul>
 								<li>Fikk kontroll på utvikling</li>
-								<li>Vil prodsette oftere</li>
 								<li>Bruker mye tid per deploy</li>
 								<li>Stor appserver</li>
-							</ul>
-						</aside>
-						<!--
-						Ville ha mer kontroll på hvordan deployment fungerte,
-						siden vi brukte mye tid per deploy. Bestilte egne
-						servere, og begynte å automatisere deployment, og
-						byttet ut stor appserver med liten container. Prøver ut
-						på en (liten) app.
-						-->
-					</section>
-
-					<section>
-						<h2>Egne servere, ny applikasjon</h2>
-						<aside class="notes">
-							<ul>
-								<li>Liten appserver</li>
+								<li>Vår første DevOps var en applikasjon med 0 brukere</li>
 								<li>Bestiller egne servere</li>
-								<li>Ansvar for drift krever kunnskap</li>
 							</ul>
 						</aside>
-						<!--
-						Videre gikk på noen problemer mens dette miljøet var i
-						startgropa. Lærte mye om drift og at dette faktisk er
-						et fag i seg selv. Å ta ansvar for driftsmiljø krever
-						mye kunnskap om infrastruktur osv. Et eksempel på en
-						mindre smart ting vi gjorde var å eksplodere war-fila
-						vår i tmp-folderen som blir wipa regelmessig av OSet.
-						Ikke smart.
-						-->
 					</section>
 
 					<section data-slide-type="tabbe">
@@ -425,19 +399,29 @@
 							<ul>
 								<li>Jetty exploded war i /tmp/</li>
 								<li>Fungerer når vi deployer ofte</li>
-								<li>Sletted hver 3. dag</li>
+								<li>Slettes hver 3. dag</li>
 							</ul>
 						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
 						<h2>Start med minimal risiko</h2>
+						<ul>
+							<li>Senker konsekvensen ved feil</li>
+							<li>
+								Gjør det lettere å selge inn <br>
+								(hva er det verste som kan skje..?)
+							</li>
+						</ul>
+
 						<aside class="notes">
 							<ul>
 								<li>Vi begynte med helt ny/liten applikasjon</li>
 								<li>Det viktigste er at kompleksiteten i applikasjonen er lav</li>
 								<li>… og at risikoen er lav. Folk bør ikke miste jobben dersom det gjøres feil i starten.</li>
 								<li>Du har fortsatt mye å lære!</li>
+								<li>Gjør det lettere å selge</li>
+								<li>Ansvar for drift krever kunnskap</li>
 							</ul>
 						</aside>
 					</section>
