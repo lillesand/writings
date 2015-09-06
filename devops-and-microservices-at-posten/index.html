@@ -479,11 +479,11 @@
 						</ul>
 						<aside class="notes">
 							<ul>
-								<li>Husk: Bakoverkompabilitet, databaseskjema, sesjoner, API</li>
 								<li>Deploy på dagtid. Lettere å deploye ofte</li>
-								<li>Alle er på jobb, i tilfelle feil</li>
-								<li>Realistisk trafikk på appen, vet om man må gjør rollback</li>
-								<li>Må tenke mer på deploy når man utvikler</li>
+								<li>Alle er <b>på jobb</b>, i tilfelle feil</li>
+								<li><b>Realistisk trafikk</b> på appen, vet om man må gjør rollback</li>
+								<li>Husk: Bakoverkompabilitet, databaseskjema, sesjoner, API</li>
+								<li>Må <b>tenke mer på deploy</b> når man utvikler</li>
 							</ul>
 						</aside>
 					</section>
@@ -669,8 +669,8 @@
 						<aside class="notes">
 							<ul>
 								<li>Hadde kun råd til å migrere noen apper</li>
-								<li>To klasser med apper oppsto, de på "Smidig drift" og de på tradisjonell</li>
-								<li>Salg ble irritert: Noen apper ute på 5 min, andre på to uker</li>
+								<li><b>To klasser</b> med apper oppsto, de på "Smidig drift" og de på tradisjonell</li>
+								<li><b>Salg ble irritert</b>: Noen apper ute på 5 min, andre på to uker</li>
 							</ul>
 						</aside>
 					</section>
@@ -681,10 +681,10 @@
 						<aside class="notes">
 							<ul>
 								<li>Hvem skal betale?</li>
-								<li>Salg/produkteier lei av IT-oppgaver</li>
+								<li><b>Salg/produkteier lei</b> av IT-oppgaver</li>
 								<li>Hvorfor migrere, betaler jo allerede for drift</li>
-								<li>Periode hvor IT hadde en del andre oppgaver i tillegg</li>
-								<li>Chicken race: Hvor lenge kan man vente før de andre betaler</li>
+								<li>Periode hvor IT hadde en del <b>andre oppgaver</b> i tillegg</li>
+								<li><b>Chicken race</b>: Hvor lenge kan man vente før de andre betaler</li>
 								<!--
 								<li>"Høye herrer" i IT betaler jo allerede for drift</li>
 								<li>Hvorfor betale dobbelt for oss</li>
@@ -704,8 +704,9 @@
 						<aside class="notes">
 							Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene!
 							<ul>
+								<li><b>Solskinns-historie</b></li>
 								<li>Salg/produkteiere betalte for migrering</li>
-								<li>Forretning må skjønne hva vi gjør</li>
+								<li><b>Forretning må skjønne</b> hva vi gjør</li>
 								<li>Kortere time to marked</li>
 								<li>Vis og bevis!</li>
 								<li>Ingen effekt for andre enn IT? Bør du?</li>
@@ -780,7 +781,7 @@
 
 						<aside class="notes">
 							<ul>
-								<li>Brukte mye tid på å snakke om hvordan vi skulle stykke opp de store applikasjonene</li>
+								<li>Brukte <b>mye</b> tid på <b>å snakke</b> om hvordan vi skulle stykke opp de store applikasjonene</li>
 								<li>Endte opp med å ikke gjøre det</li>
 								<li>Å ikke levere ny funksjonalitet på månedsvis mens du "introduserer mikrotjenester" flyr dårlig</li>
 							</ul>
@@ -792,7 +793,7 @@
 						<ul>
 							<li>Det er mye bra med monolitter!</li>
 							<li class="fragment">… men det er faen meg mye dårlig også</li>
-							<li class="fragment">Vanskelig å deploye ofte, krever mye testing</li>
+							<li class="fragment">Vanskelig å deploye ofte</li>
 						</ul>
 
 						<aside class="notes">
@@ -819,10 +820,10 @@
 
 							<ul>
 								<li>Aldri hatt bare en stor app</li>
+								<li>Vi lå <b>lenge på 4-5</b> og vokste sakte. Mye måtte på plass før vi var klare for mange små</li>
+								<li>Men definitivt noen applikasjoner som fikk vokse for mye</li>
 								<li>Arkitektur er ikke et mål i seg selv: viktig å gradvis lære seg å drifte små applikasjoner</li>
-								<li>Vi lå lenge på 4-5 og vokste sakte. Mye måtte på plass før vi var klare for mange små</li>
 								<li>Du kan være smidig og jobbe effektivt med en (eller noen) monolitter</li>
-								<li>Vi hadde aldri én megamonolitt, men definitivt noen applikasjoner som fikk vokse for mye</li>
 							</ul>
 						</aside>
 					</section>
@@ -837,11 +838,11 @@
 
 						<aside class="notes">
 							<ul>
-								<li>Bygg forretning først, så kan teknologien komme etterhvert</li>
+								<li>Bygg <b>forretning først</b>, så kan teknologien komme etterhvert</li>
 								<li>Monolitten din går ingen plass. Kan du fikse den i dag, kan du fikse den i morgen</li>
-								<li>Bli god på mikrotjenester først</li>
+								<li>Bli <b>god på mikrotjenester</b> først</li>
 								<li>Ikke la knøttsmå applikasjoner være et poeng i seg selv</li>
-								<li>Å splitte opp en eksisterende applikasjon er en vanskelig engineering-øvelse</li>
+								<li>Å <b>splitte opp</b> en eksisterende applikasjon er en <b>vanskelig</b> engineering-øvelse</li>
 							</ul>
 						</aside>
 					</section>
@@ -882,6 +883,12 @@
 
 					<section data-slide-type="poeng">
 						<img src="img/kibana2.png" alt="Kibana">
+						<aside class="notes">
+							<ul>
+								<li>Aggregering av logger</li>
+								<li>Forrige slide og denne er <b>samme data</b></li>
+								<li>Grafer gjør det lettere å se <b>trender og spikes</b></li>
+						</aside>
 					</section>
 
 					<section data-slide-type="poeng">
@@ -889,13 +896,15 @@
 						<ul>
 							<li>Applikasjoner blir moduler</li>
 							<li>
-								Støtte må gjøres rundt applikasjoner<br>,
+								Støtte må gjøres rundt applikasjoner,<br>
 								ikke inne i dem
 							</li>
 						</ul>
 
 						<aside class="notes">
 							<ul>
+								<li><b>App = modul</b></li>
+								<li>Får et <b>nivå over applikasjon</b></li>
 								<li>Fjerner kompleksiteten med monolitter, men introduserer en ny kompleksitet</li>
 								<li>Invester mer i infrastruktur</li>
 								<li>Automatiserer implisitte oppgaver</li>
@@ -910,7 +919,6 @@
 							<ul>
 								<li>Mikrotjenester brukes som et argument for at man kan bruke flere teknologier</li>
 								<li>Vår erfaring er at man i meste fall tåler like mange</li>
-								<li>Prisen for kontekstbytte for både utviklere og driftere er stor</li>
 								<li>Støtteverktøy bør standariseres, men kan godt brukes av flere teknologier</li>
 							</ul>
 						</aside>
@@ -959,6 +967,9 @@
 
 				<section data-background="img/the_end.jpg" data-owner="stian" data-timing="45">
 					<h2 style="background-color: black; padding: 10px;">The end is near</h2>
+					<aside class="notes">
+						Snarte ferdig...
+					</aside>
 				</section>
 
 				<section id="hovedpoeng" data-owner="jøran" >
@@ -966,7 +977,7 @@
 						<h2 style="background-color: black; padding: 10px;">Konklusjonen</h2>
 
 						<aside class="notes">
-							Pek tilbake til konklusjonen vi teasa med tidligere
+							Pek <b>tilbake til konklusjonen</b> vi teasa med tidligere
 						</aside>
 					</section>
 
