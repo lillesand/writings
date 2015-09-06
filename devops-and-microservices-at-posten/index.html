@@ -1099,14 +1099,26 @@
 			_.chain(document.querySelectorAll("section"))
 				.filter(function(e) { return e.dataset.timing; })
 				.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
-					var timingString = document.createElement("p");
+					var el = document.createElement("div");
+
+					el.style.position = "absolute";
+					el.style.right = "0";
+					el.style.top = "1.6em";
+					el.style.height = "2em";
+					el.style.width = "50%";
+					el.style.zIndex = 100;
+					el.style.textAlign = "right";
+					el.style.padding = "22px";
+					el.style.fontSize = "1.6em";
+
 					var t = parseFloat(e.dataset.timing);
 					var min = Math.floor(t);
 					var sek = ((t % 1) * 60) + '';
-					timingString.textContent = "Slidestart " + min + ":" +
+
+					el.textContent = min + ":" +
 						(sek.length === 1 ? "0" + sek : sek);
 
-					n.insertBefore(timingString, n.firstChild);
+					n.insertBefore(el, n.firstChild);
 				})
 			});
 
