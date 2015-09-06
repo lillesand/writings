@@ -1072,6 +1072,33 @@
 					return next;
 				});
 
+			_.chain(document.querySelectorAll("section"))
+				.filter(function(e) { return e.parentElement.nodeName !== "SECTION" })
+				.reduce(function(timing, e) {
+					if (e.dataset && e.dataset['timing']) {
+						timing = parseFloat(e.dataset['timing']);
+					}
+					e.dataset['timing'] = timing;
+					if (e.dataset && e.dataset['time']) {
+						return timing + parseFloat(e.dataset['time']);
+					}
+					return timing;
+				}, 0);
+
+			_.chain(document.querySelectorAll("section"))
+				.filter(function(e) { return e.dataset.timing; })
+				.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
+					var timingString = document.createElement("p");
+					var t = parseFloat(e.dataset.timing);
+					var min = Math.floor(t);
+					var sek = ((t % 1) * 60) + '';
+					timingString.textContent = "Slidestart " + min + ":" +
+						(sek.length === 1 ? "0" + sek : sek);
+
+					n.insertBefore(timingString, n.firstChild);
+				})
+			});
+
 			var people = {
 				stian: "../../img/hovercat.jpg",
 				'jøran': "../../img/lillesand.jpeg"
