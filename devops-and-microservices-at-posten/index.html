@@ -953,11 +953,11 @@
 				</section>
 
 
-				<section data-background="img/the_end.jpg">
+				<section data-background="img/the_end.jpg" data-owner="stian">
 					<h2 style="background-color: black; padding: 10px;">The end is near</h2>
 				</section>
 
-				<section id="hovedpoeng">
+				<section id="hovedpoeng" data-owner="jøran">
 					<section data-background-image="img/conclusion.jpg">
 						<h2 style="background-color: black; padding: 10px;">Konklusjonen</h2>
 
@@ -975,15 +975,13 @@
 						</ul>
 
 						<aside class="notes">
-
-							<aside class="notes">
-								<ul>
-									<li>Jobben til IT er å løse behov!</li>
-									<li>And the rest will follow!</li>
-									<li>Du kan ikke "implementere DevOps" eller "lage mikrotjenester".</li>
-									<li>Dette er noe som må vokse frem organisk gjennom at et ansvarliggjort team føler på smerter og har lov til å lage løsninger. Ikke bygg platform for å bygge platform!</li>
-								</ul>
-							</aside>
+							<b>NB: Neste slide er oppsummering. Hopp over hvis travelt</b>
+							<ul>
+								<li>Jobben til IT er å løse behov!</li>
+								<li>And the rest will follow!</li>
+								<li>Du kan ikke "implementere DevOps" eller "lage mikrotjenester".</li>
+								<li>Dette er noe som må vokse frem organisk gjennom at et ansvarliggjort team føler på smerter og har lov til å lage løsninger. Ikke bygg platform for å bygge platform!</li>
+							</ul>
 						</aside>
 					</section>
 
@@ -992,7 +990,6 @@
 						<ol id="summary-list">
 
 						</ol>
-
 					</section>
 				</section>
 
@@ -1109,7 +1106,7 @@
 			var summary = document.querySelector('#summary-list');
 			_.chain(document.querySelectorAll('section[data-summary]'))
 					.each(function(e) {
-						summary.innerHTML += ("<li>" + e.dataset.summary + "</li>");
+						summary.innerHTML += ('<li class="fragment">' + e.dataset.summary + '</li>');
 					});
 
 
