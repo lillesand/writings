@@ -1085,14 +1085,14 @@
 					var size = 4;
 
 					current.style.position = "fixed";
-					current.style.left = "0em";
+					current.style.right = size + "em";
 					current.style.bottom = "0em";
 					current.style.height = size + "em";
 					current.style.width = size + "em";
 					current.style.zIndex = 100;
 
 					next.style.position = "fixed";
-					next.style.left = size + "em";
+					next.style.right = "0em";
 					next.style.bottom = "0em";
 					next.style.height = size + "em";
 					next.style.width = size + "em";
@@ -1101,10 +1101,10 @@
 					current.src = people[e.dataset.owner];
 					next.src = people[e.dataset.nextowner];
 
-					e.appendChild(current);
 					if (e.dataset.owner !== e.dataset.nextowner) {
-						e.appendChild(next);
+						e.appendChild(current);
 					}
+					e.appendChild(next);
 			});
 
 			var summary = document.querySelector('#summary-list');
