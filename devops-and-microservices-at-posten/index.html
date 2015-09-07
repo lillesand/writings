@@ -1107,7 +1107,7 @@
 							joran.lillesand@bekk.no
 						</p>
 					</div>
-					<img src="img/bekk_logo_transp.png" height="25%" width="25%" style="background-color: black;">
+					<img src="img/bekk_logo_transp.png" style="background-color: black; height: 25%; width: 25%;">
 				</section>
 
 			</div>
@@ -1178,7 +1178,7 @@
 				var sek = ((t % 1) * 60) + '';
 
 				return min + ":" + (sek.length === 1 ? "0" + sek : sek);
-			}
+			};
 
 			_.chain(document.querySelectorAll("section"))
 				.filter(function(e) { return e.dataset.timing; })
@@ -1194,8 +1194,6 @@
 					el.style.textAlign = "right";
 					el.style.padding = "22px";
 					el.style.fontSize = "1.6em";
-
-					var t = parseFloat(e.dataset.timing);
 
 					el.textContent = showAsTimeInMin(e.dataset.timing) + " - " + showAsTimeInMin(e.dataset.next);
 
