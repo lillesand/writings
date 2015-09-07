@@ -1061,6 +1061,7 @@
 						</aside>
 					</section>
 
+					<!--
 					<section id="oppsummering" data-slide-type="poeng">
 						<h2 style="margin-bottom: 10px;">Oppsummering</h2>
 						<ol id="summary-list">
@@ -1077,6 +1078,7 @@
 							</ul>
 						</aside>
 					</section>
+					-->
 				</section>
 
 				<section data-time="5">
@@ -1229,11 +1231,12 @@
 			});
 
 			var summary = document.querySelector('#summary-list');
-			_.chain(document.querySelectorAll('section[data-summary]'))
-					.each(function(e) {
-						summary.innerHTML += ('<li class="fragment">' + e.dataset.summary + '</li>');
-					});
-
+			if (summary) {
+				_.chain(document.querySelectorAll('section[data-summary]'))
+						.each(function(e) {
+							summary.innerHTML += ('<li class="fragment">' + e.dataset.summary + '</li>');
+						});
+			}
 
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
