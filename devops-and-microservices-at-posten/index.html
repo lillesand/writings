@@ -62,7 +62,7 @@
 		<div class="reveal">
 
 			<div class="slides">
-				<section id="intro-speakers" data-owner="jøran">
+				<section id="intro-speakers" data-owner="jøran" data-time="1">
 					<section>
 						<h1>DevOps og mikrotjenester hos Posten og Bring!</h1>
 					</section>
@@ -88,7 +88,7 @@
 					</aside>
 				</section>
 
-				<section id="intro" data-owner="jøran">
+				<section id="intro" data-owner="jøran" data-time="4">
 					<section data-background-video="img/sortering.mp4" data-background-video-loop>
 						<h2 style="background-color: #e32d22; color: white; padding: 10px; width: auto;">
 							IT i Posten
@@ -119,7 +119,7 @@
 					</section>
 				</section>
 
-				<section data-owner="stian" data-timing="5">
+				<section data-owner="stian" data-time="7">
 					<section>
 						<h1>Hva lager vi?</h1>
 
@@ -221,7 +221,7 @@
 					-->
 				</section>
 
-				<section id="hovedpoeng-teaser" data-owner="jøran" data-timing="12">
+				<section id="hovedpoeng-teaser" data-owner="jøran" data-time="3">
 					<section data-background-image="img/conclusion.jpg">
 						<h2 style="background-color: black; padding: 10px;">Konklusjonen</h2>
 					</section>
@@ -253,7 +253,7 @@
 					</aside>
 				</section>
 
-				<section id="utfordre-premissene" data-owner="jøran" data-summary="Utfordre premissene, vær litt naughty" data-timing="15" data-time="2.5">
+				<section id="utfordre-premissene" data-owner="jøran" data-summary="Utfordre premissene, vær litt naughty" data-time="2.5">
 
 					<section data-background="img/jcvd-volvosplitt.jpg">
 						<div class="header" style="color: #B79A79">
@@ -1161,16 +1161,23 @@
 
 			_.chain(document.querySelectorAll("section"))
 				.filter(function(e) { return e.parentElement.nodeName !== "SECTION" })
-				.reduce(function(timing, e) {
-					if (e.dataset && e.dataset['timing']) {
-						timing = parseFloat(e.dataset['timing']);
-					}
-					e.dataset['timing'] = timing;
+				.reduce(function(t, e) {
 					if (e.dataset && e.dataset['time']) {
-						return timing + parseFloat(e.dataset['time']);
+						t.timing = t.next;
+						t.next = t.timing + parseFloat(e.dataset['time']);
 					}
-					return timing;
-				}, 0);
+					e.dataset['next'] = t.next;
+					e.dataset['timing'] = t.timing;
+					return t;
+				}, { timing: 0, next: 0 });
+
+			var showAsTimeInMin = function(t) {
+				t = parseFloat(t);
+				var min = Math.floor(t);
+				var sek = ((t % 1) * 60) + '';
+
+				return min + ":" + (sek.length === 1 ? "0" + sek : sek);
+			}
 
 			_.chain(document.querySelectorAll("section"))
 				.filter(function(e) { return e.dataset.timing; })
@@ -1188,11 +1195,8 @@
 					el.style.fontSize = "1.6em";
 
 					var t = parseFloat(e.dataset.timing);
-					var min = Math.floor(t);
-					var sek = ((t % 1) * 60) + '';
 
-					el.textContent = min + ":" +
-						(sek.length === 1 ? "0" + sek : sek);
+					el.textContent = showAsTimeInMin(e.dataset.timing) + " - " + showAsTimeInMin(e.dataset.next);
 
 					n.insertBefore(el, n.firstChild);
 				})
