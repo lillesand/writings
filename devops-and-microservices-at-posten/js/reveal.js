@@ -2760,7 +2760,8 @@
 				var backgroundImage = slide.getAttribute( 'data-background-image' ),
 					backgroundVideo = slide.getAttribute( 'data-background-video' ),
 					backgroundVideoLoop = slide.hasAttribute( 'data-background-video-loop' ),
-					backgroundIframe = slide.getAttribute( 'data-background-iframe' );
+					backgroundIframe = slide.getAttribute( 'data-background-iframe'),
+					playbackRate = slide.getAttribute( 'data-video-playback-rate');
 
 				// Images
 				if( backgroundImage ) {
@@ -2778,6 +2779,10 @@
 					backgroundVideo.split( ',' ).forEach( function( source ) {
 						video.innerHTML += '<source src="'+ source +'">';
 					} );
+
+					if (playbackRate) {
+						video.playbackRate = playbackRate;
+					}
 
 					background.appendChild( video );
 				}
