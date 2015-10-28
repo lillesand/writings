@@ -5,547 +5,467 @@
 
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-
-		<title>DevOps og Micro Services hos Posten</title>
-
-		<meta name="description" content="DevOps og Micro Services hos Posten">
-		<meta name="author" content="Stian Mathiassen and Jøran Lillesand">
-
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-		<link rel="stylesheet" href="css/reveal.css">
-		<!--
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		-->
-		<link rel="stylesheet" href="css/theme/bekk.css" id="theme">
-
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-
-		<style>
-			.reveal section img {
-				border: none;
-			}
-
-			section .header {
-				position: relative;
-				background-color: black;
-			}
-
-			section .header h2 {
-				padding: 10px;
-			}
-
-			section .header .caption {
-				position: absolute;
-				font-size: 20px;
-				text-align: left;
-				background-color:inherit;
-				top: -24px;
-				padding: 2px 10px;
-			}
-
-		</style>
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<div class="slides">
-				<section id="intro-speakers" data-owner="jøran" data-time="1">
-					<section>
-						<h1>DevOps og mikrotjenester hos Posten og Bring!</h1>
-					</section>
-
-					<section>
-						<h1>Hvem er vi?</h1>
-						<div style="clear:both"></div>
-
-						<div style="width: 49%; float: left;">
-							<img src="img/bekk-stian.png" />
-							<p class="">Stian</p>
-						</div>
-						<div style="width: 49%; float: left;" class="fragment">
-							<img src="img/bekk-joran.png" />
-							<p class="">Jøran</p>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Til sammen 12 år på Posten</li>
-								<li>Stian 5</li>
-								<li>Jøran 7</li>
-								<li>Stian har jobbet mye med det tekniske og er kongen bak innføring</li>
-								<li>Jøran er stor i kjeften og ser mye på hvorfor og hvilke effekter det gir</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="intro" data-owner="jøran" data-time="4">
-					<section data-background-video="img/sortering.mp4" data-background-video-loop>
-						<h2 style="background-color: #e32d22; color: white; padding: 10px; width: auto;">
-							IT i Posten
-						</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Sorteringmaskin for brev, 80 000 brev i timen per robot</li>
-								<li>Posten er en IT-virksomhet som driver med Logistikk</li>
-								<li>All produksjon er IT-styrt</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-background-image="img/bring-web-team.jpg">
-						<h2 style="background-color: #7bc144; color: white; padding: 10px;">
-							Bring Web Team
-						</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Sped begynnelse i 2008.</li>
-								<li>Jøran rett ut fra NTNU som første utvikler. Designet svært databaseskjema.</li>
-								<li>Premisset for teamet: smidig! Endre måten Posten gjør software på.</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section data-owner="stian" data-time="7">
-					<section>
-						<h1>Hva lager vi?</h1>
-
-						<aside class="notes">
-							<ul>
-								<li>Gi dere en ide om hva vi snakker om</li>
-								<li>Dette er ikke et rent tech-miljø, men forretningskritiske systemer.</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-owner="stian" data-background-image="img/sporing.png" data-background-position="top">
-						<aside class="notes">
-							<ul>
-								<li>Mest kjente løsningen</li>
-								<li>Tipper dere alle har brukt</li>
-								<li>En mill sporinger per dag</li>
-								<li>50 000 pushmeldinger i døgnet</li>
-								<li>Veldig viktig app for Posten/Bring</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-owner="stian" data-background-image="img/booking.png" data-background-position="top">
-						<aside class="notes">
-							<ul>
-								<li>I starten ca 5000 kr i uka</li>
-								<li>Over 30 000 bestillinger i uka</li>
-								<li>Flere hundre millioner i omsetning i året</li>
-								<li>Begynt å bli veldig viktig</li>
-								<li>Helt kaos om går ned</li>
-								<li>Veldig mange småkunder</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-owner="stian" data-background-image="img/developer.png" data-background-position="top">
-						<aside class="notes">
-							<ul>
-								<li>API er blitt viktig forretningsområdet</li>
-								<li>Knytter kundene tettere til seg</li>
-								<li>Stor verdi for kunder av Bring</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-owner="stian" data-background-image="img/fraktguide.png" data-background-position="top">
-						<aside class="notes">
-							<ul>
-								<li>Viktigste API-et</li>
-								<li>Brukes av veldig mange nettbutikker</li>
-								<li>En kvart million oppslag per dag</li>
-							</ul>
-						</aside>
-					</section>
-					<section data-owner="stian" data-background-image="img/vita.png">
-					</section>
-				</section>
-
-
-				<section data-owner="stian">
-					<section>
-						<h1>Hva har vi?</h1>
-						<aside class="notes">
-							Fang oppmerksomheten sånn at folk våkner opp.
-
-							Vi er stolte over hvor langt vi har kommet. Full buzzword compliance:
-							<ul>
-								<li>Serveroppsett med Puppet</li>
-								<li>nedetidsfri deployment på dagtid</li>
-								<li>Deployer flere ganger om dagen</li>
-								<li>Få feil</li>
-								<li>Automatisert overvåkning av logger basert på terskelverdier</li>
-								<li>Logaggregering</li>
-							</ul>
-						</aside>
-					</section>
-					<section data-owner="stian" data-background-image="img/puppet.png" data-background-position="top">
-					</section>
-					<section data-owner="stian" data-background-video="img/deployment.mov" data-video-playback-rate="4.0">
-						<aside class="notes">
-							<ul>
-								<li>Tar seg av alt</li>
-								<li>Databasemigrering</li>
-								<li>Forklar nedetidsfri deploy</li>
-							</ul>
-						</aside>
-					</section>
-					<section data-owner="stian" data-background-image="img/dashboard.png" data-background-position="top">
-						<aside class="notes">
-							Gir oversikt over helsen på alle appene
-						</aside>
-					</section>
-					<section data-owner="stian" data-background-image="img/kibana1.png" data-background-position="top">
-						<aside class="notes">
-							Dette er en Logstash + Elasicsearch&Kibana-stack
-						</aside>
-					</section>
-
-					<!--
-					<section data-owner="jøran">
-						<img src="img/disk_problems.png" alt="Disk problems">
-					</section>
-					-->
-
-
-					<!--
-					<section data-owner="stian">
-						Vis hvor langt vi har kommet:
-
-						* Vis Kibana
-						* Vis dashboardet
-						* Vis Slack med feilvarsling basert på terskelverdier (automatisert overvåkning)
-						* Lag screencast/video av deployment
-					</section>
-					-->
-				</section>
-
-				<section id="hovedpoeng-teaser" data-owner="jøran" data-time="3">
-					<section data-background-image="img/conclusion.jpg">
-						<h2 style="background-color: black; padding: 10px;">Konklusjonen</h2>
-					</section>
-
-					<section data-slide-type="poeng">
-						Løs problemene du faktisk har.
-
-						<aside class="notes">
-							<ul>
-								<li>Ikke dra på presentasjoner og dra hjem og "gjør DevOps"</li>
-								<li>Kjenn til hva andre gjør og hva som er the latest and greatest</li>
-								<li>Ikke lag noe bare for å lage det</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="hoveddel-intro" data-background-image="img/now-for-something-different.jpg" data-owner="jøran">
-					<h2 style="background-color: black; padding: 10px; margin-bottom: -250px;">And now for something completely different…</h2>
-
-					<aside class="notes">
-						<ul>
-							<li>Nå kommer innholdet!</li>
-							<li>Historien om leksene vi har lært</li>
-							<li>Smerten vi kjent på, og løsningene vi fant</li>
-							<li>Vi mener mye av dette er relevant for alle</li>
-							<li>Ikke for å bruke direkte, men som inspirasjon og et oppslagsverk</li>
-						</ul>
-					</aside>
-				</section>
-
-				<section id="utfordre-premissene" data-owner="jøran" data-summary="Utfordre premissene, vær litt naughty" data-time="2.5">
-
-					<section data-background="img/jcvd-volvosplitt.jpg">
-						<div class="header" style="color: #B79A79">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Utfordret premisser
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Vi ville gjøre smidig</li>
-								<li>Innkjperen vår ville gjøre smidig</li>
-								<li>Organisasjonen var på ingen måte rigget for smidig</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section>
-						<h1>Smidig<span class="fragment">ish</span></h1>
-
-						<aside class="notes">
-							<ul>
-								<li>Uregelmessige prodsettinger</li>
-								<li>Hadde ingen tilgang til egne QA- eller prodservere</li>
-								<li>Alle endringer disse miljøene måtte bestilles gjennom et ITIL-regime</li>
-								<li>Bestilte masse prodsettinger upfront og forsøkte å stykke dem utover</li>
-								<li>Masse problemer!</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="smerte">
-						<h2>Timingen er aldri riktig</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Det er alltid mye baggasje</li>
-								<li>Krav om å bruke sentralisert infrastruktur, ESB og annen dritt</li>
-								<li>"Sånn gjør vi drift hos oss"</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Utfordre premissene</h2>
-						<ul>
-							<li>Vær en organisasjon i organisasjonen</li>
-							<li>Eksperimenter med nye prosjekter</li>
-							<li class="fragment">Vær litt naughty</li>
-						</ul>
-
-						<aside class="notes">
-							<p>For smidig, DevOps eller mikrotjenester eller whatever. Du må være forberedt på å ta initiativ selv.</p>
-
-							<ul>
-								<li>Rigg deg som en liten boble!</li>
-								<li>Eksperimenter med nye prosjekter -> lav konsekvens</li>
-								<li>Det var mange som var uenige – da lot vi være å forankre med alle</li>
-								<li>Sørg for å ha en sponsor med litt pondus!</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="devops-er-en-konsekvens-av-smidig" data-owner="jøran" data-summary="Ikke gjør DevOps for å gjøre DevOps" data-time="3">
-
-					<section data-background-image="img/o-rly.png">
-						<div class="header" style="color: #FB8015">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Begynt med DevOps
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Suprise! Vi skal snakke litt om DevOps!</li>
-								<li>Det er naturlig å begynne historien vår med hvordan vi endte opp med DevOps.</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="smerte">
-						<h2>Ekstern driftsorganisasjon</h2>
-						<div class="fragment"><img src="img/poop.png" style="box-shadow: none" /></div>
-
-						<aside class="notes">
-							Unicode 1f4a9
-
-							<ul>
-								<li>Definér ekstern driftsorganisasjon (utenfor teamet)</li>
-								<li>Spør salen: hvor mange har ekstern drift? Hvor mange fungerer det bra for? Hvor mange av disse er smidige?</li>
-								<li>Vi prøvde å lykkes med ekstern drift!</li>
-								<li>Roten til det vonde: ulike incentivmodeller</li>
-								<li>Marginene på å selge drift er knøttsmå</li>
-								<li>Fastpris -> ingen proaktivitet</li>
-								<li>Men det er flinke folk!</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>DevOps</h2>
-
-						<ul>
-							<li>Ikke et mål i seg selv</li>
-							<li>Prøv å lykkes med det du har</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Det er vanskelig å innføre DevOps! Mange organisasjoner er ikke rigget</li>
-								<li>Målet er smidighet og kontroll på infrastruktur</li>
-								<li>DevOps er bare et virkemiddel</li>
-								<li>Det handler primært om å sparke ned veggen mellom drift og utvikling</li>
-								<li>… men det er jævelig vanskelig</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>DevOps er en konsekvens<br/>av å lykkes med smidig</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Vi hadde aldri hørt ordet DevOps</li>
-								<li>En direkte konsekvens av noe som ikke virket</li>
-								<li>Det er <b>umulig å jobbe smidig</b> hvis utvikling og drift er <b>forskjellige organisasjoner</b></li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="start-smått" data-owner="stian" data-summary="Start med et lite eksperiment" data-time="4">
-					<section data-background="img/miniature.jpg">
-						<div class="header" style="color: #3281AD">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Startet smått
-							</h2>
-						</div>
-						<aside class="notes">
-							<ul>
-								<li>Fikk kontroll på utvikling</li>
-								<li>Bruker mye tid per deploy</li>
-								<li>Stor appserver</li>
-								<li>Bestiller egne servere</li>
-								<li>Vår første DevOps var en applikasjon med 0 brukere</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="tabbe">
-						<img src="img/404.png">
-						<aside class="notes">
-							<ul>
-								<li>Jetty exploded war i /tmp/</li>
-								<li>Fungerer når vi deployer ofte</li>
-								<li>Slettes hver 3. dag</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Start med minimal risiko</h2>
-						<ul>
-							<li>Senker konsekvensen ved feil</li>
-							<li>
-								Gjør det lettere å selge inn <br>
-								(hva er det verste som kan skje..?)
-							</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Vi begynte med helt ny/liten applikasjon</li>
-								<li>Det viktigste er at kompleksiteten i applikasjonen er lav</li>
-								<li>… og at risikoen er lav. Folk bør ikke miste jobben dersom det gjøres feil i starten.</li>
-								<li>Du har fortsatt mye å lære!</li>
-								<li>Gjør det lettere å selge og innføre</li>
-								<li>Lettere å gjør under radaren</li>
-								<li>Ansvar for drift krever kunnskap</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="nedetidsfri-deploy" data-owner="stian" data-summary="Deploy hyppig, på dagtid" data-time="3">
-					<section data-background="img/sunrise.jpg">
-						<div class="header" style="color: #FCE677">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Deployet midt på dagen
-							</h2>
-						</div>
-						<aside class="notes">
-							<ul>
-								<li>Begynte å deploy oftere og oftere</li>
-								<li>Inge/Få brukere, ikke problem med litt nedetid</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="tabbe">
-						<h2>Nedetid</h2>
-						<p>Brukerene forventer at det alltid er oppe</p>
-						<aside class="notes">
-							<ul>
-								<li>Jøran kan ikke sitte å se når folk ikke bruker appen</li>
-								<li>Skalerer ikke</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Nedetidsfri deploy</h2>
-						<ul>
-							<li class="fragment">Folk er på jobb</li>
-							<li class="fragment">Realistisk trafikk</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Deploy på dagtid. Lettere å deploye ofte</li>
-								<li>Husk: Bakoverkompabilitet, databaseskjema, sesjoner, API</li>
-								<li>Alle er <b>på jobb</b>, i tilfelle feil</li>
-								<li><b>Realistisk trafikk</b> på appen, vet om man må gjør rollback</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="automatisering" data-owner="jøran" data-summary="Automatiser produksjonsmiljøene" data-time="3">
-					<section data-background="img/automatisering.jpg">
-						<div class="header" style="color: #0CADD1">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Automatisert
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Vi har automatisert masse!</li>
-								<li>Bruker ruby sitt Rake (selv om vi er Java!)</li>
-								<li>Selvsagt automatisert deployment.</li>
-								<li>Men av og til går det galt. En gang gikk det galt. Vil kunne heldigvis bare rulle tilbake……… [<b>next slide</b>]</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="tabbe">
+<head>
+	<meta charset="utf-8">
+
+	<title>DevOps og Micro Services hos Posten</title>
+
+	<meta name="description" content="DevOps og Micro Services hos Posten">
+	<meta name="author" content="Stian Mathiassen and Jøran Lillesand">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<!--
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    -->
+	<link rel="stylesheet" href="css/theme/bekk.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<style>
+		.reveal section img {
+			border: none;
+		}
+
+		section .header {
+			position: relative;
+			background-color: black;
+		}
+
+		section .header h2 {
+			padding: 10px;
+		}
+
+		section .header .caption {
+			position: absolute;
+			font-size: 20px;
+			text-align: left;
+			background-color:inherit;
+			top: -24px;
+			padding: 2px 10px;
+		}
+
+	</style>
+</head>
+
+<body>
+
+<div class="reveal">
+
+	<div class="slides">
+		<section id="intro-speakers" data-owner="jøran" data-time="1">
+			<section>
+				<h1>DevOps og mikrotjenester hos Posten og Bring!</h1>
+			</section>
+
+			<section>
+				<h1>Hvem er vi?</h1>
+				<div style="clear:both"></div>
+
+				<div style="width: 49%; float: left;">
+					<img src="img/bekk-stian.png" />
+					<p class="">Stian</p>
+				</div>
+				<div style="width: 49%; float: left;" class="fragment">
+					<img src="img/bekk-joran.png" />
+					<p class="">Jøran</p>
+				</div>
+
+				<aside class="notes">
+					<ul>
+						<li>Til sammen 12 år på Posten</li>
+						<li>Stian 5</li>
+						<li>Jøran 7</li>
+						<li>Stian har jobbet mye med det tekniske og er kongen bak innføring</li>
+						<li>Jøran er stor i kjeften og ser mye på hvorfor og hvilke effekter det gir</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section id="intro" data-owner="jøran" data-time="2">
+			<section data-background-video="img/sortering.mp4" data-background-video-loop>
+				<h2 style="background-color: #e32d22; color: white; padding: 10px; width: auto;">
+					IT i Posten
+				</h2>
+
+				<aside class="notes">
+					<ul>
+						<li>Sorteringmaskin for brev, 80 000 brev i timen per robot</li>
+						<li>Posten er en IT-virksomhet som driver med Logistikk</li>
+						<li>All produksjon er IT-styrt</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-image="img/bring-web-team.jpg">
+				<h2 style="background-color: #7bc144; color: white; padding: 10px;">
+					Bring Web Team
+				</h2>
+
+				<aside class="notes">
+					<ul>
+						<li>Sped begynnelse i 2008.</li>
+						<li>Jøran rett ut fra NTNU som første utvikler. Designet svært databaseskjema.</li>
+						<li>Premisset for teamet: smidig! Endre måten Posten gjør software på.</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section data-owner="stian" data-time="2">
+			<section>
+				<h1>Hva lager vi?</h1>
+
+				<aside class="notes">
+					<ul>
+						<li>Gi dere en ide om hva vi snakker om</li>
+						<li>Dette er ikke et rent tech-miljø, men forretningskritiske systemer.</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-owner="stian" data-background-image="img/sporing.png" data-background-position="top">
+				<aside class="notes">
+					<ul>
+						<li>Mest kjente løsningen</li>
+						<li>Tipper dere alle har brukt</li>
+						<li>En mill sporinger per dag</li>
+						<li>50 000 pushmeldinger i døgnet</li>
+						<li>Veldig viktig app for Posten/Bring</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-owner="stian" data-background-image="img/booking.png" data-background-position="top">
+				<aside class="notes">
+					<ul>
+						<li>I starten ca 5000 kr i uka</li>
+						<li>Over 30 000 bestillinger i uka</li>
+						<li>Flere hundre millioner i omsetning i året</li>
+						<li>Begynt å bli veldig viktig</li>
+						<li>Helt kaos om går ned</li>
+						<li>Veldig mange småkunder</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-owner="stian" data-background-image="img/fraktguide.png" data-background-position="top">
+				<aside class="notes">
+					<ul>
+						<li>Viktigste API-et</li>
+						<li>Brukes av veldig mange nettbutikker</li>
+						<li>En kvart million oppslag per dag</li>
+					</ul>
+				</aside>
+			</section>
+			<section data-owner="stian" data-background-image="img/vita.png">
+			</section>
+		</section>
+
+		<section data-owner="stian">
+			<section>
+				<h1>Hva har vi?</h1>
+				<aside class="notes">
+					Fang oppmerksomheten sånn at folk våkner opp.
+				</aside>
+			</section>
+			<section data-owner="stian" data-background-video="img/deployment.mov" data-video-playback-rate="4.0">
+				<aside class="notes">
+					Vi er stolte over hvor langt vi har kommet. <br>
+
+					I bakgrunnen ser vi automatisert deployment.
+					<ul>
+						<li>Fullautomatisert, dokumentert og reproduserbart serveroppsett</li>
+						<li>Nedetidsfri deployment på dagtid</li>
+						<li>Deployer flere ganger om dagen</li>
+						<li>Få feil</li>
+						<li>Automatisert overvåkning av logger basert på terskelverdier</li>
+					</ul>
+				</aside>
+			</section>
+			<section data-owner="stian" data-background-image="img/dashboard.png" data-background-position="top">
+				<aside class="notes">
+					Gir oversikt over helsen på alle appene
+				</aside>
+			</section>
+			<section data-owner="stian" data-background-image="img/kibana1.png" data-background-position="top">
+				<aside class="notes">
+					Dette er en Logstash + Elasicsearch&Kibana-stack
+				</aside>
+			</section>
+
+		</section>
+
+		<section id="hovedpoeng-teaser" data-owner="jøran" data-time="2">
+			<section data-background-image="img/conclusion.jpg">
+				<h2 style="background-color: black; padding: 10px;">Konklusjonen</h2>
+			</section>
+
+			<section data-slide-type="poeng">
+				Start smått og eksperimenter med lav risiko!
+
+				<aside class="notes">
+					<ul>
+						<li>Ikke dra på presentasjoner og dra hjem og "gjør DevOps"</li>
+						<li>Kjenn til hva andre gjør og hva som er the latest and greatest</li>
+						<li>Ikke lag noe bare for å lage det</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section id="hoveddel-intro" data-background-image="img/now-for-something-different.jpg" data-owner="jøran">
+			<h2 style="background-color: black; padding: 10px; margin-bottom: -250px;">And now for something completely different…</h2>
+
+			<aside class="notes">
+				<ul>
+					<li>Nå kommer innholdet!</li>
+					<li>Historien om leksene vi har lært</li>
+					<li>Smerten vi kjent på, og løsningene vi fant</li>
+					<li>Vi mener mye av dette er relevant for alle</li>
+					<li>Ikke for å bruke direkte, men som inspirasjon og et oppslagsverk</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section id="utfordre-premissene" data-owner="jøran" data-summary="Utfordre premissene, vær litt naughty" data-time="2.5">
+
+			<section data-background="img/jcvd-volvosplitt.jpg">
+				<div class="header" style="color: #B79A79">
+					<div class="caption">Vi har…</div>
+					<h2 style="color: inherit;">
+						Utfordret premisser
+					</h2>
+				</div>
+
+				<aside class="notes">
+					<ul>
+						<li>Vi ville gjøre smidig</li>
+						<li>Innkjperen vår ville gjøre smidig</li>
+						<li>Organisasjonen var på ingen måte rigget for smidig</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h1>Smidig<span class="fragment">ish</span></h1>
+
+				<aside class="notes">
+					<ul>
+						<li>Uregelmessige prodsettinger</li>
+						<li>Hadde ingen tilgang til egne QA- eller prodservere</li>
+						<li>Alle endringer disse miljøene måtte bestilles gjennom et ITIL-regime</li>
+						<li>Bestilte masse prodsettinger upfront og forsøkte å stykke dem utover</li>
+						<li>Masse problemer!</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="smerte">
+				<h2>Timingen er aldri riktig</h2>
+
+				<aside class="notes">
+					<ul>
+						<li>Det er alltid mye baggasje</li>
+						<li>Krav om å bruke sentralisert infrastruktur, ESB og annen dritt</li>
+						<li>"Sånn gjør vi drift hos oss"</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>Utfordre premissene</h2>
+				<ul>
+					<li>Vær en organisasjon i organisasjonen</li>
+					<li>Eksperimenter med nye prosjekter</li>
+					<li class="fragment">Vær litt naughty</li>
+				</ul>
+
+				<aside class="notes">
+					<p>For smidig, DevOps eller mikrotjenester eller whatever. Du må være forberedt på å ta initiativ selv.</p>
+
+					<ul>
+						<li>Rigg deg som en liten boble!</li>
+						<li>Eksperimenter med nye prosjekter -> lav konsekvens</li>
+						<li>Det var mange som var uenige – da lot vi være å forankre med alle</li>
+						<li>Sørg for å ha en sponsor med litt pondus!</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section id="devops-er-en-konsekvens-av-smidig" data-owner="jøran" data-summary="Ikke gjør DevOps for å gjøre DevOps" data-time="3">
+
+			<section data-background-image="img/o-rly.png">
+				<div class="header" style="color: #FB8015">
+					<div class="caption">Vi har…</div>
+					<h2 style="color: inherit;">
+						Begynt med DevOps
+					</h2>
+				</div>
+
+				<aside class="notes">
+					<ul>
+						<li>Suprise! Vi skal snakke litt om DevOps!</li>
+						<li>Det er naturlig å begynne historien vår med hvordan vi endte opp med DevOps.</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="smerte">
+				<h2>Ekstern driftsorganisasjon</h2>
+				<div class="fragment"><img src="img/poop.png" style="box-shadow: none" /></div>
+
+				<aside class="notes">
+					Unicode 1f4a9
+
+					<ul>
+						<li>Definér ekstern driftsorganisasjon (utenfor teamet)</li>
+						<li>Spør salen: hvor mange har ekstern drift? Hvor mange fungerer det bra for? Hvor mange av disse er smidige?</li>
+						<li>Vi prøvde å lykkes med ekstern drift!</li>
+						<li>Roten til det vonde: ulike incentivmodeller</li>
+						<li>Marginene på å selge drift er knøttsmå</li>
+						<li>Fastpris -> ingen proaktivitet</li>
+						<li>Men det er flinke folk!</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>DevOps</h2>
+
+				<ul>
+					<li>Ikke et mål i seg selv</li>
+					<li>Prøv å lykkes med det du har</li>
+				</ul>
+
+				<aside class="notes">
+					<ul>
+						<li>Det er vanskelig å innføre DevOps! Mange organisasjoner er ikke rigget</li>
+						<li>Målet er smidighet og kontroll på infrastruktur</li>
+						<li>DevOps er bare et virkemiddel</li>
+						<li>Det handler primært om å sparke ned veggen mellom drift og utvikling</li>
+						<li>… men det er jævelig vanskelig</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>DevOps er en konsekvens<br/>av å lykkes med smidig</h2>
+
+				<aside class="notes">
+					<ul>
+						<li>Vi hadde aldri hørt ordet DevOps</li>
+						<li>En direkte konsekvens av noe som ikke virket</li>
+						<li>Det er <b>umulig å jobbe smidig</b> hvis utvikling og drift er <b>forskjellige organisasjoner</b></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section id="start-smått" data-owner="stian" data-summary="Start med et lite eksperiment" data-time="4">
+			<section data-background="img/miniature.jpg">
+				<div class="header" style="color: #3281AD">
+					<div class="caption">Vi har…</div>
+					<h2 style="color: inherit;">
+						Startet smått
+					</h2>
+				</div>
+				<aside class="notes">
+					<ul>
+						<li>Fikk kontroll på utvikling</li>
+						<li>Bruker mye tid per deploy</li>
+						<li>Stor appserver</li>
+						<li>Bestiller egne servere</li>
+						<li>Vår første DevOps var en applikasjon med 0 brukere</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="tabbe">
+				<img src="img/404.png">
+				<aside class="notes">
+					<ul>
+						<li>Jetty exploded war i /tmp/</li>
+						<li>Fungerer når vi deployer ofte</li>
+						<li>Slettes hver 3. dag</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>Start med minimal risiko</h2>
+				<ul>
+					<li>Senker konsekvensen ved feil</li>
+					<li>
+						Gjør det lettere å selge inn <br>
+						(hva er det verste som kan skje..?)
+					</li>
+				</ul>
+
+				<aside class="notes">
+					<ul>
+						<li>Vi begynte med helt ny/liten applikasjon</li>
+						<li>Det viktigste er at kompleksiteten i applikasjonen er lav</li>
+						<li>… og at risikoen er lav. Folk bør ikke miste jobben dersom det gjøres feil i starten.</li>
+						<li>Du har fortsatt mye å lære!</li>
+						<li>Gjør det lettere å selge og innføre</li>
+						<li>Lettere å gjør under radaren</li>
+						<li>Ansvar for drift krever kunnskap</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section id="automatisering" data-owner="jøran" data-summary="Automatiser produksjonsmiljøene" data-time="2">
+			<section data-background="img/automatisering.jpg">
+				<div class="header" style="color: #0CADD1">
+					<div class="caption">Vi har…</div>
+					<h2 style="color: inherit;">
+						Automatisert
+					</h2>
+				</div>
+
+				<aside class="notes">
+					<ul>
+						<li>Vi har automatisert masse!</li>
+						<li>Bruker ruby sitt Rake (selv om vi er Java!)</li>
+						<li>Selvsagt automatisert deployment.</li>
+						<li>Men av og til går det galt. En gang gikk det galt. Vil kunne heldigvis bare rulle tilbake……… [<b>next slide</b>]</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="tabbe">
 						<pre style="margin-bottom: 30px;"><code style="font-size:30px; line-height:60px;" data-trim>
 							$ be rake production:rollback
 						</code></pre>
 
 
-						<div class="fragment">– not implemented. perform manual rollback.</div>
+				<div class="fragment">– not implemented. perform manual rollback.</div>
 
-						<aside class="notes">
-							<ul>
-								<li>Fucckk yoouuu… ikke implementert</li>
-								<li>Ok, null problem. Vi hadde støtte for rollback</li>
-								<li>Tok vare på gamle artifakter</li>
-								<li>Brukte symlink [<b>next slide</b>]</li>
-							</ul>
-						</aside>
-					</section>
+				<aside class="notes">
+					<ul>
+						<li>Fucckk yoouuu… ikke implementert</li>
+						<li>Ok, null problem. Vi hadde støtte for rollback</li>
+						<li>Tok vare på gamle artifakter</li>
+						<li>Brukte symlink [<b>next slide</b>]</li>
+					</ul>
+				</aside>
+			</section>
 
-					<section data-slide-type="tabbe">
-						<h2>Manual rollback time…</h2>
+			<section data-slide-type="tabbe">
+				<h2>Manual rollback time…</h2>
 						<pre style="margin-bottom: 30px;"><code style="font-size:30px; line-height:60px;" data-trim>
 							ln -sf booking.jar booking-2.11.jar
 						</code></pre>
@@ -554,730 +474,386 @@
 							ln -sf booking-2.11.jar booking.jar
 						</code></pre>
 
-						<aside class="notes">
-							<ul>
-								<li>Spør salen: hvilken er riktig?</li>
-								<li>Vi aner ikke. Må sjekke hver gang</li>
-								<li>Leser manpage. Vet fortsatt ikke.</li>
-								<li>Gikk på to sånne på kort tid!</li>
-								<li>Protip: ikke bruk -sf (superfort!)</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Automatiser alt</h2>
-
-						<ul>
-							<li>Deployments</li>
-							<li>Konfigurasjon</li>
-							<li>Ryddejobber</li>
-							<li>Engangsjobber</li>
-						</ul>
-
-						<aside class="notes">
-							Eksempelet vårt er selvsagt ekstremt. Men automatisering gir
-							<ul>
-								<li>dokumentasjon (hva har faktisk blitt gjort)</li>
-								<li>reproduserbarhet</li>
-								<li>likhet på tvers av mijøer</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h1>Automatiser, <span class="fragment">automatiser,</span> <span class="fragment">automatiser!</span></h1>
-
-						<aside class="notes">
-							<ul>
-
-								<li>Manuelle operasjoner er roten til mye vondt!</li>
-								<li>Tar mye tid og gir mye feil</li>
-								<li>Vanskelig å reprodusere og vite hva som har skjedd</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="overvåkning" data-owner="jøran" data-summary="Etabler overvåkning" data-time="3">
-					<section data-background="img/overvåkning.jpg" data-background-repeat="no-repeat" data-background-color="white" data-background-position="center" data-background-size="70%">
-
-						<div class="header" style="background-color: white;">
-							<div class="caption">Vi har…</div>
-							<h2>
-								Overvåket
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Applikasjonene blir mer og mer kritiske</li>
-								<li>Stian ikke så glad i at vi forteller dette fordi vi høres ut som n00bs. Men faen, la oss være ærlige.</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="tabbe">
-						<img src="img/error-page.png" class="stretch" />
-
-						<aside class="notes">
-
-							<ul>
-								<li>Blir varslet av kundeservice om at en app er nede</li>
-								<li>Viser seg at den har vært nede siden kvelden før</li>
-								<li>Føles litt som vi er de siste som vet</li>
-								<li>Vår erfaring: et n+1-problem, det går alltid ned der du mangler målepunkter</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Overvåkning</h2>
-
-						<ul>
-							<li>Mål sluttbrukertransaksjoner</li>
-							<li>Automatisk helsesjekk</li>
-							<li>Loggovervåkning basert på terskler</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Overvåkning basert på sluttbrukertransaksjoner</li>
-
-								<li>Viktig med flere typer overvåkning</li>
-								<li>Helsesjekker som overvåker, minne, diskplass, cpu-bruk, databasetilkobling og mye mye mer</li>
-								<li>Overvåk logger basert på terskler</li>
-							</ul>
-						</aside>
-					</section>
-
-				</section>
-
-				<!--
-				<section id="lær-drift" data-owner="stian" data-summary="Lær driftsfaget">
-					<section data-background="img/gears.jpg">
-						<div class="header" style="color: #C66659">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Lært driftsfaget
-							</h2>
-						</div>
-						<aside class="notes">
-							<ul>
-								<li>Til nå en app</li>
-								<li>Budsjett til å migrere noen flere</li>
-								<li>Drift er eget fagfelt!</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="tabbe">
-						<h2>Ting tar tid</h2>
-						<p>Gikk til tider på bekostning av annen funksjonalitet</p>
-						<aside class="notes">
-							<ul>
-								<li>Fikk kjenne at vi ikke fulgte vårt eget prinsipp</li>
-								<li>Flere smeller med backup, overvåkning, hardening</li>
-								<li>Mangler det man får ut av boksen</li>
-								<li>Bruker utviklerpraksis i drift. Tester, automatisering, verifisering</li>
-								<li>Kontroll på at det virker</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Lær drift</h2>
-						<ul>
-							<li>Drift er ikke så lett som utviklere tror</li>
-							<li>Øv på drift</li>
-						</ul>
-						<aside class="notes">
-							Mye å lære om drift. Du kan det antagelig ikke.
-							<ul>
-								<li>Sikkerhet: OS-hardening</li>
-								<li>Sonemodeller</li>
-								<li>Virtualisering</li>
-								<li>Nettverk</li>
-								<li>Backup</li>
-								<li>Overvåkning</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-				-->
-
-				<section id="devops-er-en-markedsfordel" data-owner="stian" data-summary="Demonstrer forretningsverdi" data-time="2.5">
-					<section data-background="img/cashregister.jpg">
-						<div class="header">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Fått forretning med på laget
-							</h2>
-						</div>
-						<aside class="notes">
-							<ul>
-								<li>Hadde kun råd til å migrere noen apper</li>
-								<li><b>To klasser</b> med apper oppsto, de på "Smidig drift" og de på tradisjonell</li>
-								<li><b>Salg ble irritert</b>: Noen apper ute på 5 min, andre på to uker</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="smerte">
-						<h2>Finansiering</h2>
-						<p>Ingen vil betale, men alle vil ha</p>
-						<aside class="notes">
-							<ul>
-								<li>Hvem skal betale?</li>
-								<li><b>Salg/produkteier lei</b> av IT-oppgaver</li>
-								<li>Hvorfor migrere, betaler jo allerede for drift</li>
-								<li>Periode hvor IT hadde en del <b>andre oppgaver</b> i tillegg</li>
-								<li><b>Chicken race</b>: Hvor lenge kan man vente før de andre betaler</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>IT-arkitektur er forretningsbehov</h2>
-						<ul>
-							<li>Kortere time-to-marked</li>
-							<li>Retter feil fortere</li>
-						</ul>
-						<aside class="notes">
-							Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene!
-							<ul>
-								<li><b>Solskinns-historie</b></li>
-								<li>Salg/produkteiere betalte for migrering</li>
-								<li><b>Forretning må skjønne</b> hva vi gjør</li>
-								<li>Kortere time to marked</li>
-								<li>Vis og bevis!</li>
-								<li>Ingen effekt for andre enn IT? Bør du?</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="micro-services-the-beginning" data-owner="jøran" data-summary="Lag mikrotjenester ved behov" data-time="3.5">
-					<section data-background-image="img/neural-network.jpg">
-						<div class="header" style="color: #E2E7CF">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Begynt med mikrotjenester
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Applikasjonene ble store</li>
-								<li>Vanskelig å beholde smidigheten</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="smerte">
-						<h2>Smidig med<br>store applikasjoner</h2>
-						<ul>
-							<li>Mye funksjonalitet å teste</li>
-							<li>Langsom utvikling</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Vanskelig å være smidig med store applikasjoner</li>
-								<li>Krever mye retesting, også en del manuell</li>
-								<li>Nyutvikling går tregere og tregere</li>
-								<li>Kode brekker mindre åpenbare sammenhenger</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Mikrotjenester gir <br/>effektivitet</h2>
-						<ul>
-							<li>Lar deg deploye ofte</li>
-							<li>Senker risiko på endringer</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Senker risiko: splitter funksjonalitet</li>
-								<li>Lettere å deploye ofte</li>
-								<li>Kan deploye mindre funksjonalitet per gang</li>
-								<li>Lettere å rulle tilbake</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>
-							Mikrotjenester er<br>
-							en konsekvens<br>
-							av å lykkes med DevOps
-						</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>På samme måte som Smidig -> DevOps</li>
-								<li>DevOps -> Mikrotjenester</li>
-								<li>Plutselig blir størrelsen på applikasjoner det største problemet</li>
-							</ul>
-						</aside>
-					</section>
-
-				</section>
-
-				<!--
-				<section id="la-monolitten-leve" data-owner="stian" data-summary="Og la monolitten leve" data-time="2">
-					<section data-background-image="img/monolitten.jpg">
-						<div class="header" style="color: #F9E9CE">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Latt monolitten leve
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Brukte <b>mye</b> tid på <b>å snakke</b> om hvordan vi skulle stykke opp de store applikasjonene</li>
-								<li>Endte opp med å ikke gjøre det</li>
-								<li>Å ikke levere ny funksjonalitet på månedsvis mens du "introduserer mikrotjenester" flyr dårlig</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="tabbe">
-						<h2>Vår venn monolitten</h2>
-						<ul>
-							<li>Det er mye bra med monolitter!</li>
-							<li class="fragment">… men det er faen meg mye dårlig også</li>
-						</ul>
-
-						<aside class="notes">
-							Det er ikke noe feil med monolitter i seg selv!
-
-							<ul>
-								<li>Lenge fungerte det bra med store applikasjoner</li>
-								<li>Men når de større appene kom over på ny infrastruktur ble det verre</li>
-								<li>Høyere hyppighet på deploys</li>
-								<li>Stor kompleksitet i apper, vanskelig å endre og teste</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Skap verdi først!</h2>
-						<p>
-								Det er vanskelig å splitte opp eksisterende applikasjoner<br>
-								… og det tilfører veldig liten verdi
-						</p>
-
-						<aside class="notes">
-							Det er ikke noe feil med monolitter i seg selv!
-
-							<ul>
-								<li>Aldri hatt bare en stor app</li>
-								<li>Vi lå <b>lenge på 4-5</b> og vokste sakte. Mye måtte på plass før vi var klare for mange små</li>
-								<li>Men definitivt noen applikasjoner som fikk vokse for mye</li>
-								<li>Arkitektur er ikke et mål i seg selv: viktig å gradvis lære seg å drifte små applikasjoner</li>
-								<li>Du kan være smidig og jobbe effektivt med en (eller noen) monolitter</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>La monolitten din leve lenge</h2>
-
-						<ul>
-							<li>Skaff erfaring med mikrotjenester først</li>
-							<li>Mikro er relativt</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Bygg <b>forretning først</b>, så kan teknologien komme etterhvert</li>
-								<li>Monolitten din går ingen plass. Kan du fikse den i dag, kan du fikse den i morgen</li>
-								<li>Bli <b>god på mikrotjenester</b> først</li>
-								<li>Ikke la knøttsmå applikasjoner være et poeng i seg selv</li>
-								<li>Å <b>splitte opp</b> en eksisterende applikasjon er en <b>vanskelig</b> engineering-øvelse</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-				-->
-
-				<section id="industrialisering" data-owner="stian" data-summary="Industrialiser infrastrukturen" data-time="3">
-					<section data-background="img/cake.jpg">
-						<div class="header" style="color: #FF1512">
-							<div class="caption">Vi har…</div>
-							<h2 style="color: inherit;">
-								Industrialisert utvikling og utrulling
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Kostnad per app ned</li>
-								<li>Fikk ny type kompleksitet</li>
-								<li>Mikrotjenester fører til industrialisering</li>
-								<li>Mikrotjenester fører også til standariseing</li>
-								<li>Viktig å ikke bli for rigid</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="smerte">
-						<img src="img/logs.png" alt="Logs across applications">
-						<aside class="notes">
-							<ul>
-								<li>Flere og flere avhengigheter mellom appene</li>
-								<li>Det ble veldig komplekst å deploye en app.</li>
-								<li>Måtte følge med i 4 fire logger på 2 servere samtidig!</li>
-								<li>Var vanskelig å gjøre drift, for miljøet begynte å bli komplekst.</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<img src="img/kibana3.png" alt="Kibana">
-						<aside class="notes">
-							<ul>
-								<li>Aggregering av logger</li>
-								<li>Forrige slide og denne er <b>samme data</b></li>
-								<li>Grafer gjør det lettere å se <b>trender og spikes</b></li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Støtteverktøy</h2>
-						<ul>
-							<li>Applikasjoner blir moduler</li>
-							<li>
-								Støtte må gjøres rundt applikasjoner,<br>
-								ikke inne i dem
-							</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li><b>App = modul</b></li>
-								<li>Invester mer i infrastruktur</li>
-								<li>Automatiserer implisitte oppgaver</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Standardisering?</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Støtteverktøy bør standariseres, men kan godt brukes av flere teknologier</li>
-								<li>Alle platformer du bruker må ha støtteverktøy</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-				<section id="ende-til-ende-testing" data-owner="jøran" data-time="4">
-					<section data-background-image="img/curiosity.jpg">
-						<div class="header" style="color: #EAA96B">
-							<div class="caption"><strike>Vi har…</strike>Vi burde…</div>
-							<h2 style="color: inherit;">
-								Automatisert testing av alt
-							</h2>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Hit har vi ikke kommet enda</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="pain">
-						<h2>Verifisere oppførsel på tvers av 4 applikasjoner :(</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>En forretningsfeature kan gjerne gå over 3-4 applikasjoner</li>
-								<li>Har sine fordeler, men også utfordringer</li>
-								<li>Hvordan vet jeg at jeg ikke brekker funksjonalitet i andre applikasjoner?</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="pain">
-						<img src="img/monolithconf.png"/>
-
-						<aside class="notes">
-							<ul>
-								<li>La folk lese den, gå gjerne videre</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Kompleksiteten er tilbake</h2>
-
-						<ul>
-							<li>Mikrotjenester fjerner ikke kompleksitet</li>
-							<li>Mikrotjenester <em>flytter</em> kompleksitet</li>
-						</ul>
-						<aside class="notes">
-							<ul>
-								<li>Ikke en sølvkule</li>
-								<li>Vår erfaring er likevel at det er verdt det</li>
-								<li>Flytter kompleksiteten til et sted den er lettere å håndtere</li>
-								<li>Du må <b>vokse inn</b> i det.</li>
-								<li>Det er ok å taile logger i starten</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-
-
-				<section data-background="img/the_end.jpg" data-owner="stian" data-time="1">
-					<h2 style="background-color: black; padding: 10px;">The end is near</h2>
-					<aside class="notes">
-						Nå nærmer vi oss slutten! Snart ferdig.
-					</aside>
-				</section>
-
-				<section id="hovedpoeng" data-owner="jøran" data-time="4">
-					<section data-background-image="img/conclusion.jpg">
-						<h2 style="background-color: black; padding: 10px;">Konklusjonen</h2>
-
-						<aside class="notes">
-							Pek <b>tilbake til konklusjonen</b> vi teasa med tidligere
-						</aside>
-					</section>
-
-					<section data-slide-type="poeng">
-						<h2>Fokuser på smidighet</h2>
-						<ul>
-							<li>… og gjør én forbedring om gangen.</li>
-							<li class="fragment">Løs problemer når du har dem</li>
-							<li class="fragment">…og gjør ting enkelt!</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Jobben til IT er å løse behov!</li>
-								<li>Du kan ikke "implementere DevOps" eller "lage mikrotjenester".</li>
-								<li>Må vokse frem organisk gjennom at et ansvarliggjort team</li>
-								<li>Teamet kjenner på smerter og har tillit nok til å lage løsninger.</li>
-								<li>Ikke bygg platform for å bygge platform!</li>
-							</ul>
-						</aside>
-					</section>
-
-					<!--
-					<section id="oppsummering" data-slide-type="poeng">
-						<h2 style="margin-bottom: 10px;">Oppsummering</h2>
-						<ol id="summary-list">
-
-						</ol>
-
-						<aside class="notes">
-							<ul>
-								<li>Dette er en smørbrødliste!</li>
-								<li>Vi har bygd sten for sten</li>
-								<li>Jøran har vært på workshop med Sam Newman om mikrotjenester i Thoughtworks</li>
-								<li>Interessant at det nesten var som å krysse av en komplett liste over vi har gjort</li>
-								<li>… noen forskjeller: vi gjør ikke service discovery (ikke cloud), så langt ikke sentral config (på vei)</li>
-							</ul>
-						</aside>
-					</section>
-					-->
-				</section>
-
-				<section data-time="5">
-					<h1>Spørsmål?</h1>
-					<div style="font-size: 100px">🍺</div>
-
-					<aside class="notes">
-						Spørsmål? Vi blir stående ved scenen etterpå – eller med en øl på BEKK-standen utover kvelden
-					</aside>
-				</section>
-
-				<section data-background="img/bekk.jpg" style="background: black">
-					<h1>Takk for oss!</h1>
-					<div style="clear:both"></div>
-
-					<div style="width: 49%; float: left;">
-						<img src="img/bekk-stian.png">
-						<p>
-						Stian Mathiassen<br/>
-						stian.mathiassen@bekk.no
-						</p>
-					</div>
-					<div style="width: 49%; float: left;">
-						<img src="img/bekk-joran.png">
-						<p>
-						Jøran Vagnby Lillesand<br/>
-							joran.lillesand@bekk.no
-						</p>
-					</div>
-					<img src="img/bekk_logo_transp.png" style="background-color: black; height: 25%; width: 25%;">
-				</section>
-
+				<aside class="notes">
+					<ul>
+						<li>Spør salen: hvilken er riktig?</li>
+						<li>Vi aner ikke. Må sjekke hver gang</li>
+						<li>Leser manpage. Vet fortsatt ikke.</li>
+						<li>Gikk på to sånne på kort tid!</li>
+						<li>Protip: ikke bruk -sf (superfort!)</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>Automatiser alt</h2>
+
+				<ul>
+					<li>Deployments</li>
+					<li>Konfigurasjon</li>
+					<li>Ryddejobber</li>
+					<li>Engangsjobber</li>
+				</ul>
+
+				<aside class="notes">
+					Eksempelet vårt er selvsagt ekstremt. Men automatisering gir
+					<ul>
+						<li>dokumentasjon (hva har faktisk blitt gjort)</li>
+						<li>reproduserbarhet</li>
+						<li>likhet på tvers av mijøer</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h1>Automatiser, <span class="fragment">automatiser,</span> <span class="fragment">automatiser!</span></h1>
+
+				<aside class="notes">
+					<ul>
+
+						<li>Manuelle operasjoner er roten til mye vondt!</li>
+						<li>Tar mye tid og gir mye feil</li>
+						<li>Vanskelig å reprodusere og vite hva som har skjedd</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section id="devops-er-en-markedsfordel" data-owner="stian" data-summary="Demonstrer forretningsverdi" data-time="2.5">
+			<section data-background="img/cashregister.jpg">
+				<div class="header">
+					<div class="caption">Vi har…</div>
+					<h2 style="color: inherit;">
+						Fått forretning med på laget
+					</h2>
+				</div>
+				<aside class="notes">
+					<ul>
+						<li>Hadde kun råd til å migrere noen apper</li>
+						<li><b>To klasser</b> med apper oppsto, de på "Smidig drift" og de på tradisjonell</li>
+						<li><b>Salg ble irritert</b>: Noen apper ute på 5 min, andre på to uker</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="smerte">
+				<h2>Finansiering</h2>
+				<p>Ingen vil betale, men alle vil ha</p>
+				<aside class="notes">
+					<ul>
+						<li>Hvem skal betale?</li>
+						<li><b>Salg/produkteier lei</b> av IT-oppgaver</li>
+						<li>Hvorfor migrere, betaler jo allerede for drift</li>
+						<li>Periode hvor IT hadde en del <b>andre oppgaver</b> i tillegg</li>
+						<li><b>Chicken race</b>: Hvor lenge kan man vente før de andre betaler</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>IT-arkitektur er forretningsbehov</h2>
+				<ul>
+					<li>Kortere time-to-marked</li>
+					<li>Retter feil fortere</li>
+				</ul>
+				<aside class="notes">
+					Sørg for at forretning ser og får cashet ut verdien av de tekniske forbedringene!
+					<ul>
+						<li><b>Solskinns-historie</b></li>
+						<li>Salg/produkteiere betalte for migrering</li>
+						<li><b>Forretning må skjønne</b> hva vi gjør</li>
+						<li>Kortere time to marked</li>
+						<li>Vis og bevis!</li>
+						<li>Ingen effekt for andre enn IT? Bør du?</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<!-- TODO: PRI 2 -->
+		<section id="micro-services-the-beginning" data-owner="jøran" data-summary="Lag mikrotjenester ved behov" data-time="3.5">
+			<section data-background-image="img/neural-network.jpg">
+				<div class="header" style="color: #E2E7CF">
+					<div class="caption">Vi har…</div>
+					<h2 style="color: inherit;">
+						Begynt med mikrotjenester
+					</h2>
+				</div>
+
+				<aside class="notes">
+					<ul>
+						<li>Si bittelitt om hva micro services er</li>
+						<li>Applikasjonene ble store</li>
+						<li>Vanskelig å beholde smidigheten</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="smerte">
+				<h2>Smidig med<br>store applikasjoner</h2>
+				<ul>
+					<li>Mye funksjonalitet å teste</li>
+					<li>Langsom utvikling</li>
+				</ul>
+
+				<aside class="notes">
+					<ul>
+						<li>Vanskelig å være smidig med store applikasjoner</li>
+						<li>Krever mye retesting, også en del manuell</li>
+						<li>Nyutvikling går tregere og tregere</li>
+						<li>Kode brekker mindre åpenbare sammenhenger</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>Mikrotjenester gir <br/>effektivitet</h2>
+				<ul>
+					<li>Lar deg deploye ofte</li>
+					<li>Senker risiko på endringer</li>
+				</ul>
+
+				<aside class="notes">
+					<ul>
+						<li>Senker risiko: splitter funksjonalitet</li>
+						<li>Lettere å deploye ofte</li>
+						<li>Kan deploye mindre funksjonalitet per gang</li>
+						<li>Lettere å rulle tilbake</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>
+					Mikrotjenester er<br>
+					en konsekvens<br>
+					av å lykkes med DevOps
+				</h2>
+
+				<aside class="notes">
+					<ul>
+						<li>På samme måte som Smidig -> DevOps</li>
+						<li>DevOps -> Mikrotjenester</li>
+						<li>Plutselig blir størrelsen på applikasjoner det største problemet</li>
+					</ul>
+				</aside>
+			</section>
+
+		</section>
+
+		<section data-background="img/the_end.jpg" data-owner="stian" data-time="0.5">
+			<h2 style="background-color: black; padding: 10px;">The end is near</h2>
+			<aside class="notes">
+				Nå nærmer vi oss slutten! Snart ferdig.
+			</aside>
+		</section>
+
+		<section id="hovedpoeng" data-owner="jøran" data-time="4">
+			<section data-background-image="img/conclusion.jpg">
+				<h2 style="background-color: black; padding: 10px;">Konklusjonen</h2>
+
+				<aside class="notes">
+					Pek <b>tilbake til konklusjonen</b> vi teasa med tidligere
+				</aside>
+			</section>
+
+			<section data-slide-type="poeng">
+				<h2>Fokuser på smidighet</h2>
+				<ul>
+					<li>Gjør små eksperimenter</li>
+					<li class="fragment">Gi folk tillit og verktøyene de trenger</li>
+					<li class="fragment">Gjør ting enkelt!</li>
+				</ul>
+
+				<aside class="notes">
+					<ul>
+						<li>Jobben til IT er å løse behov!</li>
+						<li>Du kan ikke "implementere DevOps" eller "lage mikrotjenester".</li>
+						<li>Må vokse frem organisk gjennom at et ansvarliggjort team</li>
+						<li>Teamet kjenner på smerter og har tillit nok til å lage løsninger.</li>
+						<li>Ikke bygg platform for å bygge platform!</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+		<section data-background="img/bekk.jpg" style="background: black">
+			<h1>Takk for oss!</h1>
+			<div style="clear:both"></div>
+
+			<div style="width: 49%; float: left;">
+				<img src="img/bekk-stian.png">
+				<p>
+					Stian Mathiassen<br/>
+					stian.mathiassen@bekk.no
+				</p>
 			</div>
+			<div style="width: 49%; float: left;">
+				<img src="img/bekk-joran.png">
+				<p>
+					Jøran Vagnby Lillesand<br/>
+					joran.lillesand@bekk.no
+				</p>
+			</div>
+			<img src="img/bekk_logo_transp.png" style="background-color: black; height: 25%; width: 25%;">
+		</section>
 
-		</div>
+	</div>
 
-		<script src="lib/js/underscore-min.js"></script>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+</div>
 
-		<script>
+<script src="lib/js/underscore-min.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-			var slideTypeToBgImage = {
-				tabbe: 'img/pain.jpg', // http://www.oxfordtoday.ox.ac.uk/features/pain-always-real
-				smerte: 'img/pain.jpg',
-				poeng: 'img/idea.jpg' // http://images.huffingtonpost.com/2015-01-20-IdeasMakeorBreakYourBusiness.jpg
-				//visdomsord: '',
-			};
+<script>
 
-			_.chain(document.getElementsByTagName('section'))
-				.filter(function(e) { return e.dataset['slideType']; })
-				.filter(function(e) { return slideTypeToBgImage[e.dataset['slideType']]; })
+	var slideTypeToBgImage = {
+		tabbe: 'img/pain.jpg', // http://www.oxfordtoday.ox.ac.uk/features/pain-always-real
+		smerte: 'img/pain.jpg',
+		poeng: 'img/idea.jpg' // http://images.huffingtonpost.com/2015-01-20-IdeasMakeorBreakYourBusiness.jpg
+		//visdomsord: '',
+	};
+
+	_.chain(document.getElementsByTagName('section'))
+			.filter(function(e) { return e.dataset['slideType']; })
+			.filter(function(e) { return slideTypeToBgImage[e.dataset['slideType']]; })
+			.each(function(e) {
+				e.dataset['background'] = slideTypeToBgImage[e.dataset['slideType']];
+				e.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+			});
+
+	// Add speaker notes to all slides
+	_.chain(document.getElementsByTagName("section"))
+			.filter(function(e) { return _.isEmpty(e.getElementsByTagName("section"))})
+			.filter(function(e) { return _.isEmpty(e.querySelectorAll("aside.notes"))})
+			.forEach(function(e) {
+				var notes = document.createElement("aside");
+				notes.className = "notes";
+				e.appendChild(notes);
+			});
+
+	// Add owner to all speaker notes
+	_.chain(document.getElementsByTagName("section"))
+			.filter(function(e) { return e.dataset.owner })
+			.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
+				n.dataset.owner = e.dataset.owner;
+			})
+			});
+
+	// Add next owner of next slide to notes
+	_.chain(document.querySelectorAll("aside.notes"))
+			.reduce(function(prev, next) {
+				prev.dataset.nextowner = next.dataset.owner;
+				return next;
+			});
+
+	_.chain(document.querySelectorAll("section"))
+			.filter(function(e) { return e.parentElement.nodeName !== "SECTION" })
+			.reduce(function(t, e) {
+				if (e.dataset && e.dataset['time']) {
+					t.timing = t.next;
+					t.next = t.timing + parseFloat(e.dataset['time']);
+				}
+				e.dataset['next'] = t.next;
+				e.dataset['timing'] = t.timing;
+				return t;
+			}, { timing: 0, next: 0 });
+
+	var showAsTimeInMin = function(t) {
+		t = parseFloat(t);
+		var min = Math.floor(t);
+		var sek = ((t % 1) * 60) + '';
+
+		return min + ":" + (sek.length === 1 ? "0" + sek : sek);
+	};
+
+	_.chain(document.querySelectorAll("section"))
+			.filter(function(e) { return e.dataset.timing; })
+			.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
+				var el = document.createElement("div");
+
+				el.style.position = "absolute";
+				el.style.right = "0";
+				el.style.top = "1.6em";
+				el.style.height = "2em";
+				el.style.width = "50%";
+				el.style.zIndex = 100;
+				el.style.textAlign = "right";
+				el.style.padding = "22px";
+				el.style.fontSize = "1.6em";
+
+				el.textContent = showAsTimeInMin(e.dataset.timing) + " - " + showAsTimeInMin(e.dataset.next);
+
+				n.insertBefore(el, n.firstChild);
+			})
+			});
+
+	var people = {
+		stian: "../../img/hovercat.jpg",
+		'jøran': "../../img/lillesand.jpeg"
+	};
+
+	_.chain(document.querySelectorAll("aside.notes"))
+			.each(function(e) {
+				var current = document.createElement("img");
+				var next = document.createElement("img");
+
+				var size = 4;
+
+				current.style.position = "fixed";
+				current.style.right = size + "em";
+				current.style.bottom = "0em";
+				current.style.height = size + "em";
+				current.style.width = size + "em";
+				current.style.zIndex = 100;
+
+				next.style.position = "fixed";
+				next.style.right = "0em";
+				next.style.bottom = "0em";
+				next.style.height = size + "em";
+				next.style.width = size + "em";
+				next.style.zIndex = 100;
+
+				current.src = people[e.dataset.owner];
+				next.src = people[e.dataset.nextowner];
+
+				if (e.dataset.owner !== e.dataset.nextowner) {
+					e.appendChild(current);
+				}
+				e.appendChild(next);
+			});
+
+	var summary = document.querySelector('#summary-list');
+	if (summary) {
+		_.chain(document.querySelectorAll('section[data-summary]'))
 				.each(function(e) {
-					e.dataset['background'] = slideTypeToBgImage[e.dataset['slideType']];
-					e.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+					summary.innerHTML += ('<li class="fragment">' + e.dataset.summary + '</li>');
 				});
+	}
 
-			// Add speaker notes to all slides
-			_.chain(document.getElementsByTagName("section"))
-				.filter(function(e) { return _.isEmpty(e.getElementsByTagName("section"))})
-				.filter(function(e) { return _.isEmpty(e.querySelectorAll("aside.notes"))})
-				.forEach(function(e) {
-					var notes = document.createElement("aside");
-					notes.className = "notes";
-					e.appendChild(notes);
-				});
+	// Full list of configuration options available at:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: false,
+		progress: true,
+		history: true,
+		center: true,
 
-			// Add owner to all speaker notes
-			_.chain(document.getElementsByTagName("section"))
-				.filter(function(e) { return e.dataset.owner })
-				.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
-					n.dataset.owner = e.dataset.owner;
-				})
-			});
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-			// Add next owner of next slide to notes
-			_.chain(document.querySelectorAll("aside.notes"))
-				.reduce(function(prev, next) {
-					prev.dataset.nextowner = next.dataset.owner;
-					return next;
-				});
+		// Optional reveal.js plugins
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			{ src: 'plugin/notes/notes.js', async: true }
+		]
+	});
 
-			_.chain(document.querySelectorAll("section"))
-				.filter(function(e) { return e.parentElement.nodeName !== "SECTION" })
-				.reduce(function(t, e) {
-					if (e.dataset && e.dataset['time']) {
-						t.timing = t.next;
-						t.next = t.timing + parseFloat(e.dataset['time']);
-					}
-					e.dataset['next'] = t.next;
-					e.dataset['timing'] = t.timing;
-					return t;
-				}, { timing: 0, next: 0 });
-
-			var showAsTimeInMin = function(t) {
-				t = parseFloat(t);
-				var min = Math.floor(t);
-				var sek = ((t % 1) * 60) + '';
-
-				return min + ":" + (sek.length === 1 ? "0" + sek : sek);
-			};
-
-			_.chain(document.querySelectorAll("section"))
-				.filter(function(e) { return e.dataset.timing; })
-				.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
-					var el = document.createElement("div");
-
-					el.style.position = "absolute";
-					el.style.right = "0";
-					el.style.top = "1.6em";
-					el.style.height = "2em";
-					el.style.width = "50%";
-					el.style.zIndex = 100;
-					el.style.textAlign = "right";
-					el.style.padding = "22px";
-					el.style.fontSize = "1.6em";
-
-					el.textContent = showAsTimeInMin(e.dataset.timing) + " - " + showAsTimeInMin(e.dataset.next);
-
-					n.insertBefore(el, n.firstChild);
-				})
-			});
-
-			var people = {
-				stian: "../../img/hovercat.jpg",
-				'jøran': "../../img/lillesand.jpeg"
-			};
-
-			_.chain(document.querySelectorAll("aside.notes"))
-				.each(function(e) {
-					var current = document.createElement("img");
-					var next = document.createElement("img");
-
-					var size = 4;
-
-					current.style.position = "fixed";
-					current.style.right = size + "em";
-					current.style.bottom = "0em";
-					current.style.height = size + "em";
-					current.style.width = size + "em";
-					current.style.zIndex = 100;
-
-					next.style.position = "fixed";
-					next.style.right = "0em";
-					next.style.bottom = "0em";
-					next.style.height = size + "em";
-					next.style.width = size + "em";
-					next.style.zIndex = 100;
-
-					current.src = people[e.dataset.owner];
-					next.src = people[e.dataset.nextowner];
-
-					if (e.dataset.owner !== e.dataset.nextowner) {
-						e.appendChild(current);
-					}
-					e.appendChild(next);
-			});
-
-			var summary = document.querySelector('#summary-list');
-			if (summary) {
-				_.chain(document.querySelectorAll('section[data-summary]'))
-						.each(function(e) {
-							summary.innerHTML += ('<li class="fragment">' + e.dataset.summary + '</li>');
-						});
-			}
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
+</script>
 
 
-	</body>
+</body>
 </html>
