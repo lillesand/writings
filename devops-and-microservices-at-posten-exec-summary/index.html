@@ -129,7 +129,7 @@
 				<aside class="notes">
 					<ul>
 						<li>Gi dere en ide om hva vi snakker om</li>
-						<li>Dette er ikke et rent tech-miljø, men forretningskritiske systemer.</li>
+						<li>Forretningskritiske systemer.</li>
 					</ul>
 				</aside>
 			</section>
@@ -138,10 +138,8 @@
 				<aside class="notes">
 					<ul>
 						<li>Mest kjente løsningen</li>
-						<li>Tipper dere alle har brukt</li>
+						<li>Tipper dere alle har brukt, <b>refresing</b></li>
 						<li>En mill sporinger per dag</li>
-						<li>50 000 pushmeldinger i døgnet</li>
-						<li>Veldig viktig app for Posten/Bring</li>
 					</ul>
 				</aside>
 			</section>
@@ -150,11 +148,8 @@
 				<aside class="notes">
 					<ul>
 						<li>I starten ca 5000 kr i uka</li>
-						<li>Over 30 000 bestillinger i uka</li>
 						<li>Flere hundre millioner i omsetning i året</li>
 						<li>Begynt å bli veldig viktig</li>
-						<li>Helt kaos om går ned</li>
-						<li>Veldig mange småkunder</li>
 					</ul>
 				</aside>
 			</section>
@@ -163,12 +158,17 @@
 				<aside class="notes">
 					<ul>
 						<li>Viktigste API-et</li>
-						<li>Brukes av veldig mange nettbutikker</li>
-						<li>En kvart million oppslag per dag</li>
+						<li>Dere har sikkert også brukt</li>
 					</ul>
 				</aside>
 			</section>
 			<section data-owner="stian" data-background-image="img/vita.png">
+				<aside class="notes">
+					<ul>
+						<li>Brukes av veldig mange nettbutikker</li>
+						<li>En kvart million oppslag per dag</li>
+					</ul>
+				</aside>
 			</section>
 		</section>
 
@@ -176,7 +176,7 @@
 			<section>
 				<h1>Hva har vi?</h1>
 				<aside class="notes">
-					Fang oppmerksomheten sånn at folk våkner opp.
+					Dere må få se hvor langt vi er kommet!
 				</aside>
 			</section>
 			<section data-owner="stian" data-background-video="img/deployment.mov" data-video-playback-rate="4.0">
@@ -188,8 +188,7 @@
 						<li>Fullautomatisert, dokumentert og reproduserbart serveroppsett</li>
 						<li>Nedetidsfri deployment på dagtid</li>
 						<li>Deployer flere ganger om dagen</li>
-						<li>Få feil</li>
-						<li>Automatisert overvåkning av logger basert på terskelverdier</li>
+						<li>Mindre feil enn før</li>
 					</ul>
 				</aside>
 			</section>
@@ -197,6 +196,10 @@
 			<section data-owner="stian" data-background-image="img/dashboard.png" data-background-position="top">
 				<aside class="notes">
 					Gir oversikt over helsen på alle appene
+					<ul>
+						<li>Viser hvor alle appene kjører</li>
+						<li>Viser helsen til alle appene</li>
+					</ul>
 				</aside>
 			</section>
 		</section>
@@ -380,8 +383,10 @@
 						<li>Fikk kontroll på utvikling</li>
 						<li>Bruker mye tid per deploy</li>
 						<li>Stor appserver</li>
+						<li><b>Nytt prosjekt</b></li>
 						<li>Bestiller egne servere</li>
 						<li>Vår første DevOps var en applikasjon med 0 brukere</li>
+						<li>Men kundeservice melder om feil...</li>
 					</ul>
 				</aside>
 			</section>
@@ -390,7 +395,7 @@
 				<img src="img/404.png">
 				<aside class="notes">
 					<ul>
-						<li>Jetty exploded war i /tmp/</li>
+						<li>Jetty exploded war i <kbd>/tmp/</kbd></li>
 						<li>Fungerer når vi deployer ofte</li>
 						<li>Slettes hver 3. dag</li>
 					</ul>
@@ -410,12 +415,10 @@
 				<aside class="notes">
 					<ul>
 						<li>Vi begynte med helt ny/liten applikasjon</li>
-						<li>Det viktigste er at kompleksiteten i applikasjonen er lav</li>
-						<li>… og at risikoen er lav. Folk bør ikke miste jobben dersom det gjøres feil i starten.</li>
+						<li>Risikoen må være lav. Folk bør ikke miste jobben dersom det gjøres feil i starten.</li>
 						<li>Du har fortsatt mye å lære!</li>
-						<li>Gjør det lettere å selge og innføre</li>
-						<li>Lettere å gjør under radaren</li>
-						<li>Ansvar for drift krever kunnskap</li>
+						<li>Organisasjonen må <b>lære!</b></li>
+						<li>Hadde vi gjort dette på en stor app, hadde det vært ferdig</li>
 					</ul>
 				</aside>
 			</section>
@@ -535,11 +538,10 @@
 				<p>Ingen vil betale, men alle vil ha</p>
 				<aside class="notes">
 					<ul>
-						<li>Hvem skal betale?</li>
-						<li><b>Salg/produkteier lei</b> av IT-oppgaver</li>
-						<li>Hvorfor migrere, betaler jo allerede for drift</li>
-						<li>Periode hvor IT hadde en del <b>andre oppgaver</b> i tillegg</li>
-						<li><b>Chicken race</b>: Hvor lenge kan man vente før de andre betaler</li>
+						<li>IT har ikke ressurser til å gjøre migrering</li>
+						<li>Forretning gikk i tenkeboksen</li>
+						<li>Fant ut at de ville stoppe features</li>
+						<li>Time to marked var viktigere</li>
 					</ul>
 				</aside>
 			</section>
@@ -575,9 +577,10 @@
 
 				<aside class="notes">
 					<ul>
-						<li>Si bittelitt om hva micro services er</li>
 						<li>Applikasjonene ble store</li>
 						<li>Vanskelig å beholde smidigheten</li>
+						<li>Vi måtte dele de opp</li>
+						<li>Kanskje ikke helt mikro, men mindre</li>
 					</ul>
 				</aside>
 			</section>
@@ -593,6 +596,7 @@
 					<ul>
 						<li>Vanskelig å være smidig med store applikasjoner</li>
 						<li>Krever mye retesting, også en del manuell</li>
+						<li>Mindre app, mindre å teste</li>
 						<li>Nyutvikling går tregere og tregere</li>
 						<li>Kode brekker mindre åpenbare sammenhenger</li>
 					</ul>
