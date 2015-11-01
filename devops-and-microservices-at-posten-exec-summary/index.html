@@ -210,13 +210,14 @@
 			</section>
 
 			<section data-slide-type="poeng">
-				Start smått og eksperimenter med lav risiko!
+				Start smått og gjør forsøk med lav risiko!
 
 				<aside class="notes">
 					<ul>
-						<li>Ikke dra på presentasjoner og dra hjem og "gjør DevOps"</li>
-						<li>Kjenn til hva andre gjør og hva som er the latest and greatest</li>
-						<li>Ikke lag noe bare for å lage det</li>
+						<li>Veien til DevOps trenger ikke være total transformasjon</li>
+						<li>Prøv det ut på et nytt prosjekt</li>
+						<li>Gi folk tillit og de verktøyene de trenger</li>
+						<li>Det verste som skjer er at det må flyttes tilbake til eksisterende infrastruktur</li>
 					</ul>
 				</aside>
 			</section>
@@ -231,7 +232,6 @@
 					<li>Historien om leksene vi har lært</li>
 					<li>Smerten vi kjent på, og løsningene vi fant</li>
 					<li>Vi mener mye av dette er relevant for alle</li>
-					<li>Ikke for å bruke direkte, men som inspirasjon og et oppslagsverk</li>
 				</ul>
 			</aside>
 		</section>
@@ -261,10 +261,9 @@
 				<aside class="notes">
 					<ul>
 						<li>Uregelmessige prodsettinger</li>
-						<li>Hadde ingen tilgang til egne QA- eller prodservere</li>
+						<li>Hadde ingen tilgang til egne servere</li>
 						<li>Alle endringer disse miljøene måtte bestilles gjennom et ITIL-regime</li>
 						<li>Bestilte masse prodsettinger upfront og forsøkte å stykke dem utover</li>
-						<li>Masse problemer!</li>
 					</ul>
 				</aside>
 			</section>
@@ -283,16 +282,15 @@
 			<section data-slide-type="poeng">
 				<h2>Utfordre premissene</h2>
 				<ul>
-					<li>Vær en organisasjon i organisasjonen</li>
-					<li>Eksperimenter med nye prosjekter</li>
+					<li>Lag en organisasjon i organisasjonen</li>
+					<li>Eksperimentér med nye prosjekter</li>
 				</ul>
 
 				<aside class="notes">
-					<p>For smidig, DevOps eller mikrotjenester eller whatever. Du må være forberedt på å ta initiativ selv.</p>
-
 					<ul>
-						<li>Det er vanskelig å gjøre innovasjon i store organisasjoner. Med det går an å innovere i små grupper innad i organisasjonen</li>
-						<li>Rigg deg som en liten boble!</li>
+						<li>Det er vanskelig å gjøre innovasjon i store organisasjoner.</li>
+						<li>Det går an å innovere i små grupper innad i organisasjonen</li>
+						<li>Rigg det som en liten boble!</li>
 						<li>Eksperimenter med nye prosjekter -> lav konsekvens</li>
 						<li>Det var mange som var uenige – da lot vi være å forankre med alle</li>
 						<li>Sørg for å ha en sponsor med litt pondus!</li>
@@ -328,7 +326,6 @@
 
 					<ul>
 						<li>Definér ekstern driftsorganisasjon (utenfor teamet)</li>
-						<li>Spør salen: hvor mange har ekstern drift? Hvor mange fungerer det bra for? Hvor mange av disse er smidige?</li>
 						<li>Vi prøvde å lykkes med ekstern drift!</li>
 						<li>Roten til det vonde: ulike incentivmodeller</li>
 						<li>Marginene på å selge drift er knøttsmå</li>
@@ -436,7 +433,6 @@
 				<aside class="notes">
 					<ul>
 						<li>Vi har automatisert masse!</li>
-						<li>Bruker ruby sitt Rake (selv om vi er Java!)</li>
 						<li>Selvsagt automatisert deployment.</li>
 						<li>Men av og til går det galt. En gang gikk det galt. Vil kunne heldigvis bare rulle tilbake……… [<b>next slide</b>]</li>
 					</ul>
@@ -444,10 +440,9 @@
 			</section>
 
 			<section data-slide-type="tabbe">
-						<pre style="margin-bottom: 30px;"><code style="font-size:30px; line-height:60px;" data-trim>
-							$ be rake production:rollback
-						</code></pre>
-
+				<pre style="margin-bottom: 30px;"><code style="font-size:30px; line-height:60px;" data-trim>
+					$ be rake production:rollback
+				</code></pre>
 
 				<div class="fragment">– not implemented. perform manual rollback.</div>
 
@@ -476,15 +471,15 @@
 						<li>Spør salen: hvilken er riktig?</li>
 						<li>Vi aner ikke. Må sjekke hver gang</li>
 						<li>Leser manpage. Vet fortsatt ikke.</li>
-						<li>Gikk på to sånne på kort tid!</li>
 						<li>Protip: ikke bruk -sf (superfort!)</li>
 					</ul>
 				</aside>
 			</section>
 
 			<section data-slide-type="poeng">
+					<!-- data-background-image="img/cattle.jpg" style="top: 120.5px; display: block; background-color: rgba(0, 0, 0, 0.74902);" -->
+
 				<h2>Automatiser alt</h2>
-				TODO: Kvegmetafor
 				<ul>
 					<li>Deployments</li>
 					<li>Konfigurasjon</li>
@@ -498,6 +493,7 @@
 						<li>dokumentasjon (hva har faktisk blitt gjort)</li>
 						<li>reproduserbarhet</li>
 						<li>likhet på tvers av mijøer</li>
+						<li>Kvegmetafor</li>
 					</ul>
 				</aside>
 			</section>
@@ -507,7 +503,6 @@
 
 				<aside class="notes">
 					<ul>
-
 						<li>Manuelle operasjoner er roten til mye vondt!</li>
 						<li>Tar mye tid og gir mye feil</li>
 						<li>Vanskelig å reprodusere og vite hva som har skjedd</li>
