@@ -1,0 +1,377 @@
+<!doctype html>
+<!-- vim: set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab: -->
+<!-- vim: set foldexpr=SectionFold(v\:lnum) : -->
+<!-- vim: set foldcolumn=5 foldlevel=99 foldmethod=expr : -->
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>DevOps og Micro Services hos Posten</title>
+
+	<meta name="description" content="DevOps og Micro Services hos Posten">
+	<meta name="author" content="Stian Mathiassen and Jøran Lillesand">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<!--
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    -->
+	<link rel="stylesheet" href="css/theme/bekk.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<style>
+		.reveal section img {
+			border: none;
+		}
+
+		section .header {
+			position: relative;
+			background-color: black;
+		}
+
+		section .header h2 {
+			padding: 10px;
+		}
+
+		section .header .caption {
+			position: absolute;
+			font-size: 20px;
+			text-align: left;
+			background-color:inherit;
+			top: -24px;
+			padding: 2px 10px;
+		}
+
+	</style>
+</head>
+
+<body>
+
+<div class="reveal">
+
+	<div class="slides">
+		<section>
+			<section data-background-image="img/drifting-car.jpg">
+				<h2 style="background-color: #7bc144; color: white; padding: 10px;">
+					Full gass med bremsen inne!
+				</h2>
+			</section>
+
+			<section>
+				<h2 style="background-color: rgba(0,0,0,0.75); color: white; padding: 10px;">
+					«Veien til en mer smidig organisasjon trenger ikke være en revolusjon.»
+				</h2>
+			</section>
+
+		</section>
+
+		<section>
+			<section>
+				<h2>Hva snakker vi egentlig om?</h2>
+			</section>
+
+			<section>
+				30 utviklere
+			</section>
+
+			<section>
+				15 forretningsapplikasjoner
+			</section>
+
+			<section>
+				100 millioner i årlig omsetning
+			</section>
+
+			<section>
+				Millioner sidevisninger daglig
+			</section>
+
+			<section>
+				Daglige produksjonssettinger
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>But how…?</h2>
+			</section>
+
+			<section>
+				«Vi har aldri tatt på oss risiko»
+			</section>
+		</section>
+
+		<section>
+			<!-- TODO: Bilde av meg fra lenge siden -->
+			<section>
+				Et tilbakeblikk…
+				<aside class="notes">
+					<ul>
+						<li>Fortell om mine første dager</li>
+						<li>Målet var å etablere et smidig miljø</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Premisser fra dag 1</h3>
+				<ul>
+					<li>Tydelige forretningsmål</li>
+					<li>Sterk tverrfaglighet</li>
+					<li>Lov til å utfordre</li>
+					<li>Lever for å levere</li>
+				</ul>
+
+				<aside class="notes">
+					<ul>
+						<li>Tydelig forretningsmål: øke kundelojalitet gjennom API-integrasjoner</li>
+						<li>The chosen 5: Tverrfaglighet: prosjektleder, managementkonsulent, interaksjonsdesigner og to utviklere</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Fokus på smidige leveranser</h3>
+			</section>
+
+			<section>
+				<h3>Tillit til å finne løsninger</h3>
+
+				<aside class="notes">
+					<ul>
+						<li>Får levert problemer og behov, ikke brukerhistorier</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Tar ansvar – og får ansvar</h3>
+
+				<aside class="notes">
+					<ul>
+						<li>Beviser oss tilliten verdig</li>
+						<li>Får mer tillit</li>
+						<li>Recurse!</li>
+						<li>Ingen utenfor teamet som overprøver</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Inkrementelle forbedringer</h3>
+			</section>
+		</section>
+
+		<section>
+			<section>Oppsummering</section>
+
+			<section>
+				<h3>Alle ønsker å gjøre en god jobb</h3>
+
+				<aside class="notes">
+					<ul>
+						<li>Du har sannsynligvis allerede gode folk!</li>
+						<li>… men får de verktøykassa de trenger?</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Culture is king</h3>
+
+				<aside class="notes">
+					<ul>
+						<li>I en kultur uten tillit tar ikke folk ansvar</li>
+						<li>Folk som får ansvar tar ansvar!</li>
+						<li>Vi har hatt utviklere som har jobbet gjennom påskeferien for å få opp et system som havarerte</li>
+						<li>Fordi de bryr seg!</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Det trenger ikke være så vanskelig…</h3>
+
+				<aside class="notes">
+					<ul>
+						<li>Det er ikke alltid lett</li>
+						<li>Men det finnes forskjellige måter å angripe problemet på</li>
+						<li>Start smått</li>
+						<li>Spre gode ideer</li>
+						<li>Gi folk støtte, ansvar og tillit</li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+
+	</div>
+
+</div>
+
+<script src="lib/js/underscore-min.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	var slideTypeToBgImage = {
+		tabbe: 'img/pain.jpg', // http://www.oxfordtoday.ox.ac.uk/features/pain-always-real
+		smerte: 'img/pain.jpg',
+		poeng: 'img/idea.jpg' // http://images.huffingtonpost.com/2015-01-20-IdeasMakeorBreakYourBusiness.jpg
+		//visdomsord: '',
+	};
+
+	_.chain(document.getElementsByTagName('section'))
+			.filter(function(e) { return e.dataset['slideType']; })
+			.filter(function(e) { return slideTypeToBgImage[e.dataset['slideType']]; })
+			.each(function(e) {
+				e.dataset['background'] = slideTypeToBgImage[e.dataset['slideType']];
+				e.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+			});
+
+	// Add speaker notes to all slides
+	_.chain(document.getElementsByTagName("section"))
+			.filter(function(e) { return _.isEmpty(e.getElementsByTagName("section"))})
+			.filter(function(e) { return _.isEmpty(e.querySelectorAll("aside.notes"))})
+			.forEach(function(e) {
+				var notes = document.createElement("aside");
+				notes.className = "notes";
+				e.appendChild(notes);
+			});
+
+	// Add owner to all speaker notes
+	_.chain(document.getElementsByTagName("section"))
+			.filter(function(e) { return e.dataset.owner })
+			.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
+				n.dataset.owner = e.dataset.owner;
+			})
+			});
+
+	// Add next owner of next slide to notes
+	_.chain(document.querySelectorAll("aside.notes"))
+			.reduce(function(prev, next) {
+				prev.dataset.nextowner = next.dataset.owner;
+				return next;
+			});
+
+	_.chain(document.querySelectorAll("section"))
+			.filter(function(e) { return e.parentElement.nodeName !== "SECTION" })
+			.reduce(function(t, e) {
+				if (e.dataset && e.dataset['time']) {
+					t.timing = t.next;
+					t.next = t.timing + parseFloat(e.dataset['time']);
+				}
+				e.dataset['next'] = t.next;
+				e.dataset['timing'] = t.timing;
+				return t;
+			}, { timing: 0, next: 0 });
+
+	var showAsTimeInMin = function(t) {
+		t = parseFloat(t);
+		var min = Math.floor(t);
+		var sek = ((t % 1) * 60) + '';
+
+		return min + ":" + (sek.length === 1 ? "0" + sek : sek);
+	};
+
+	_.chain(document.querySelectorAll("section"))
+			.filter(function(e) { return e.dataset.timing; })
+			.each(function(e) { _.each(e.querySelectorAll("aside.notes"), function(n) {
+				var el = document.createElement("div");
+
+				el.style.position = "absolute";
+				el.style.right = "0";
+				el.style.top = "1.6em";
+				el.style.height = "2em";
+				el.style.width = "50%";
+				el.style.zIndex = 100;
+				el.style.textAlign = "right";
+				el.style.padding = "22px";
+				el.style.fontSize = "1.6em";
+
+				el.textContent = showAsTimeInMin(e.dataset.timing) + " - " + showAsTimeInMin(e.dataset.next);
+
+				n.insertBefore(el, n.firstChild);
+			})
+			});
+
+	var people = {
+		stian: "../../img/hovercat.jpg",
+		'jøran': "../../img/lillesand.jpeg"
+	};
+
+	_.chain(document.querySelectorAll("aside.notes"))
+			.each(function(e) {
+				var current = document.createElement("img");
+				var next = document.createElement("img");
+
+				var size = 4;
+
+				current.style.position = "fixed";
+				current.style.right = size + "em";
+				current.style.bottom = "0em";
+				current.style.height = size + "em";
+				current.style.width = size + "em";
+				current.style.zIndex = 100;
+
+				next.style.position = "fixed";
+				next.style.right = "0em";
+				next.style.bottom = "0em";
+				next.style.height = size + "em";
+				next.style.width = size + "em";
+				next.style.zIndex = 100;
+
+				current.src = people[e.dataset.owner];
+				next.src = people[e.dataset.nextowner];
+
+				if (e.dataset.owner !== e.dataset.nextowner) {
+					e.appendChild(current);
+				}
+				e.appendChild(next);
+			});
+
+	var summary = document.querySelector('#summary-list');
+	if (summary) {
+		_.chain(document.querySelectorAll('section[data-summary]'))
+				.each(function(e) {
+					summary.innerHTML += ('<li class="fragment">' + e.dataset.summary + '</li>');
+				});
+	}
+
+	// Full list of configuration options available at:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: false,
+		progress: true,
+		history: true,
+		center: true,
+
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// Optional reveal.js plugins
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			{ src: 'plugin/notes/notes.js', async: true }
+		]
+	});
+
+</script>
+
+
+</body>
+</html>
