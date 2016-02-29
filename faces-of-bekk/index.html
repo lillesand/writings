@@ -28,6 +28,7 @@
 			section .header {
 				position: relative;
 				background-color: black;
+				opacity: 0.8;
 			}
 
 			section .header h2 {
@@ -50,6 +51,49 @@
 
 			.reveal section li {
 				list-style: none;
+			}
+
+			.imgbox {
+				width: 50%;
+				float: left;
+			}
+
+			.reveal .imgtext {
+				width: 45%;
+				float: left;
+				padding: 20px;
+			}
+
+			.imgtext h2 {
+				margin-bottom: 10px;
+			}
+
+			.reveal .master-title {
+				font-size: 0.75em;
+				font-style: italic;
+				text-align: left;
+				margin-top: 1em;
+			}
+
+			.reveal .master-title:after {
+				content: "»";
+			}
+
+			.reveal .master-title:before {
+				content: "«";
+			}
+
+			.reveal .authors {
+				float: right;
+				font-size: 0.5em;
+			}
+
+			.reveal .authors:before {
+				content: "–";
+			}
+
+			.reveal dd {
+				font-size:0.8em;
 			}
 
 		</style>
@@ -77,6 +121,9 @@
 				<section data-background-image="img/olav_cencored.jpg"></section>
 			</section>
 
+			<section>
+				<h1>Litt om meg</h1>
+			</section>
 
 			<section id="guro">
 				<section>
@@ -90,13 +137,95 @@
 			</section>
 
 			<section id="mats">
-				<section>
-					<div class="header" style="color: #B79A79">
+				<section data-background-image="img/Mats-MUFC.jpg">
+					<div class="header" style="color: #C9F7AF; margin-bottom: 350px;">
 						<div class="caption">Møt…</div>
 						<h2 style="color: inherit;">
 							Mats
 						</h2>
 					</div>
+
+					<aside class="notes">
+						Mats Knutsen-Valen, tidligere Mats Knutsen. En av dem.
+					</aside>
+				</section>
+
+				<section>
+					<div class="imgbox">
+						<img src="img/mats_ntnu.png"/>
+					</div>
+
+					<div class="imgtext">
+						<h2>NTNU 2010</h2>
+						Kommunikasjonsteknologi
+
+						<div class="master-title">
+							Java Implementation and Performance Analysis of 14 SHA-3 Hash Functions on a Constrained Device
+						</div>
+						<span class="authors">
+							Mats Knutsen & Kim-André Martinsen
+						</span>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Informasjonssikkerhet</li>
+							<li>Lyst til å bli konsulent hele veien</li>
+							<li>Interessert i ledelse</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<div class="imgbox">
+						<img src="img/mats_bekk.png"/>
+					</div>
+
+					<div class="imgtext">
+						<h2>Bats</h2>
+
+						<dl>
+							<dt>2011</dt>
+							<dd>Virksomhet 2.0</dd>
+
+							<dt>2012</dt>
+							<dd>Leter etter seg selv</dd>
+
+							<dt>2013</dt>
+							<dd>Finner seg selv</dd>
+
+							<dt>2014</dt>
+							<dd>Spirer</dd>
+
+							<dt>2015</dt>
+							<dd>Blomstrer</dd>
+						</dl>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>2011: Begynner i BEKK. Faggruppe: Virksomhet 2.0 (I shit you not)</li>
+							<li>2012: Ber om ansvar. Rekrutteringsansvarlig NITH og Bergen, fagdagansvarlig</li>
+							<li>2013: PL-programmet, Mod på NAV som prosjektkoordinator</li>
+							<li>2014: Ansvarlig for Bootcamp, prosjektleder på SiO, vikariat i salg (pappaperm)</li>
+							<li>2015: Kundeansvarlig, trer inn i salg</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background-image="img/bekk_crowd.jpg">
+					<div class="header">
+						<h1>The Right Size</h1>
+					</div>
+
+					<aside class="notes">
+						Hva viser historien om Mats?
+						<ul>
+							<li>BEKK har veldig fin størrelse</li>
+							<li>Store: mange ulike karriereveier, store nok til å gjøre impact</li>
+							<li>Små: du blir sett, folk vil og kan gi ansvar og utfordringer</li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 
