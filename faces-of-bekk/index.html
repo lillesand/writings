@@ -1,434 +1,514 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+    <title>reveal.js – The HTML Presentation Framework</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<style>
-			.reveal section img {
-				border: none;
-			}
+    <style>
+        .reveal section img {
+            border: none;
+        }
 
-			section .header {
-				position: relative;
-				background-color: black;
-				opacity: 0.8;
-			}
+        section .header {
+            position: relative;
+            background-color: black;
+            opacity: 0.8;
+        }
 
-			section .header h2 {
-				padding: 10px;
-			}
+        section .header h2 {
+            padding: 10px;
+        }
 
-			section .header .caption {
-				position: absolute;
-				font-size: 20px;
-				text-align: left;
-				background-color:inherit;
-				top: -24px;
-				padding: 2px 10px;
-			}
+        section .header .caption {
+            position: absolute;
+            font-size: 20px;
+            text-align: left;
+            background-color: inherit;
+            top: -24px;
+            padding: 2px 10px;
+        }
 
-			.reveal section img {
-				border: none;
-				box-shadow: none;
-			}
+        .reveal section img {
+            border: none;
+            box-shadow: none;
+        }
 
-			.reveal section li {
-				list-style: none;
-			}
+        .reveal section li {
+            list-style: none;
+        }
 
-			.imgbox {
-				width: 50%;
-				float: left;
-			}
+        .imgbox {
+            width: 50%;
+            float: left;
+        }
 
-			.reveal .imgtext {
-				width: 45%;
-				float: left;
-				padding: 20px;
-			}
+        .reveal .imgtext {
+            width: 45%;
+            float: left;
+            padding: 20px;
+        }
 
-			.imgtext h2 {
-				margin-bottom: 10px;
-			}
+        .imgtext h2 {
+            margin-bottom: 10px;
+        }
 
-			.reveal .master-title {
-				font-size: 0.75em;
-				font-style: italic;
-				text-align: left;
-				margin-top: 1em;
-			}
+        .reveal .master-title {
+            font-size: 0.75em;
+            font-style: italic;
+            text-align: left;
+            margin-top: 1em;
+        }
 
-			.reveal .master-title:after {
-				content: "»";
-			}
+        .reveal .master-title:after {
+            content: "»";
+        }
 
-			.reveal .master-title:before {
-				content: "«";
-			}
+        .reveal .master-title:before {
+            content: "«";
+        }
 
-			.reveal .authors {
-				float: right;
-				font-size: 0.5em;
-			}
+        .reveal .authors {
+            float: right;
+            font-size: 0.5em;
+        }
 
-			.reveal .authors:before {
-				content: "–";
-			}
+        .reveal .authors:before {
+            content: "–";
+        }
 
-			.reveal dd {
-				font-size:0.8em;
-			}
+        .reveal dd {
+            font-size: 0.8em;
+        }
 
-		</style>
+    </style>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
 
-	<body>
+<body>
 
-	<div class="reveal">
+<div class="reveal">
 
-		<div class="slides">
-			<section id="intro">
-				<section data-background-image="img/olav_cencored.jpg"></section>
-			</section>
+    <div class="slides">
+        <section id="intro">
+            <section data-background-image="img/olav_cencored.jpg"></section>
+        </section>
 
-			<section data-background-image="img/jøran.jpg">
-				<div class="header" style="color: #EB8964; margin-top: 350px;">
-					<div class="caption">Møt…</div>
-					<h2 style="color: inherit;">
-						Jøran
-					</h2>
-				</div>
+        <section data-background-image="img/jøran.jpg">
+            <div class="header" style="color: #EB8964; margin-top: 350px;">
+                <div class="caption">Møt…</div>
+                <h2 style="color: inherit;">
+                    Jøran
+                </h2>
+            </div>
 
-				<aside class="notes">
-					Kort om meg selv:
-					<ul>
-						<li>Gikk ut fra Komtek i 2008</li>
-						<li>Jobbet i bekk i 7.5 år</li>
-						<li>Gått gradene i BEKK</li>
-						<li><span style="text-decoration: line-through;">Fagansvarlig</span>mellomleder i Tech med personalansvar</li>
-						<li>Er en Posten-røver på dagtid</li>
-					</ul>
-				</aside>
-			</section>
+            <aside class="notes">
+                Kort om meg selv:
+                <ul>
+                    <li>Gikk ut fra Komtek i 2008</li>
+                    <li>Jobbet i bekk i 7.5 år</li>
+                    <li>Gått gradene i BEKK</li>
+                    <li><span style="text-decoration: line-through;">Fagansvarlig</span>mellomleder i Tech med
+                        personalansvar
+                    </li>
+                    <li>Er en Posten-røver på dagtid</li>
+                </ul>
+            </aside>
+        </section>
 
-			<section id="guro">
-				<section data-background-image="img/guro-jobb.jpeg">
-					<div class="header" style="color: #C1C5BC; margin-top: 250px;">
-						<div class="caption">Møt…</div>
-						<h2 style="color: inherit;">
-							Guro
-						</h2>
-					</div>
-				</section>
+        <section id="guro">
+            <section data-background-image="img/guro-jobb.jpeg">
+                <div class="header" style="color: #C1C5BC; margin-top: 250px;">
+                    <div class="caption">Møt…</div>
+                    <h2 style="color: inherit;">
+                        Guro
+                    </h2>
+                </div>
+            </section>
 
-				<section data-background-color="white">
-					<div class="imgbox">
-						<img src="img/guro_ntnu.jpg"/>
-					</div>
+            <section data-background-color="white">
+                <div class="imgbox">
+                    <img src="img/guro_ntnu.jpg"/>
+                </div>
 
-					<div class="imgtext">
-						<h2>NTNU 2015</h2>
-						Industriell matematikk
+                <div class="imgtext">
+                    <h2>NTNU 2015</h2>
+                    Industriell matematikk
 
-						<div class="master-title">
-							Simulations of CO<sub>2</sub> Migration<br> with a Fully-Integrated VE Model on the GPU ﻿
-						</div>
+                    <div class="master-title">
+                        Simulations of CO<sub>2</sub> Migration<br> with a Fully-Integrated VE Model on the GPU ﻿
+                    </div>
 						<span class="authors">
 							Guro Seternes
 						</span>
 
-						<img src="img/guro_master.png" />
-					</div>
+                    <img src="img/guro_master.png"/>
+                </div>
 
-					<aside class="notes">
-						<p>Begynte i BEKK 15. februar 2015. Vet ikke helt hvorfor ikke august.</p>
+                <aside class="notes">
+                    <p>Begynte i BEKK 15. februar 2015. Vet ikke helt hvorfor ikke august.</p>
 
-						<p>Masteroppgaven skrev hun for SINTEFs avdeling for IKT i Oslo. Oppgaven gikk ut på å simulere oppførselen til CO2 som blir sprøytet inn i havbunnen, for å se om dette kan være skadelig over tid. For å simulere denne problemstillingen benyttet Guro seg av matematisk modellering, hvor gassens bevegelse ble beskrevet ved hjelp av ligninger, før disse ble implementert for å løses numerisk. Implementeringen ble gjort i C++ og CUDA, og utregningene ble parallelliserte og utført på GPUen for å øke ytelsen.</p>
-					</aside>
-				</section>
+                    <p>Masteroppgaven skrev hun for SINTEFs avdeling for IKT i Oslo. Oppgaven gikk ut på å simulere
+                        oppførselen til CO2 som blir sprøytet inn i havbunnen, for å se om dette kan være skadelig over
+                        tid. For å simulere denne problemstillingen benyttet Guro seg av matematisk modellering, hvor
+                        gassens bevegelse ble beskrevet ved hjelp av ligninger, før disse ble implementert for å løses
+                        numerisk. Implementeringen ble gjort i C++ og CUDA, og utregningene ble parallelliserte og
+                        utført på GPUen for å øke ytelsen.</p>
+                </aside>
+            </section>
 
-				<section>
-					<div class="imgbox">
-						<img src="img/guro_bekk.jpg"/>
-					</div>
+            <section>
+                <div class="imgbox">
+                    <img src="img/guro_bekk.jpg"/>
+                </div>
 
-					<div class="imgtext">
-						<h2>Bekkuro</h2>
+                <div class="imgtext">
+                    <h2>Bekkuro</h2>
 
-						<dl>
-							<dt>2014</dt>
-							<dd>Sommerjobb på NAV</dd>
+                    <dl>
+                        <dt>2014</dt>
+                        <dd>Sommerjobb på NAV</dd>
 
-							<dt>Mars 2015</dt>
-							<dd>Oppstart på Digipost</dd>
+                        <dt>Mars 2015</dt>
+                        <dd>Oppstart på Digipost</dd>
 
-							<dt>2016</dt>
-							<dd>Ansvarlig for frontend på Digipost</dd>
-						</dl>
-					</div>
+                        <dt>2016</dt>
+                        <dd>Ansvarlig for frontend på Digipost</dd>
+                    </dl>
+                </div>
 
-					<aside class="notes">
-						<ul>
-							<li>Plassen bortenfor min!</li>
-							<li>Snakket med Guro om masteren</li>
-							<li>Sånn bruker vi akademisk talent: skriver jævelig fancy master, gnukker pixler på Digipost</li>
-							<li>Men har spennende utfordringer!</li>
-						</ul>
-					</aside>
-				</section>
+                <aside class="notes">
+                    <ul>
+                        <li>Plassen bortenfor min!</li>
+                        <li>Snakket med Guro om masteren</li>
+                        <li>Sånn bruker vi akademisk talent: skriver jævelig fancy master, gnukker pixler på Digipost
+                        </li>
+                        <li>Men har spennende utfordringer!</li>
+                    </ul>
+                </aside>
+            </section>
 
-				<section data-background-image="img/bekk_funksjonell_javascript.jpg">
-					<div class="header">
-						<h1 style="color: #47AEF5;">Få ansvar tidlig!</h1>
-					</div>
+            <section data-background-image="img/bekk_funksjonell_javascript.jpg">
+                <div class="header">
+                    <h1 style="color: #47AEF5;">Få ansvar tidlig!</h1>
+                </div>
 
-					<aside class="notes">
-						<ul>
-							<li>Da Guro begynte på Digipost hadde hun ikke kodet en linje JavaScript i hele sitt liv</li>
-							<li>Workshop om React & Redux</li>
-							<li>Viste initiativ og lyst på ansvar –får masser av ansvar!</li>
-							<li>Ikke alle er interessert i ansvar, men de som er det får muligheter!</li>
-						</ul>
-					</aside>
-				</section>
-			</section>
+                <aside class="notes">
+                    <ul>
+                        <li>Da Guro begynte på Digipost hadde hun ikke kodet en linje JavaScript i hele sitt liv</li>
+                        <li>Workshop om React & Redux</li>
+                        <li>Viste initiativ og lyst på ansvar –får masser av ansvar!</li>
+                        <li>Ikke alle er interessert i ansvar, men de som er det får muligheter!</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
 
-			<section id="mats">
-				<section data-background-image="img/Mats-MUFC.jpg">
-					<div class="header" style="color: #C9F7AF; margin-bottom: 350px;">
-						<div class="caption">Møt…</div>
-						<h2 style="color: inherit;">
-							Mats
-						</h2>
-					</div>
+        <section id="mats">
+            <section data-background-image="img/Mats-MUFC.jpg">
+                <div class="header" style="color: #C9F7AF; margin-bottom: 350px;">
+                    <div class="caption">Møt…</div>
+                    <h2 style="color: inherit;">
+                        Mats
+                    </h2>
+                </div>
 
-					<aside class="notes">
-						Mats Knutsen-Valen, tidligere Mats Knutsen. En av dem.
-					</aside>
-				</section>
+                <aside class="notes">
+                    Mats Knutsen-Valen, tidligere Mats Knutsen. En av dem.
+                </aside>
+            </section>
 
-				<section>
-					<div class="imgbox">
-						<img src="img/mats_ntnu.png"/>
-					</div>
+            <section>
+                <div class="imgbox">
+                    <img src="img/mats_ntnu.png"/>
+                </div>
 
-					<div class="imgtext">
-						<h2>NTNU 2010</h2>
-						Kommunikasjonsteknologi
+                <div class="imgtext">
+                    <h2>NTNU 2010</h2>
+                    Kommunikasjonsteknologi
 
-						<div class="master-title">
-							Java Implementation and Performance Analysis of 14 SHA-3 Hash Functions on a Constrained Device
-						</div>
+                    <div class="master-title">
+                        Java Implementation and Performance Analysis of 14 SHA-3 Hash Functions on a Constrained Device
+                    </div>
 						<span class="authors">
 							Mats Knutsen & Kim-André Martinsen
 						</span>
-					</div>
+                </div>
 
-					<aside class="notes">
-						<ul>
-							<li>Informasjonssikkerhet</li>
-							<li>Lyst til å bli konsulent hele veien</li>
-							<li>Interessert i ledelse</li>
-						</ul>
-					</aside>
-				</section>
+                <aside class="notes">
+                    <ul>
+                        <li>Informasjonssikkerhet</li>
+                        <li>Lyst til å bli konsulent hele veien</li>
+                        <li>Interessert i ledelse</li>
+                    </ul>
+                </aside>
+            </section>
 
-				<section>
-					<div class="imgbox">
-						<img src="img/mats_bekk.jpg"/>
-					</div>
+            <section>
+                <div class="imgbox">
+                    <img src="img/mats_bekk.jpg"/>
+                </div>
 
-					<div class="imgtext">
-						<h2>Bats</h2>
+                <div class="imgtext">
+                    <h2>Bats</h2>
 
-						<dl>
-							<dt>2011</dt>
-							<dd>Virksomhet 2.0</dd>
+                    <dl>
+                        <dt>2011</dt>
+                        <dd>Virksomhet 2.0</dd>
 
-							<dt>2012</dt>
-							<dd>Leter etter seg selv</dd>
+                        <dt>2012</dt>
+                        <dd>Leter etter seg selv</dd>
 
-							<dt>2013</dt>
-							<dd>Finner seg selv</dd>
+                        <dt>2013</dt>
+                        <dd>Finner seg selv</dd>
 
-							<dt>2014</dt>
-							<dd>Spirer</dd>
+                        <dt>2014</dt>
+                        <dd>Spirer</dd>
 
-							<dt>2015</dt>
-							<dd>Blomstrer</dd>
-						</dl>
-					</div>
+                        <dt>2015</dt>
+                        <dd>Blomstrer</dd>
+                    </dl>
+                </div>
 
-					<aside class="notes">
-						Kommer dette til å fønke? Kanskje fokusere på en kritisk sti..?
+                <aside class="notes">
+                    Kommer dette til å fønke? Kanskje fokusere på en kritisk sti..?
 
-						<ul>
-							<li>2011: Begynner i BEKK. Faggruppe: Virksomhet 2.0 (I shit you not)</li>
-							<li>2012: Ber om ansvar. Rekrutteringsansvarlig NITH og Bergen, fagdagansvarlig</li>
-							<li>2013: PL-programmet, Mod på NAV som prosjektkoordinator</li>
-							<li>2014: Ansvarlig for Bootcamp, prosjektleder på SiO, vikariat i salg (pappaperm)</li>
-							<li>2015: Kundeansvarlig, trer inn i salg</li>
-						</ul>
-					</aside>
-				</section>
+                    <ul>
+                        <li>2011: Begynner i BEKK. Faggruppe: Virksomhet 2.0 (I shit you not)</li>
+                        <li>2012: Ber om ansvar. Rekrutteringsansvarlig NITH og Bergen, fagdagansvarlig</li>
+                        <li>2013: PL-programmet, Mod på NAV som prosjektkoordinator</li>
+                        <li>2014: Ansvarlig for Bootcamp, prosjektleder på SiO, vikariat i salg (pappaperm)</li>
+                        <li>2015: Kundeansvarlig, trer inn i salg</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
 
-				<section data-background-image="img/bekk_crowd.jpg">
-					<div class="header">
-						<h1>The Right Size</h1>
-					</div>
+        <section id="video">
+            <h1>Placeholder for CY</h1>
+        </section>
 
-					<aside class="notes">
-						Hva viser historien om Mats?
-						<ul>
-							<li>BEKK har veldig fin størrelse</li>
-							<li>Store: mange ulike karriereveier, store nok til å gjøre impact</li>
-							<li>Små: du blir sett, folk vil og kan gi ansvar og utfordringer</li>
-						</ul>
-					</aside>
-				</section>
-			</section>
+        <section id="erik">
+            <section>
+                <div class="header" style="color: #B79A79">
+                    <div class="caption">Møt…</div>
+                    <h2 style="color: inherit;">
+                        Erik
+                    </h2>
+                </div>
+            </section>
+        </section>
 
-			<section id="video">
-				<h1>Placeholder for CY</h1>
-			</section>
+        <section id="ingvild">
+            <section data-background-image="img/ingvild_natur.jpg">
+                <div class="header" style="color: #88BDF0; margin-bottom: 200px; transform: rotate(-10.5deg)">
+                    <div class="caption">Møt…</div>
+                    <h2 style="color: inherit;">
+                        Ingvild
+                    </h2>
+                </div>
+            </section>
 
-			<section id="erik">
-				<section>
-					<div class="header" style="color: #B79A79">
-						<div class="caption">Møt…</div>
-						<h2 style="color: inherit;">
-							Erik
-						</h2>
-					</div>
-				</section>
-			</section>
 
-			<section id="ingvild">
-				<section>
-					<div class="header" style="color: #B79A79">
-						<div class="caption">Møt…</div>
-						<h2 style="color: inherit;">
-							Ingvild
-						</h2>
-					</div>
-				</section>
-			</section>
+            <section>
+                <div class="imgbox">
+                    <img src="img/ingvild_ntnu.png" style="width: 90%;"/>
+                </div>
 
-			<section id="olav">
-				<section data-background-image="img/olav_fest.jpg">
-					<div class="header" style="color: #FEF4C3; margin-top: 500px;">
-						<div class="caption">Møt…</div>
-						<h2 style="color: inherit;">
-							Olav
-						</h2>
-					</div>
-				</section>
+                <div class="imgtext">
+                    <h2>NTNU 2014</h2>
+                    Fysmat
 
-				<section data-background-color="#B69269">
-					<div class="imgbox">
-						<img src="img/olav_ntnu.png"/>
-					</div>
+                    <div class="master-title">
+                        A Hybrid Metaheuristic for the Mixed Capacitated General Routing Problem with Route Balancing
+                    </div>
+                    <span class="authors">
+                        Ingvild Lyckander et. al.
+                    </span>
+                </div>
+            </section>
 
-					<div class="imgtext">
-						<h2>NTNU 1982</h2>
-						Bygg
+            <section>
+                <div class="imgbox">
+                    <img src="img/ingvild_bekk.jpg"/>
+                </div>
 
-						<div class="master-title">
-							Fra transcendental til grammatisk undersøkelse av estetisk erfaring - I lys av Kant og Wittgenstein ﻿
-						</div>
+                <div class="imgtext">
+                    <h2>Bekkvild</h2>
+                    <dl>
+                        <dt>2014</dt>
+                        <dd>NAV</dd>
+
+                        <dt>2015</dt>
+                        <dd>Statens Vegvesen</dd>
+
+                        <dt>2016</dt>
+                        <dd>Oppstartsansvarlig i Tech</dd>
+                    </dl>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>NAV: bl.a. foreldrepengesøknad. Høy profil, veldig mange brukere. Great success for NAV!
+                        </li>
+                        <li>Gjør en forskjell</li>
+                        <li>SVV: Road Status Information</li>
+                        <li>Bruke sensorer i biler til å samle inn informasjon om vei- og føreforhold</li>
+                        <li>Hele greia kjører på AWS</li>
+                        <li>Oppstartsansvarlig i Tech. Tar i mot de nyansatte, følger dem opp gjennom året, er med på
+                            Bootcamp
+                        </li>
+                        <li>Osvosv</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section data-background-image="img/bekk_crowd.jpg">
+                <div class="header">
+                    <h1>The Right Size</h1>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>BEKK har veldig fin størrelse</li>
+                        <li>Store: mange ulike karriereveier, store nok til å gjøre impact</li>
+                        <li>Så fremoverlente at kundene ser mot oss når de skal gjøre ekstra spennende ting!</li>
+                        <li>Små: du blir sett, folk vil og kan gi ansvar og utfordringer</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section id="olav">
+            <section data-background-image="img/olav_fest.jpg">
+                <div class="header" style="color: #FEF4C3; margin-top: 500px;">
+                    <div class="caption">Møt…</div>
+                    <h2 style="color: inherit;">
+                        Olav
+                    </h2>
+                </div>
+            </section>
+
+            <section data-background-color="#B69269">
+                <div class="imgbox">
+                    <img src="img/olav_ntnu.png"/>
+                </div>
+
+                <div class="imgtext">
+                    <h2>NTNU 1982</h2>
+                    Bygg
+
+                    <div class="master-title">
+                        Fra transcendental til grammatisk undersøkelse av estetisk erfaring - I lys av Kant og
+                        Wittgenstein ﻿
+                    </div>
 						<span class="authors">
 							Ragnhild S. Folkestad
 						</span>
-					</div>
-				</section>
+                </div>
+            </section>
 
-				<section data-background-color="white" class="inverted">
-					<div class="imgbox">
-						<img src="img/olav_bekk.png"/>
-					</div>
+            <section data-background-color="white" class="inverted">
+                <div class="imgbox">
+                    <img src="img/olav_bekk.png"/>
+                </div>
 
-					<div class="imgtext">
-						<h2>Bekklav</h2>
+                <div class="imgtext">
+                    <h2>Bekklav</h2>
 
-						<dl>
-							<dt>1982</dt>
-							<dd>Bygg</dd>
+                    <dl>
+                        <dt>1982</dt>
+                        <dd>Bygg</dd>
 
-							<dt>1982-2001</dt>
-							<dd>??</dd>
+                        <dt>1982-2001</dt>
+                        <dd>??</dd>
 
-							<dt>2001</dt>
-							<dd>CEO i Bekk Consulting AS</dd>
+                        <dt>2001</dt>
+                        <dd>CEO i Bekk Consulting AS</dd>
 
-							<dt>2016</dt>
-							<dd>Profit!</dd>
-						</dl>
-					</div>
-				</section>
+                        <dt>2016</dt>
+                        <dd>Profit!</dd>
+                    </dl>
+                </div>
+            </section>
 
-			</section>
+        </section>
 
 
-		</div>
+    </div>
 
-	</div>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-		<script>
+<script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
 
-		</script>
+</script>
 
-	</body>
+</body>
 </html>
