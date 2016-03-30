@@ -1,0 +1,73 @@
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #1A1A1A; // BEKK dark
+
+$mainColor: #FFFFFF; // BEKK paper white
+$headingColor: #EBEBEB ; // Section title color
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingMargin: $blockMargin 0 $blockMargin 0;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #FD5158; // BEKK red
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(136, 126, 111, 0.99);
+$selectionColor: #FFF9AE; // BEKK Yellow
+$headingFontWeight: 600;
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: $backgroundColor;
+	}
+}
+
+div.illustrationCircle {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+}
+.illustrationCircle p.illustrationCircle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    margin: 0;
+}
+.imgCircle, .illustrationCircle {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+}
+.backgroundColor-red {
+    background-color: #DF565B;
+}
+.backgroundColor-green {
+    background-color: #28BCB3;
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
