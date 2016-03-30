@@ -641,6 +641,139 @@
 
 			</section>
 
+			<section id="industrialisering" data-owner="stian" data-summary="Industrialiser infrastrukturen" data-time="3">
+				<section data-background="img/cake.jpg">
+					<div class="header" style="color: #FF1512">
+						<div class="caption">Vi har…</div>
+						<h2 style="color: inherit;">
+							Industrialisert utvikling og utrulling
+						</h2>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Kostnad per app ned</li>
+							<li>Fikk ny type kompleksitet</li>
+							<li>Mikrotjenester fører til industrialisering</li>
+							<li>Mikrotjenester fører også til standariseing</li>
+							<li>Viktig å ikke bli for rigid</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-slide-type="smerte">
+					<img src="img/logs.png" alt="Logs across applications">
+					<aside class="notes">
+						<ul>
+							<li>Flere og flere avhengigheter mellom appene</li>
+							<li>Det ble veldig komplekst å deploye en app.</li>
+							<li>Måtte følge med i 4 fire logger på 2 servere samtidig!</li>
+							<li>Var vanskelig å gjøre drift, for miljøet begynte å bli komplekst.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-slide-type="poeng">
+					<img src="img/kibana3.png" alt="Kibana">
+					<aside class="notes">
+						<ul>
+							<li>Aggregering av logger</li>
+							<li>Forrige slide og denne er <b>samme data</b></li>
+							<li>Grafer gjør det lettere å se <b>trender og spikes</b></li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-slide-type="poeng">
+					<h2>Støtteverktøy</h2>
+					<ul>
+						<li>Applikasjoner blir moduler</li>
+						<li>
+							Støtte må gjøres rundt applikasjoner,<br>
+							ikke inne i dem
+						</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li><b>App = modul</b></li>
+							<li>Invester mer i infrastruktur</li>
+							<li>Automatiserer implisitte oppgaver</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-slide-type="poeng">
+					<h2>Standardisering?</h2>
+
+					<aside class="notes">
+						<ul>
+							<li>Støtteverktøy bør standariseres, men kan godt brukes av flere teknologier</li>
+							<li>Alle platformer du bruker må ha støtteverktøy</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+
+			<section id="ende-til-ende-testing" data-owner="jøran" data-time="4">
+				<section data-background-image="img/curiosity.jpg">
+					<div class="header" style="color: #EAA96B">
+						<div class="caption"><strike>Vi har…</strike>Vi burde…</div>
+						<h2 style="color: inherit;">
+							Automatisert testing av alt
+						</h2>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Hit har vi ikke kommet enda</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-slide-type="pain">
+					<h2>Verifisere oppførsel på tvers av 4 applikasjoner :(</h2>
+
+					<aside class="notes">
+						<ul>
+							<li>En forretningsfeature kan gjerne gå over 3-4 applikasjoner</li>
+							<li>Har sine fordeler, men også utfordringer</li>
+							<li>Hvordan vet jeg at jeg ikke brekker funksjonalitet i andre applikasjoner?</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-slide-type="pain">
+					<img src="img/monolithconf.png"/>
+
+					<aside class="notes">
+						<ul>
+							<li>La folk lese den, gå gjerne videre</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-slide-type="poeng">
+					<h2>Kompleksiteten er tilbake</h2>
+
+					<ul>
+						<li>Mikrotjenester fjerner ikke kompleksitet</li>
+						<li>Mikrotjenester <em>flytter</em> kompleksitet</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Ikke en sølvkule</li>
+							<li>Vår erfaring er likevel at det er verdt det</li>
+							<li>Flytter kompleksiteten til et sted den er lettere å håndtere</li>
+							<li>Du må <b>vokse inn</b> i det.</li>
+							<li>Det er ok å taile logger i starten</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+
 			<section data-background="img/the_end.jpg" data-owner="stian" data-time="0.5">
 				<h2 style="background-color: black; padding: 10px;">The end is near</h2>
 				<aside class="notes">
@@ -660,8 +793,7 @@
 				<section data-slide-type="poeng">
 					<h2>Fokuser på smidighet</h2>
 					<ul>
-						<li>Gjør små eksperimenter</li>
-						<li class="fragment">Gi folk tillit og verktøyene de trenger</li>
+						<li>Gjør en forbedring om gangen</li>
 						<li class="fragment">Løs problemene du faktisk har</li>
 						<li class="fragment">Gjør ting enkelt!</li>
 					</ul>
