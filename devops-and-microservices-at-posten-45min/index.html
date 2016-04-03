@@ -169,6 +169,7 @@
 				<section data-owner="stian" data-background-image="img/booking.png" data-background-position="top">
 					<aside class="notes">
 						<ul>
+							<li>Startet 2010</li>
 							<li>I starten ca 5000 kr i uka</li>
 							<li>Flere hundre millioner i omsetning i året</li>
 							<li>Eneste måten en del SMBer sender varer på. Viktig for dem!</li>
@@ -189,6 +190,7 @@
 						I bakgrunnen ser vi automatisert deployment.
 						<ul>
 							<li>Nedetidsfri deployment på dagtid</li>
+							<li>To noder bak lastbalanserer</li>
 							<li>Deployer flere ganger om dagen</li>
 							<li>Mindre feil enn før</li>
 						</ul>
@@ -215,6 +217,11 @@
 				<section data-owner="stian" data-background-image="img/kibana1.png" data-background-position="top">
 					<aside class="notes">
 						Dette er en Logstash + Elasicsearch&Kibana-stack
+						<br/>
+						<ul>
+							<li>Lagt all applikasjonslog og aksesslogg inn i Elasticsearch.</li>
+							<li>På tvers av over 30 applikasjoner</li>
+						</ul>
 					</aside>
 				</section>
 			</section>
@@ -393,7 +400,8 @@
 						</h2>
 					</div>
 					<aside class="notes">
-						<p>Måtte ta kontroll over deployment selv. Ineffektivt å være avhengig av andre.</p>
+						<p>Startet med mange applikasjoner i ITIL-regimet.</br>
+						Måtte ta kontroll over deployment selv. Ineffektivt å være avhengig av andre.</p>
 						<ul>
 							<li>Fikk kontroll på utvikling</li>
 							<li>Bruker mye tid per deploy</li>
@@ -537,7 +545,7 @@
 						</h2>
 					</div>
 					<aside class="notes">
-						Nye apper ble deployet på ny infrastruktur, men de eldre og viktige levde videre på den gamle.
+						Nye apper ble deployet på ny infrastruktur, men hovedapplikasjonene levde videre på den gamle.
 						<ul>
 							<li>Fått noen av appene over på smidig drifta</li>
 							<li>Hvorfor tar noen apper lengre tid å deploy å deploye</li>
@@ -661,9 +669,7 @@
 						<ul>
 							<li>Kostnad per app ned</li>
 							<li>Fikk ny type kompleksitet</li>
-							<li>Mikrotjenester fører til industrialisering</li>
-							<li>Mikrotjenester fører også til standariseing</li>
-							<li>Viktig å ikke bli for rigid</li>
+							<li>Komplekstitet ble liggende mellom applikasjonene</li>
 						</ul>
 					</aside>
 				</section>
@@ -707,6 +713,15 @@
 							<li>Invester mer i infrastruktur</li>
 							<li>Automatiserer implisitte oppgaver</li>
 						</ul>
+
+						<b>Eksempler:</b>
+						<ul>
+							<li>Helsesjekk med dashboard</li>
+							<li>Felles deployscript</li>
+							<li>Standarisert databasemigrering</li>
+							<li>All logging inn i felles verktøy</li>
+							<li>Hystrix - Pass på at et system ikke tar ned et annet</li>
+						</ul>
 					</aside>
 				</section>
 
@@ -715,13 +730,16 @@
 
 					<aside class="notes">
 						<ul>
+							<li>Standariser ting rundt applikasjonene</li>
 							<li>Støtteverktøy bør standariseres, men kan godt brukes av flere teknologier</li>
 							<li>Alle platformer du bruker må ha støtteverktøy</li>
+							<li>Mikrotjenester fører til industrialisering</li>
+							<li>Mikrotjenester fører også til standariseing</li>
+							<li>Viktig å ikke bli for rigid</li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-
 
 			<section id="ende-til-ende-testing" data-owner="jøran" data-time="4">
 				<section data-background-image="img/curiosity.jpg">
