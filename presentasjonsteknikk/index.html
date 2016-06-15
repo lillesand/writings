@@ -195,7 +195,7 @@
 					<section>
 						<div>
 							Når jeg holder presentasjon har jeg
-							<h1><span>lolo</span> i puls</h1>
+							<h1><span id="pulse-holder">120</span> i puls</h1>
 							… og det er greit.
 						</div>
 					</section>
@@ -342,5 +342,23 @@
 				]
 			});
 		</script>
+
+	<script>
+		(function() {
+			var holder = document.querySelector('#pulse-holder');
+
+			setInterval(function() {
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.onreadystatechange = function() {
+					if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+						holder.innerText = xmlHttp.responseText;
+					}
+				};
+				xmlHttp.open("GET", "http://localhost:2000/", true); // true for asynchronous
+				xmlHttp.send(null);
+			}, 500);
+		})();
+	</script>
+
 	</body>
 </html>
